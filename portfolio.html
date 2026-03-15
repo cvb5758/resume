@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이수민 | Portfolio</title>
+  <meta name="description" content="프론트엔드 개발자 이수민 포트폴리오. 결제 시스템 전환, GTM 트래킹 통합, 디자인 시스템 전환, 웹 성능 최적화 상세 기여 내역.">
+  <meta name="author" content="이수민">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="이수민 | Portfolio">
+  <meta property="og:description" content="결제·트래킹·디자인 시스템·성능 최적화 프로젝트 상세 기여.">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "이수민 포트폴리오",
+    "description": "프론트엔드 개발자 이수민의 주요 프로젝트 상세 기여 내역",
+    "author": {
+      "@type": "Person",
+      "name": "이수민",
+      "jobTitle": "Frontend Developer"
+    },
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "결제 시스템 전환 및 안정화",
+        "description": "PortOne/Inicis → Toss Payments 전환, 결제 로직 83+ 파일 → 10개 핵심 모듈 재설계",
+        "dateCreated": "2026-01"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "GTM 트래킹 체계 통합",
+        "description": "화면별 분산 트래킹을 7개 도메인 훅 · 57개 표준 이벤트 체계로 통합",
+        "dateCreated": "2025-12"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "디자인 시스템 전환",
+        "description": "MUI 5→7 업그레이드, styled/sx 565개 파일 대상 Tailwind 토큰 체계 전환",
+        "dateCreated": "2026-03"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "웹 성능 및 런타임 안정화",
+        "description": "46개 라우트 lazy loading + 4-chunk 번들 분리로 점진적 렌더링 전환",
+        "dateCreated": "2025-12"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #555;
+      --text-muted: #888;
+      --border: #e0e0e0;
+      --bg: #fff;
+      --bg-card: #f8f8f8;
+      --max-w: 700px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    a {
+      color: var(--text-sub);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    a:hover { border-color: var(--text); color: var(--text); }
+
+    /* ── Header ── */
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .nav {
+      margin-top: 4px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    /* ── Entry ── */
+    .entry {
+      margin-top: 56px;
+    }
+    .entry:first-of-type { margin-top: 40px; }
+
+    .entry-header {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .entry-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .entry-header .meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .entry-header time {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .summary {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+
+    /* ── Sub-sections ── */
+    .sub-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 24px 0 10px;
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+    }
+    .bullets li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 7px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      word-break: keep-all;
+    }
+    .bullets li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .metric {
+      display: inline-block;
+      background: var(--bg-card);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 2px 4px 2px 0;
+    }
+    .metrics {
+      margin: 12px 0;
+      line-height: 2;
+    }
+
+    .tech-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* ── Print ── */
+    @media print {
+      main { padding: 16px 0; }
+      .entry { break-inside: avoid; margin-top: 32px; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 560px) {
+      main { padding: 40px 16px 64px; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- ════════════ HEADER ════════════ -->
+    <header>
+      <h1>Portfolio</h1>
+      <p class="nav"><a href="index.html">← 이력서로 돌아가기</a></p>
+    </header>
+
+    <!-- ════════════ 1. 결제 시스템 전환 ════════════ -->
+    <article class="entry" id="payment" aria-label="결제 시스템 전환 및 안정화">
+      <div class="entry-header">
+        <h2>결제 시스템 전환 및 안정화</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2026-01">2026.01</time> ~ <time datetime="2026-03">03</time>
+        </p>
+      </div>
+
+      <p class="summary">
+        PortOne/Inicis 기반 결제를 Toss Payments로 전환하고,
+        결제 로직 전체를 재설계해 유지보수성과 안정성을 확보한 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">결제 로직 83+ → 10개 모듈</span>
+        <span class="metric">매직 스트링 100+ → 0</span>
+        <span class="metric">PlanTier 23종 enum</span>
+        <span class="metric">13페이지 마이그레이션</span>
+        <span class="metric">온보딩 18단계 → 1단계</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>기존(PortOne/Inicis)·신규(Toss) 결제를 동시 운영할 수 있도록 구조를 분리하고, 환경변수 기반 단계적 오픈으로 전환 리스크를 통제했습니다.</li>
+        <li>결제 관련 매직 스트링 100+개를 제거하고, PlanTier 23종 enum + 타입 가드 체계로 전환해 런타임 오류 가능성을 제거했습니다.</li>
+        <li>13개 페이지에 플랜 접근 제어 훅을 마이그레이션하고, FeatureMatrix 패턴으로 기능별 접근 권한을 선언적으로 관리할 수 있게 했습니다.</li>
+        <li>해지·요금제 변경 플로우를 재설계하고, PO와 조율해 해지 예약·grandfather 할인 등 사용자 혼란을 최소화했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>기존 결제 코드가 83+개 파일에 분산되어 있어, 어디를 고쳐야 하는지 파악하는 것 자체가 첫 번째 과제였습니다.</li>
+        <li>전면 교체 대신 구/신 동시 운영 구조를 선택해, 장애 발생 시 환경변수 하나로 즉시 롤백할 수 있게 했습니다.</li>
+        <li>PlanTier enum을 도입할 때 기존 문자열과의 호환을 위해 타입 가드를 함께 작성해 점진적 마이그레이션이 가능하도록 했습니다.</li>
+      </ul>
+
+      <p class="tech-label">React · TypeScript · Toss Payments SDK · PortOne</p>
+    </article>
+
+    <!-- ════════════ 2. GTM 트래킹 ════════════ -->
+    <article class="entry" id="gtm" aria-label="GTM 트래킹 체계 통합">
+      <div class="entry-header">
+        <h2>GTM 트래킹 체계 통합</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2025-12">2025.12</time> ~
+        </p>
+      </div>
+
+      <p class="summary">
+        화면마다 제각각이던 이벤트 트래킹을 도메인 훅 기반의 표준 체계로 통합해,
+        데이터 누락·중복 없이 확장 가능한 구조를 만든 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">7개 도메인 훅</span>
+        <span class="metric">57개 표준 이벤트</span>
+        <span class="metric">43개 타입 인터페이스</span>
+        <span class="metric">816 additions / 454 deletions</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>shared/tracking 모듈과 도메인별 훅 구조로 추적 로직을 재배치해, 트래킹 누락·중복 리스크를 해소했습니다.</li>
+        <li>사용자 식별 정보에 해싱 처리를 적용하고, GTM→GA4 태그 운영 구조를 정비했습니다.</li>
+        <li>타입 인터페이스 43개로 이벤트 페이로드를 정의해, 잘못된 데이터 전송을 컴파일 타임에 차단했습니다.</li>
+        <li>1년 뒤 GA4 확장 시에도 기존 구조 위에 훅만 추가해 대응할 수 있는 구조를 설계했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>기존 트래킹은 컴포넌트 안에 직접 GTM 호출이 섞여 있어, 변경 시 화면 로직까지 건드려야 했습니다.</li>
+        <li>도메인별 훅으로 분리해 화면 컴포넌트는 "무엇을 추적할지"만 선언하고, "어떻게 보낼지"는 훅이 담당하게 했습니다.</li>
+      </ul>
+
+      <p class="tech-label">GTM · GA4 · React Hooks · TypeScript</p>
+    </article>
+
+    <!-- ════════════ 3. 디자인 시스템 전환 ════════════ -->
+    <article class="entry" id="design-system" aria-label="디자인 시스템 구축">
+      <div class="entry-header">
+        <h2>디자인 시스템 구축 · Tailwind 전환</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2025-07">2025.07</time> ~ <time datetime="2026-03">2026.03</time>
+        </p>
+      </div>
+
+      <p class="summary">
+        디자인 시스템을 0에서 설계해 단일 소스에서 CSS·Tailwind·MUI 테마를 자동 생성하는 파이프라인을 구축하고,
+        레거시 565개 파일을 전환한 뒤 CI 게이트로 회귀를 차단했습니다.
+        결과적으로 하루 이상 걸리던 UI 작업을 1시간 이내로 단축했습니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">UI 작업 시간 하루 → 1시간 이내</span>
+        <span class="metric">대상 565개 파일</span>
+        <span class="metric">CSS 커스텀 프로퍼티 202개</span>
+        <span class="metric">15 토큰 카테고리 · ~215 토큰</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>디자인 시스템을 0에서 설계 — 단일 source.js에서 CSS 커스텀 프로퍼티 202개 + Tailwind config + MUI 테마를 동시 생성하는 파이프라인을 구축했습니다.</li>
+        <li>토큰 기반 래퍼 컴포넌트(PageWrapper, ListContainer, Modal 등)를 만들어 화면 구성 시 스타일링 의사결정 비용을 제거했습니다.</li>
+        <li>AI 협업 워크플로우(기준 문서화 → 구조 정리 → AI 전환 → 수동 검수 → 이슈 환류)로 565개 파일 대규모 전환을 실행했습니다.</li>
+        <li>스타일 경계 검사 CI 게이트(check-style-system-boundary.mjs)를 적용해 전환 완료 컴포넌트에 MUI sx/styled() 재유입 시 배포를 자동 차단했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>기존에는 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단해야 했고, 이것이 하루 이상 소요의 주된 원인이었습니다.</li>
+        <li>토큰화 자체보다 "단일 소스 → 3개 포맷 자동 생성" 파이프라인이 핵심이었습니다. 토큰을 수정하면 CSS·Tailwind·MUI가 동시에 반영되어 일관성이 자동으로 보장됩니다.</li>
+        <li>Tailwind v4 도입이 목표였지만 MUI 5가 호환되지 않아, MUI 5→7 업그레이드를 선행한 뒤 Tailwind 전환을 진행하는 2단계 전략을 선택했습니다.</li>
+        <li>전환 후 회귀를 막기 위해 CI 게이트를 도입했고, "전환했는데 다시 돌아가는" 문제를 구조적으로 차단했습니다.</li>
+      </ul>
+
+      <p class="tech-label">Tailwind CSS v4 · MUI 7 · CSS Custom Properties · CI/CD · AI Workflow</p>
+    </article>
+
+    <!-- ════════════ 4. 웹 성능 최적화 ════════════ -->
+    <article class="entry" id="performance" aria-label="웹 성능 및 런타임 안정화">
+      <div class="entry-header">
+        <h2>웹 성능 및 런타임 안정화</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2025-12">2025.12</time> ~
+        </p>
+      </div>
+
+      <p class="summary">
+        단일 번들로 모든 것을 로딩하던 구조를 점진적 렌더링으로 전환해
+        체감 대기 시간을 단축한 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">46개 라우트 lazy loading</span>
+        <span class="metric">4-chunk 번들 분리</span>
+        <span class="metric">6개 멀티앱 빌드 타겟</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>Vite manualChunks를 vendor/mui/charts/grid로 4분할하고, 46개 라우트에 lazy loading을 적용해 초기 로딩 경로를 분리했습니다.</li>
+        <li>AG Grid 초기화를 유휴 시점으로 지연하고, Suspense 경계를 적용해 준비된 영역부터 먼저 노출되도록 했습니다.</li>
+        <li>데이터가 많은 화면에서도 부분 렌더링으로 사용자 체감 대기 시간을 단축했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>AG Grid처럼 무거운 서드파티 라이브러리가 초기 번들에 포함되어 전체 로딩을 지연시키고 있었습니다.</li>
+        <li>manualChunks로 서드파티를 분리하고, 라우트 단위 lazy loading으로 "필요한 것만 필요할 때" 로딩하는 구조를 만들었습니다.</li>
+      </ul>
+
+      <p class="tech-label">Vite · React.lazy · Suspense · AG Grid · manualChunks</p>
+    </article>
+  </main>
+</body>
+</html>
