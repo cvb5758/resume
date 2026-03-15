@@ -85,6 +85,12 @@
       transition: color 0.15s;
     }
     .sidebar .print-btn:hover { color: var(--text-sub); }
+    .sidebar-link {
+      display: block; padding: 3px 0 3px 14px; font-size: 0.72rem;
+      color: var(--text-muted); border-bottom: none; line-height: 1.5;
+      transition: color 0.12s;
+    }
+    .sidebar-link:hover { color: var(--text-sub); border-bottom: none; }
 
     main { max-width: var(--max-w); margin: 0 auto; padding: 64px 24px 96px; }
 
@@ -164,12 +170,17 @@
     <span class="sidebar-label">General</span>
     <button class="active" data-tab="general">General</button>
     <span class="sidebar-label">Company</span>
-    <button data-tab="challengers">화이트큐브</button>
     <button data-tab="zvzo">두어스(ZVZO)</button>
     <button data-tab="always">레브잇</button>
     <button data-tab="coworkcity">지니수</button>
     <button data-tab="amersly">에이머슬리</button>
     <button data-tab="meraki">메라키플레이스</button>
+    <span class="sidebar-label">공고</span>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/334108" target="_blank">두어스(ZVZO) ↗</a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339811" target="_blank">레브잇 ↗</a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339711" target="_blank">지니수 ↗</a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/344477" target="_blank">에이머슬리 ↗</a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/342387" target="_blank">메라키플레이스 ↗</a>
     <button class="print-btn" onclick="window.print()">PDF 저장</button>
   </nav>
 
@@ -229,9 +240,12 @@
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║  챌린저스                                                     ║ -->
+<!-- ║  (화이트큐브 — 채용 종료)                                        ║ -->
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
-<div id="challengers" class="tab-content">
+<!-- removed: challengers tab -->
+
+<!-- keep old div for reference, hidden -->
+<!-- <div id="challengers" class="tab-content">
   <section class="about"><h2>About</h2>
     <p>사용자 경험과 비즈니스 성장을 최우선으로 두고 개발해온 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·트래킹·성능·디자인 시스템을 포함한 제품 전반을 맡으며, 기술적 구현뿐 아니라 기획 단계에서 정책 모순을 짚어내고 PO와 조율하는 역할까지 수행했습니다.</p>
     <p>기능을 빠르게 만들고, 데이터로 검증하고, 개선하는 사이클을 반복하며 제품을 성장시키는 데 집중합니다. 크롬 익스텐션 940+ 다운로드 달성, 결제 전환 무장애 완료, UI 작업 생산성 8배 향상 등 비즈니스에 직접적인 임팩트를 만들어왔습니다.</p>
@@ -261,7 +275,7 @@
   </section>
   <section><h2>Failure &amp; Learning</h2><div class="learning"><h4>Next.js App Router 마이그레이션 시도</h4><ul class="bullets"><li>SSR 이해 부족과 의존성 호환 문제로 병합하지 못했고, 이후 범위를 분리해 기존 환경에서 안정적으로 완료했습니다.</li></ul></div></section>
   <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
-</div>
+</div> -->
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
 <!-- ║  두어스 (ZVZO)                                               ║ -->
