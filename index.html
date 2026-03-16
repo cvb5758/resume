@@ -179,12 +179,14 @@
     <span class="sidebar-label">General</span>
     <button class="active" data-tab="general">General</button>
     <span class="sidebar-label">Company</span>
+    <button data-tab="challengers">화이트큐브</button>
     <button data-tab="zvzo">두어스(ZVZO)</button>
     <button data-tab="always">레브잇</button>
     <button data-tab="coworkcity">지니수</button>
     <button data-tab="amersly">에이머슬리</button>
     <button data-tab="meraki">메라키플레이스</button>
     <span class="sidebar-label">공고</span>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/276525" target="_blank">화이트큐브 ↗</a>
     <a class="sidebar-link" href="https://www.wanted.co.kr/wd/334108" target="_blank">두어스(ZVZO) ↗</a>
     <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339811" target="_blank">레브잇 ↗</a>
     <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339711" target="_blank">지니수 ↗</a>
@@ -251,12 +253,9 @@
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
-<!-- ║  (화이트큐브 — 채용 종료)                                        ║ -->
+<!-- ║  화이트큐브                                                     ║ -->
 <!-- ╚══════════════════════════════════════════════════════════════╝ -->
-<!-- removed: challengers tab -->
-
-<!-- keep old div for reference, hidden -->
-<!-- <div id="challengers" class="tab-content">
+<div id="challengers" class="tab-content">
   <section class="about"><h2>About</h2>
     <p>사용자 경험과 비즈니스 성장을 최우선으로 두고 개발해온 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·트래킹·성능·디자인 시스템을 포함한 제품 전반을 맡으며, 기술적 구현뿐 아니라 기획 단계에서 정책 모순을 짚어내고 PO와 조율하는 역할까지 수행했습니다.</p>
     <p>기능을 빠르게 만들고, 데이터로 검증하고, 개선하는 사이클을 반복하며 제품을 성장시키는 데 집중합니다. 크롬 익스텐션 940+ 다운로드 달성, 결제 전환 무장애 완료, UI 작업 생산성 8배 향상 등 비즈니스에 직접적인 임팩트를 만들어왔습니다.</p>
@@ -280,15 +279,15 @@
   <div class="stats"><span><strong>신규 기능 35+</strong></span><span><strong>구조 개선 15+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 10개</strong></span></div>
   <p class="stats-label">이 중 인상 깊었던 프로젝트</p>
   <section><h2>Project</h2>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · Tailwind 전환</h4><ul class="bullets"><li>0에서 설계한 토큰 파이프라인으로 레거시 565개 파일 전환, UI 작업 시간 하루 → 1시간 이내</li><li>스타일 경계 검사 CI 게이트로 회귀 자동 차단</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CI/CD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
     <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 및 안정화</h4><ul class="bullets"><li>구/신 결제 런타임 분기 구조 설계로 서비스 중단 없이 점진적 전환</li><li>결제 로직 83+ 파일 → 10개 핵심 모듈 재설계, PlanTier 23종 enum + 선언적 접근 제어 config 통합</li><li>해지·요금제 변경 플로우를 PO와 조율해 사용자 혼란 최소화</li></ul><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
     <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li>도메인 구분 없이 혼재되던 트래킹을 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li>새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
-    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>쿠팡/스마트스토어 마진 계산기 신규 개발, 상품 데이터 스크래핑, Gemini API 리뷰 분석</li><li>크롬 웹스토어 940+ 다운로드 — 독립 제품을 기획부터 배포·운영까지 담당</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span><span class="tag">Gemini API</span></div></div></article>
-    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · Tailwind 전환</h4><ul class="bullets"><li>0에서 설계한 토큰 파이프라인으로 레거시 565개 파일 전환, UI 작업 시간 하루 → 1시간 이내</li><li>스타일 경계 검사 CI 게이트로 회귀 자동 차단</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CI/CD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>쿠팡/스마트스토어 마진 계산기 신규 개발, Gemini API 리뷰 분석. 940+ 다운로드</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span><span class="tag">Gemini API</span></div></div></article>
     <article class="proj"><div class="proj-period"><time>2024.10 ~ 12</time></div><div class="proj-body"><h4>대시보드 개편 · 로켓그로스 연동 · 온보딩</h4><ul class="bullets"><li>대시보드 재설계, 쿠팡 로켓그로스 계정 연동, NUX 온보딩 투어, 가격 페이지 UI/UX 개편</li></ul><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">GTM</span></div></div></article>
   </section>
   <section><h2>Failure &amp; Learning</h2><div class="learning"><h4>Next.js App Router 마이그레이션 시도</h4><ul class="bullets"><li>SSR 이해 부족과 의존성 호환 문제로 병합하지 못했고, 이후 범위를 분리해 기존 환경에서 안정적으로 완료했습니다.</li></ul></div></section>
   <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
-</div> -->
+</div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
 <!-- ║  두어스 (ZVZO)                                               ║ -->
