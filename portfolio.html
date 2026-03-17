@@ -192,10 +192,24 @@
       margin-top: 16px;
     }
 
+    /* ── Print Button ── */
+    .print-btn {
+      position: fixed; bottom: 32px; right: 32px;
+      padding: 10px 20px; font-size: 0.82rem; font-weight: 500;
+      font-family: inherit; color: var(--text-sub); background: var(--bg);
+      border: 1px solid var(--border); border-radius: 6px;
+      cursor: pointer; transition: all 0.15s; z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .print-btn:hover { color: var(--text); border-color: var(--text); }
+
     /* ── Print ── */
     @media print {
       main { padding: 16px 0; }
       .entry { break-inside: avoid; margin-top: 32px; }
+      .print-btn { display: none !important; }
+      .nav { display: none !important; }
+      a { border-bottom: none; }
     }
 
     /* ── Mobile ── */
@@ -207,6 +221,7 @@
 </head>
 
 <body>
+  <button class="print-btn" onclick="window.print()">PDF 저장</button>
   <main>
     <!-- ════════════ HEADER ════════════ -->
     <header>
@@ -374,44 +389,6 @@
       <p class="tech-label">Vite · React.lazy · Suspense · AG Grid · manualChunks</p>
     </article>
 
-    <!-- ════════════ 5. 매입원가 관리 UX 반복 개선 ════════════ -->
-    <article class="entry" id="purchase-price" aria-label="매입원가 관리 UX 반복 개선">
-      <div class="entry-header">
-        <h2>매입원가 관리 — 입력률 개선을 위한 반복 UX 개선</h2>
-        <p class="meta">
-          (주)뭉클랩 · 장사왕 ·
-          <time datetime="2025-11">2025.11</time> ~ <time datetime="2025-12">12</time>
-        </p>
-      </div>
-
-      <p class="summary">
-        매입원가 입력률은 서비스에서 가장 중요한 지표였습니다. 매입가가 입력되어야 순이익이 계산되고, 순이익을 보는 셀러만이 서비스에 의존하게 됩니다.
-        3주간 10회의 반복 개선으로 입력 마찰을 줄이고, 입력 즉시 결과를 보여주며, 서비스 전체에서 매입원가 페이지로의 진입 경로를 연결했습니다.
-      </p>
-
-      <div class="metrics" aria-label="핵심 지표">
-        <span class="metric">v1.4.0 ~ v1.4.7 (3주간 10회 릴리즈)</span>
-        <span class="metric">진입 경로 4개 페이지 연결</span>
-        <span class="metric">DataComparisonUtil 신규 설계</span>
-      </div>
-
-      <h3 class="sub-title">What I Did</h3>
-      <ul class="bullets">
-        <li>매입가를 입력해도 결과를 바로 알 수 없던 구조에서, 예상순이익·예상마진율 컬럼을 그리드에 추가해 입력 즉시 수익성을 확인할 수 있게 했습니다. 컬럼 순서도 매입가 → 결과가 바로 옆에 오도록 재배치했습니다.</li>
-        <li>그리드와 계산기 위젯이 별도로 동작하던 구조를 양방향 동기화로 연결하고, 원본 데이터와의 비교 유틸리티(DataComparisonUtil)를 설계해 실제 변경분만 저장 요청하도록 개선했습니다.</li>
-        <li>대시보드·주문목록·상품별 순이익·주문 상세 분석 4개 페이지의 "매입가 입력" 버튼에 현재 검색 조건(날짜, 쇼핑몰, 상품ID)을 파라미터로 전달해, 매입원가 페이지 진입 시 맥락이 유지되도록 했습니다.</li>
-        <li><code>!vatRate</code> 조건이 0을 falsy로 처리해 부가세율 0%를 입력할 수 없던 문제를 <code>=== null || === undefined</code>로 수정해, 면세·영세율 상품의 정확한 데이터 입력을 가능하게 했습니다.</li>
-      </ul>
-
-      <h3 class="sub-title">Challenge & Decision</h3>
-      <ul class="bullets">
-        <li>매입원가 페이지는 "입력해야 하는 페이지"인데, 입력의 동기가 약했습니다. 매입가를 넣어도 결과를 보려면 다른 페이지로 이동해야 했고, 다른 페이지에서 넘어오면 검색 조건이 초기화되어 다시 설정해야 했습니다. 이 마찰이 입력률 저하의 원인이라고 판단했습니다.</li>
-        <li>"입력하면 즉시 결과가 보인다"와 "어디서든 맥락을 유지하며 진입할 수 있다"를 두 축으로, 예상순이익 컬럼 추가 → 크로스 페이지 파라미터 전달 → 변경분 감지 → 0/null 엣지케이스 순서로 개선했습니다.</li>
-        <li>기본 필터를 "판매 상품만"에서 "미판매 포함 전체"로 변경한 것은 트레이드오프였습니다. 데이터가 많아져 로딩이 느려질 수 있지만, 매입가가 아직 입력되지 않은 상품을 먼저 보여주는 것이 입력률에 더 중요하다고 판단했습니다.</li>
-      </ul>
-
-      <p class="tech-label">React · AG Grid · TypeScript · queryString · dayjs</p>
-    </article>
   </main>
 </body>
 </html>
