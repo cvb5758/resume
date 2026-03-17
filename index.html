@@ -24,7 +24,7 @@
       "sameAs": ["https://github.com/cvb5758","https://github.com/suminlee-moonklabs"],
       "knowsAbout": ["React","TypeScript","Next.js","Vue 3","Vite","Tailwind CSS","MUI","Emotion","React Query","Zustand","AG Grid","GTM","GA4","Toss Payments","Chrome Extension","AWS Lambda"],
       "worksFor": {"@type":"Organization","name":"(주)뭉클랩","description":"이커머스 정산/순이익 분석 SaaS"},
-      "alumniOf": {"@type":"EducationalOrganization","name":"한국폴리텍대학 인천캠퍼스","department":"컴퓨터정보학과"}
+      "alumniOf": {"@type":"EducationalOrganization","name":"한국폴리텍대학 인천캠퍼스","department":"컴퓨터정보과(2년제)"}
     }]
   }
   </script>
@@ -95,6 +95,15 @@
       transition: color 0.12s;
     }
     .sidebar-link:hover { color: var(--text-sub); border-bottom: none; }
+    .sidebar-link.rejected { text-decoration: line-through; opacity: 0.4; }
+    .status {
+      font-size: 0.58rem; font-weight: 600; padding: 1px 4px;
+      border-radius: 3px; vertical-align: middle; margin-left: 2px;
+    }
+    .status-pending { color: var(--text-muted); border: 1px solid var(--border); }
+    .status-applied { color: #2563eb; border: 1px solid #2563eb; }
+    .status-interview { color: #16a34a; border: 1px solid #16a34a; }
+    .status-rejected { color: var(--text-muted); border: 1px solid var(--border); }
 
     main { max-width: var(--max-w); margin: 0 auto; padding: 64px 24px 96px; }
 
@@ -195,13 +204,23 @@
     <button data-tab="coworkcity">지니수</button>
     <button data-tab="amersly">에이머슬리</button>
     <button data-tab="meraki">메라키플레이스</button>
-    <span class="sidebar-label">공고</span>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/276525" target="_blank">화이트큐브 ↗</a>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/334108" target="_blank">두어스(ZVZO) ↗</a>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339811" target="_blank">레브잇 ↗</a>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339711" target="_blank">지니수 ↗</a>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/344477" target="_blank">에이머슬리 ↗</a>
-    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/342387" target="_blank">메라키플레이스 ↗</a>
+    <button data-tab="miridi">미리캔버스</button>
+    <button data-tab="doctornow">닥터나우</button>
+    <button data-tab="stunning">스터닝</button>
+    <button data-tab="slogup">슬로그업</button>
+    <button data-tab="ufintech">유핀테크허브</button>
+    <span class="sidebar-label">지원 현황</span>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/276525" target="_blank">화이트큐브 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/334108" target="_blank">두어스(ZVZO) ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339811" target="_blank">레브잇 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/339711" target="_blank">지니수 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/344477" target="_blank">에이머슬리 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/wd/342387" target="_blank">메라키플레이스 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://career.miricanvas.com" target="_blank">미리캔버스 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://doctornow.career.greetinghr.com" target="_blank">닥터나우 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/company/stunning" target="_blank">스터닝 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/company/slogup" target="_blank">슬로그업 ↗ <span class="status status-pending">대기</span></a>
+    <a class="sidebar-link" href="https://www.wanted.co.kr/company/ufintech" target="_blank">유핀테크허브 ↗ <span class="status status-pending">대기</span></a>
     <button class="print-btn" onclick="window.print()">PDF 저장</button>
   </nav>
 
@@ -251,12 +270,13 @@
       <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
       <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
       <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-      <dt>Analytics</dt><dd>GTM · GA4</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
       <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
       <dt>Infra</dt><dd>AWS Lambda</dd>
     </dl>
   </section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time datetime="2017">2017</time> 입학 / <time datetime="2021">2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -295,12 +315,13 @@
       <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
       <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
       <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-      <dt>Analytics</dt><dd>GTM · GA4</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
       <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
       <dt>Infra</dt><dd>AWS Lambda</dd>
     </dl>
   </section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time datetime="2017">2017</time> 입학 / <time datetime="2021">2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -336,12 +357,13 @@
       <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
       <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
       <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-      <dt>Analytics</dt><dd>GTM · GA4</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
       <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
       <dt>Infra</dt><dd>AWS Lambda</dd>
     </dl>
   </section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time datetime="2017">2017</time> 입학 / <time datetime="2021">2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -373,11 +395,12 @@
     <dt>Frontend</dt><dd>React · TypeScript · Vite · Chrome Extension · Next.js · Vue 3</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -408,11 +431,12 @@
     <dt>Frontend</dt><dd>React · TypeScript · Vite · Chrome Extension · Next.js · Vue 3</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>AI Workflow</dt><dd>Cursor · Claude Code · Codex · 기준 문서화 → AI 협업 → 수동 검수 → 이슈 환류</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -445,11 +469,12 @@
     <dt>Frontend</dt><dd>React · TypeScript · Vite · Chrome Extension · Next.js · Vue 3</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -481,11 +506,12 @@
     <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vite · Vue 3 · Chrome Extension</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -517,11 +543,12 @@
     <dt>Frontend</dt><dd>React · TypeScript · Vite · Chrome Extension · Next.js · Vue 3</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>Data / Viz</dt><dd>AG Grid · React Query · Zustand · recharts</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>AI Workflow</dt><dd>Cursor · Claude Code · Codex</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
 <!-- ╔══════════════════════════════════════════════════════════════╗ -->
@@ -552,11 +579,225 @@
     <dt>Frontend</dt><dd>React · TypeScript · Vite · Chrome Extension · Next.js · Vue 3</dd>
     <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
     <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-    <dt>Analytics</dt><dd>GTM · GA4</dd>
+    <dt>Analytics</dt><dd>GA4</dd>
     <dt>AI Workflow</dt><dd>Cursor · Claude Code · Codex · MCP · Prompt Engineering</dd>
     <dt>Infra</dt><dd>AWS Lambda</dd>
   </dl></section>
-  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보학과 · <time>2017</time> 입학 / <time>2021</time> 졸업 · 군필</p></section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time>2017</time> 입학 / <time>2021</time> 졸업</p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!-- ║  미리캔버스 (프로덕트)                                          ║ -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
+<div id="miridi" class="tab-content">
+  <section class="about"><h2>About</h2>
+    <p>고객이 느끼는 불편함을 구조화하고 해결 방법을 설계하는 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 제품 전반을 개발·운영하며, 모호한 요구사항을 사용자 시나리오와 데이터 구조 기준으로 다시 정의하고 백엔드 API 제약까지 함께 확인해 구현 가능한 방향으로 팀의 의사결정을 도왔습니다.</p>
+    <p>서비스 개발에만 그치지 않고 기술 조직의 비효율을 개선하는 데도 집중했습니다. 디자인 시스템을 0에서 구축해 UI 작업 시간을 하루 → 1시간 이내로 단축했고, FSD 계층 구조와 CI 경계 검사를 도입해 코드베이스의 구조적 품질을 유지하고 있습니다.</p>
+  </section>
+  <section><h2>Experience</h2>
+    <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+    <h4 class="sub-title">역할 요약</h4>
+    <ul class="bullets">
+      <li>1인 프론트엔드로서 제품 전 영역을 개발·운영하며, 고객이 느끼는 불편함을 구조화하고 해결 방법을 설계하는 방식으로 일해왔습니다.</li>
+      <li>서비스 개발에만 그치지 않고, 반복되는 기술적 비효율을 발견해 디자인 시스템·트래킹 인프라·요금제 접근 제어 같은 플랫폼 작업으로 팀 생산성을 개선했습니다.</li>
+    </ul>
+  </section>
+  <div class="stats"><span><strong>신규 기능 25+</strong></span><span><strong>구조 개선 10+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 5개</strong></span></div>
+  <p class="stats-label">서비스 기능 개발과 플랫폼 작업을 함께 경험해왔습니다</p>
+  <section><h2>Project</h2>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">01 — 서비스 개발</h4>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 · 구독 체계</h4><ul class="bullets"><li>구/신 결제 런타임 분기로 개발/운영 환경을 분리해 점진적 전환</li><li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선</li></ul><p class="proj-note">결제 전환과 구독 정책 구현 과정에서 드러난 플랜 체크 분산 문제는 이후 접근 제어 구조 개선으로 연결됐습니다.</p><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~ 2026.01</time></div><div class="proj-body"><h4>쿠팡 광고 분석 · 로딩 UX 개선</h4><ul class="bullets"><li>캠페인별 수익성 진단 대시보드를 구현하고, 행동 지침이 공격적이라 판단해 단계별 가이드 형태로 조정</li><li>풀페이지 로딩을 컴포넌트별 독립 로딩으로 전환하고, 대시보드 워터폴 로딩 제거·API 병렬화로 체감 대기 시간 단축</li></ul><p class="proj-note">광고 분석 기능과 퍼널 계측이 늘면서 산재한 이벤트 코드를 공통 트래킹 체계로 정리할 필요를 확인했습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">Hackle</span><span class="tag">GA4</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>소싱 유저를 타깃으로 쿠팡/스마트스토어 마진 계산기를 기획부터 배포·운영까지 독립적으로 개발, 940+ 다운로드</li><li>서비스 유입 채널 가설을 검증한 결과 유효 사용자 유입은 만들었지만 전환 증대 효과는 제한적이었고, 메인 타깃과의 간극을 확인</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.10 ~ 2025.04</time></div><div class="proj-body"><h4>상품별 순이익 · 대시보드 · 온보딩 UI</h4><ul class="bullets"><li>트리 형태의 상품-옵션 데이터를 AG Grid master/detail로 제안해 구현, 사용자 방문율 3위 페이지 달성</li><li>주문 목록·매입원가의 컬럼 접기·전체화면, 대시보드 매출 상세 뷰 전환, 트라이얼·NUX 온보딩 UI를 연속적으로 개선</li></ul><p class="proj-note">여러 화면을 반복 개발하며 스타일 기준 부재로 같은 UI도 매번 새로 판단해야 했고, 이후 디자인 시스템 구축으로 이어졌습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">TypeScript</span><span class="tag">ChannelTalk</span></div></div></article>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">02 — 서비스 개발 과정의 병목을 해결한 플랫폼 작업</h4>
+    <p class="proj-note" style="margin-top:0; margin-bottom:14px;">기능을 계속 만들수록 플랜 정책, 트래킹, 스타일 기준, 성능 같은 공통 문제가 반복돼 이를 플랫폼 관점의 작업으로 정리했습니다.</p>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · 컴포넌트 아키텍처 전환</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단 — 하루 이상 소요</li><li><strong>해결:</strong> 0에서 토큰 파이프라인 설계(단일 소스 → CSS·Tailwind·MUI 동시 생성), 레거시 565개 파일 전환, Feature-Sliced Design 계층 구조 도입, CI 게이트로 회귀·레이어 위반 자동 차단</li><li><strong>결과:</strong> UI 작업 하루 → 1시간 이내, 결과적으로 새 기능 구현·실험 속도 가속</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CSS Custom Properties</span><span class="tag">CI/CD</span><span class="tag">FSD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li><strong>체감한 문제:</strong> Mixpanel·Hotjar·GTM이 한 파일에 혼재, 광고 분석 페이지는 자체 트래킹 유틸리티를 162줄 별도 작성</li><li><strong>해결:</strong> GTM/GA4를 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li><strong>결과:</strong> 새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~</time></div><div class="proj-body"><h4>요금제별 기능 제한 — 3단계 고도화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 요금제 체크가 문자열 비교로 분산, 새 요금제 추가 시 전수 수정, 레거시 호환 버그</li><li><strong>해결:</strong> 타입 안전한 요금제 체계 + 훅으로 통합 → 사용자 유형 구분 한계 발견 → 유형별 접근 정책을 config에 선언하고 라우트 단위로 자동 차단하는 구조로 고도화</li><li><strong>결과:</strong> 새 요금제 추가 시 매핑 1개만 수정, 기능별 전제조건도 config에서 관리, 테스트 232줄</li></ul><div class="tags"><span class="tag">TypeScript</span><span class="tag">Unit Test</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.11 ~</time></div><div class="proj-body"><h4>웹 성능 최적화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> tui-grid 등 무거운 라이브러리가 초기 번들에 포함, 모든 페이지 코드가 한 번에 로딩</li><li><strong>해결:</strong> tui-grid 제거 + AG Grid 지연 로딩, 전 페이지 lazy loading, manualChunks 4분할</li></ul><div class="tags"><span class="tag">Vite</span><span class="tag">React.lazy</span><span class="tag">Suspense</span></div><a href="portfolio.html#performance" class="detail-link">상세 →</a></div></article>
+  </section>
+    <section class="skills"><h2>Skills</h2>
+    <dl>
+      <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
+      <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
+      <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
+      <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
+      <dt>Infra</dt><dd>AWS Lambda</dd>
+    </dl>
+  </section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+</div>
+
+<div id="doctornow" class="tab-content">
+  <section class="about"><h2>About</h2>
+    <p>고객의 문제를 관찰하고 Why 중심으로 사고하며 해결해온 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·광고 분석·온보딩 등 제품 전반을 맡으며, PO·백엔드와 함께 모호한 정책을 사용자 시나리오 기준으로 정의하고, 백엔드 저장 방식과 API 제약까지 확인해 구현 가능한 방향을 도출해왔습니다.</p>
+    <p>직군에 갇히지 않고 백엔드 개발, 데이터 분석 등 인접 영역에도 관여해왔습니다. 쿠팡 광고 계정 연동을 프론트·백엔드 함께 구현한 경험이 있고, GA4 이벤트 계측·Hackle A/B 테스트 설계를 통해 데이터 기반 의사결정에 참여했습니다.</p>
+  </section>
+  <section><h2>Experience</h2>
+    <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+    <h4 class="sub-title">역할 요약</h4>
+    <ul class="bullets">
+      <li>1인 프론트엔드로서 제품 전 영역을 PO·백엔드·디자이너와 협업하며 개발·운영했고, 사용자 흐름과 비즈니스 도메인을 이해한 뒤에는 정책의 빈틈이나 사용자 혼란 가능성을 먼저 짚어내며 제품 의사결정에 참여했습니다.</li>
+      <li>기술부채와 비즈니스 구현의 우선순위를 조율하며, 서비스 개발 중 반복되는 비효율을 디자인 시스템·트래킹 인프라·요금제 접근 제어 같은 플랫폼 작업으로 해결했습니다.</li>
+    </ul>
+  </section>
+  <div class="stats"><span><strong>신규 기능 25+</strong></span><span><strong>구조 개선 10+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 5개</strong></span></div>
+  <p class="stats-label">서비스 기능 개발과 플랫폼 작업을 함께 경험해왔습니다</p>
+  <section><h2>Project</h2>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">01 — 서비스 개발</h4>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 · 구독 체계</h4><ul class="bullets"><li>구/신 결제 런타임 분기로 개발/운영 환경을 분리해 점진적 전환</li><li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선</li></ul><p class="proj-note">결제 전환과 구독 정책 구현 과정에서 드러난 플랜 체크 분산 문제는 이후 접근 제어 구조 개선으로 연결됐습니다.</p><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~ 2026.01</time></div><div class="proj-body"><h4>쿠팡 광고 분석 · 로딩 UX 개선</h4><ul class="bullets"><li>캠페인별 수익성 진단 대시보드를 구현하고, 행동 지침이 공격적이라 판단해 단계별 가이드 형태로 조정</li><li>풀페이지 로딩을 컴포넌트별 독립 로딩으로 전환하고, 대시보드 워터폴 로딩 제거·API 병렬화로 체감 대기 시간 단축</li></ul><p class="proj-note">광고 분석 기능과 퍼널 계측이 늘면서 산재한 이벤트 코드를 공통 트래킹 체계로 정리할 필요를 확인했습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">Hackle</span><span class="tag">GA4</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>소싱 유저를 타깃으로 쿠팡/스마트스토어 마진 계산기를 기획부터 배포·운영까지 독립적으로 개발, 940+ 다운로드</li><li>서비스 유입 채널 가설을 검증한 결과 유효 사용자 유입은 만들었지만 전환 증대 효과는 제한적이었고, 메인 타깃과의 간극을 확인</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.10 ~ 2025.04</time></div><div class="proj-body"><h4>상품별 순이익 · 대시보드 · 온보딩 UI</h4><ul class="bullets"><li>트리 형태의 상품-옵션 데이터를 AG Grid master/detail로 제안해 구현, 사용자 방문율 3위 페이지 달성</li><li>주문 목록·매입원가의 컬럼 접기·전체화면, 대시보드 매출 상세 뷰 전환, 트라이얼·NUX 온보딩 UI를 연속적으로 개선</li></ul><p class="proj-note">여러 화면을 반복 개발하며 스타일 기준 부재로 같은 UI도 매번 새로 판단해야 했고, 이후 디자인 시스템 구축으로 이어졌습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">TypeScript</span><span class="tag">ChannelTalk</span></div></div></article>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">02 — 서비스 개발 과정의 병목을 해결한 플랫폼 작업</h4>
+    <p class="proj-note" style="margin-top:0; margin-bottom:14px;">기능을 계속 만들수록 플랜 정책, 트래킹, 스타일 기준, 성능 같은 공통 문제가 반복돼 이를 플랫폼 관점의 작업으로 정리했습니다.</p>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · 컴포넌트 아키텍처 전환</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단 — 하루 이상 소요</li><li><strong>해결:</strong> 0에서 토큰 파이프라인 설계(단일 소스 → CSS·Tailwind·MUI 동시 생성), 레거시 565개 파일 전환, Feature-Sliced Design 계층 구조 도입, CI 게이트로 회귀·레이어 위반 자동 차단</li><li><strong>결과:</strong> UI 작업 하루 → 1시간 이내, 결과적으로 새 기능 구현·실험 속도 가속</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CSS Custom Properties</span><span class="tag">CI/CD</span><span class="tag">FSD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li><strong>체감한 문제:</strong> Mixpanel·Hotjar·GTM이 한 파일에 혼재, 광고 분석 페이지는 자체 트래킹 유틸리티를 162줄 별도 작성</li><li><strong>해결:</strong> GTM/GA4를 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li><strong>결과:</strong> 새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~</time></div><div class="proj-body"><h4>요금제별 기능 제한 — 3단계 고도화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 요금제 체크가 문자열 비교로 분산, 새 요금제 추가 시 전수 수정, 레거시 호환 버그</li><li><strong>해결:</strong> 타입 안전한 요금제 체계 + 훅으로 통합 → 사용자 유형 구분 한계 발견 → 유형별 접근 정책을 config에 선언하고 라우트 단위로 자동 차단하는 구조로 고도화</li><li><strong>결과:</strong> 새 요금제 추가 시 매핑 1개만 수정, 기능별 전제조건도 config에서 관리, 테스트 232줄</li></ul><div class="tags"><span class="tag">TypeScript</span><span class="tag">Unit Test</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.11 ~</time></div><div class="proj-body"><h4>웹 성능 최적화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> tui-grid 등 무거운 라이브러리가 초기 번들에 포함, 모든 페이지 코드가 한 번에 로딩</li><li><strong>해결:</strong> tui-grid 제거 + AG Grid 지연 로딩, 전 페이지 lazy loading, manualChunks 4분할</li></ul><div class="tags"><span class="tag">Vite</span><span class="tag">React.lazy</span><span class="tag">Suspense</span></div><a href="portfolio.html#performance" class="detail-link">상세 →</a></div></article>
+  </section>
+    <section class="skills"><h2>Skills</h2>
+    <dl>
+      <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
+      <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
+      <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
+      <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
+      <dt>Infra</dt><dd>AWS Lambda</dd>
+    </dl>
+  </section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+</div>
+
+<div id="stunning" class="tab-content">
+  <section class="about"><h2>About</h2>
+    <p>단순 기능 구현을 넘어 서비스 흐름과 사용자 경험을 함께 고민하며 개발해온 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·광고 분석·온보딩 등 다양한 도메인이 연결된 서비스를 개발·운영하며, 레거시 코드를 이해하고 점진적으로 리팩토링해 유지보수성을 높여왔습니다.</p>
+    <p>단기 수정에 머무르지 않고 구조적 개선으로 연결하는 방식으로 일합니다. 디자인 시스템을 0에서 구축해 개발 생산성을 8배 향상시켰고, FSD 계층 구조·CI 경계 검사를 도입해 코드베이스의 구조적 품질을 유지하고 있습니다. AI 도구는 워크플로우로 설계해 565개 파일 마이그레이션에 활용했습니다.</p>
+  </section>
+  <section><h2>Experience</h2>
+    <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+    <h4 class="sub-title">역할 요약</h4>
+    <ul class="bullets">
+      <li>1인 프론트엔드로서 결제·광고·상품·주문 등 다양한 도메인이 연결된 서비스를 개발·운영하며, 사용자 VOC를 반영하면서도 구조적 개선으로 연결하는 방식으로 일해왔습니다.</li>
+      <li>레거시 코드를 점진적으로 리팩토링하며, 디자인 시스템·빌드 최적화·트래킹 인프라 등 개발 생산성을 높이는 시스템을 설계하고 개선했습니다.</li>
+    </ul>
+  </section>
+  <div class="stats"><span><strong>신규 기능 25+</strong></span><span><strong>구조 개선 10+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 5개</strong></span></div>
+  <p class="stats-label">서비스 기능 개발과 플랫폼 작업을 함께 경험해왔습니다</p>
+  <section><h2>Project</h2>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">01 — 서비스 개발</h4>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 · 구독 체계</h4><ul class="bullets"><li>구/신 결제 런타임 분기로 개발/운영 환경을 분리해 점진적 전환</li><li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선</li></ul><p class="proj-note">결제 전환과 구독 정책 구현 과정에서 드러난 플랜 체크 분산 문제는 이후 접근 제어 구조 개선으로 연결됐습니다.</p><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~ 2026.01</time></div><div class="proj-body"><h4>쿠팡 광고 분석 · 로딩 UX 개선</h4><ul class="bullets"><li>캠페인별 수익성 진단 대시보드를 구현하고, 행동 지침이 공격적이라 판단해 단계별 가이드 형태로 조정</li><li>풀페이지 로딩을 컴포넌트별 독립 로딩으로 전환하고, 대시보드 워터폴 로딩 제거·API 병렬화로 체감 대기 시간 단축</li></ul><p class="proj-note">광고 분석 기능과 퍼널 계측이 늘면서 산재한 이벤트 코드를 공통 트래킹 체계로 정리할 필요를 확인했습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">Hackle</span><span class="tag">GA4</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>소싱 유저를 타깃으로 쿠팡/스마트스토어 마진 계산기를 기획부터 배포·운영까지 독립적으로 개발, 940+ 다운로드</li><li>서비스 유입 채널 가설을 검증한 결과 유효 사용자 유입은 만들었지만 전환 증대 효과는 제한적이었고, 메인 타깃과의 간극을 확인</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.10 ~ 2025.04</time></div><div class="proj-body"><h4>상품별 순이익 · 대시보드 · 온보딩 UI</h4><ul class="bullets"><li>트리 형태의 상품-옵션 데이터를 AG Grid master/detail로 제안해 구현, 사용자 방문율 3위 페이지 달성</li><li>주문 목록·매입원가의 컬럼 접기·전체화면, 대시보드 매출 상세 뷰 전환, 트라이얼·NUX 온보딩 UI를 연속적으로 개선</li></ul><p class="proj-note">여러 화면을 반복 개발하며 스타일 기준 부재로 같은 UI도 매번 새로 판단해야 했고, 이후 디자인 시스템 구축으로 이어졌습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">TypeScript</span><span class="tag">ChannelTalk</span></div></div></article>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">02 — 서비스 개발 과정의 병목을 해결한 플랫폼 작업</h4>
+    <p class="proj-note" style="margin-top:0; margin-bottom:14px;">기능을 계속 만들수록 플랜 정책, 트래킹, 스타일 기준, 성능 같은 공통 문제가 반복돼 이를 플랫폼 관점의 작업으로 정리했습니다.</p>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · 컴포넌트 아키텍처 전환</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단 — 하루 이상 소요</li><li><strong>해결:</strong> 0에서 토큰 파이프라인 설계(단일 소스 → CSS·Tailwind·MUI 동시 생성), 레거시 565개 파일 전환, Feature-Sliced Design 계층 구조 도입, CI 게이트로 회귀·레이어 위반 자동 차단</li><li><strong>결과:</strong> UI 작업 하루 → 1시간 이내, 결과적으로 새 기능 구현·실험 속도 가속</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CSS Custom Properties</span><span class="tag">CI/CD</span><span class="tag">FSD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li><strong>체감한 문제:</strong> Mixpanel·Hotjar·GTM이 한 파일에 혼재, 광고 분석 페이지는 자체 트래킹 유틸리티를 162줄 별도 작성</li><li><strong>해결:</strong> GTM/GA4를 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li><strong>결과:</strong> 새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~</time></div><div class="proj-body"><h4>요금제별 기능 제한 — 3단계 고도화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 요금제 체크가 문자열 비교로 분산, 새 요금제 추가 시 전수 수정, 레거시 호환 버그</li><li><strong>해결:</strong> 타입 안전한 요금제 체계 + 훅으로 통합 → 사용자 유형 구분 한계 발견 → 유형별 접근 정책을 config에 선언하고 라우트 단위로 자동 차단하는 구조로 고도화</li><li><strong>결과:</strong> 새 요금제 추가 시 매핑 1개만 수정, 기능별 전제조건도 config에서 관리, 테스트 232줄</li></ul><div class="tags"><span class="tag">TypeScript</span><span class="tag">Unit Test</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.11 ~</time></div><div class="proj-body"><h4>웹 성능 최적화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> tui-grid 등 무거운 라이브러리가 초기 번들에 포함, 모든 페이지 코드가 한 번에 로딩</li><li><strong>해결:</strong> tui-grid 제거 + AG Grid 지연 로딩, 전 페이지 lazy loading, manualChunks 4분할</li></ul><div class="tags"><span class="tag">Vite</span><span class="tag">React.lazy</span><span class="tag">Suspense</span></div><a href="portfolio.html#performance" class="detail-link">상세 →</a></div></article>
+  </section>
+    <section class="skills"><h2>Skills</h2>
+    <dl>
+      <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
+      <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
+      <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
+      <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
+      <dt>Infra</dt><dd>AWS Lambda</dd>
+    </dl>
+  </section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+</div>
+
+<div id="slogup" class="tab-content">
+  <section class="about"><h2>About</h2>
+    <p>아이디어 단계부터 참여해 최소의 개발로 최대 효과를 내는 방향을 제시하는 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·광고 분석·온보딩 등 프로덕트 A-Z 전체 사이클을 경험하며, 기능 구현이 아닌 문제 해결에 집중해왔습니다.</p>
+    <p>소규모 스타트업에서 1인 프론트엔드로 큰 역할을 감당하며, 비즈니스 목표를 이해하고 PM·디자이너와 협업해 문제를 해결해왔습니다. 디자인 시스템을 0에서 구축해 개발 생산성을 8배 향상시켰고, 레거시 결제 시스템을 점진적으로 전환하며 성능 최적화까지 직접 설계했습니다.</p>
+  </section>
+  <section><h2>Experience</h2>
+    <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+    <h4 class="sub-title">역할 요약</h4>
+    <ul class="bullets">
+      <li>1인 프론트엔드로서 프로덕트 A-Z 전체 사이클(기획 참여 → 설계 → 구현 → 릴리즈 → 운영 개선)을 담당하며, 왜 개발하는지 이해한 뒤 최소의 개발로 최대 효과를 내는 방향을 제시했습니다.</li>
+      <li>PM·디자이너와 협업해 기능 구현이 아닌 문제 해결에 집중하며, 비즈니스 이해를 바탕으로 검증된 목표를 효율적이고 확장성 있는 설계로 개발했습니다.</li>
+    </ul>
+  </section>
+  <div class="stats"><span><strong>신규 기능 25+</strong></span><span><strong>구조 개선 10+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 5개</strong></span></div>
+  <p class="stats-label">서비스 기능 개발과 플랫폼 작업을 함께 경험해왔습니다</p>
+  <section><h2>Project</h2>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">01 — 서비스 개발</h4>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 · 구독 체계</h4><ul class="bullets"><li>구/신 결제 런타임 분기로 개발/운영 환경을 분리해 점진적 전환</li><li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선</li></ul><p class="proj-note">결제 전환과 구독 정책 구현 과정에서 드러난 플랜 체크 분산 문제는 이후 접근 제어 구조 개선으로 연결됐습니다.</p><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~ 2026.01</time></div><div class="proj-body"><h4>쿠팡 광고 분석 · 로딩 UX 개선</h4><ul class="bullets"><li>캠페인별 수익성 진단 대시보드를 구현하고, 행동 지침이 공격적이라 판단해 단계별 가이드 형태로 조정</li><li>풀페이지 로딩을 컴포넌트별 독립 로딩으로 전환하고, 대시보드 워터폴 로딩 제거·API 병렬화로 체감 대기 시간 단축</li></ul><p class="proj-note">광고 분석 기능과 퍼널 계측이 늘면서 산재한 이벤트 코드를 공통 트래킹 체계로 정리할 필요를 확인했습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">Hackle</span><span class="tag">GA4</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>소싱 유저를 타깃으로 쿠팡/스마트스토어 마진 계산기를 기획부터 배포·운영까지 독립적으로 개발, 940+ 다운로드</li><li>서비스 유입 채널 가설을 검증한 결과 유효 사용자 유입은 만들었지만 전환 증대 효과는 제한적이었고, 메인 타깃과의 간극을 확인</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.10 ~ 2025.04</time></div><div class="proj-body"><h4>상품별 순이익 · 대시보드 · 온보딩 UI</h4><ul class="bullets"><li>트리 형태의 상품-옵션 데이터를 AG Grid master/detail로 제안해 구현, 사용자 방문율 3위 페이지 달성</li><li>주문 목록·매입원가의 컬럼 접기·전체화면, 대시보드 매출 상세 뷰 전환, 트라이얼·NUX 온보딩 UI를 연속적으로 개선</li></ul><p class="proj-note">여러 화면을 반복 개발하며 스타일 기준 부재로 같은 UI도 매번 새로 판단해야 했고, 이후 디자인 시스템 구축으로 이어졌습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">TypeScript</span><span class="tag">ChannelTalk</span></div></div></article>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">02 — 서비스 개발 과정의 병목을 해결한 플랫폼 작업</h4>
+    <p class="proj-note" style="margin-top:0; margin-bottom:14px;">기능을 계속 만들수록 플랜 정책, 트래킹, 스타일 기준, 성능 같은 공통 문제가 반복돼 이를 플랫폼 관점의 작업으로 정리했습니다.</p>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · 컴포넌트 아키텍처 전환</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단 — 하루 이상 소요</li><li><strong>해결:</strong> 0에서 토큰 파이프라인 설계(단일 소스 → CSS·Tailwind·MUI 동시 생성), 레거시 565개 파일 전환, Feature-Sliced Design 계층 구조 도입, CI 게이트로 회귀·레이어 위반 자동 차단</li><li><strong>결과:</strong> UI 작업 하루 → 1시간 이내, 결과적으로 새 기능 구현·실험 속도 가속</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CSS Custom Properties</span><span class="tag">CI/CD</span><span class="tag">FSD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li><strong>체감한 문제:</strong> Mixpanel·Hotjar·GTM이 한 파일에 혼재, 광고 분석 페이지는 자체 트래킹 유틸리티를 162줄 별도 작성</li><li><strong>해결:</strong> GTM/GA4를 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li><strong>결과:</strong> 새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~</time></div><div class="proj-body"><h4>요금제별 기능 제한 — 3단계 고도화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 요금제 체크가 문자열 비교로 분산, 새 요금제 추가 시 전수 수정, 레거시 호환 버그</li><li><strong>해결:</strong> 타입 안전한 요금제 체계 + 훅으로 통합 → 사용자 유형 구분 한계 발견 → 유형별 접근 정책을 config에 선언하고 라우트 단위로 자동 차단하는 구조로 고도화</li><li><strong>결과:</strong> 새 요금제 추가 시 매핑 1개만 수정, 기능별 전제조건도 config에서 관리, 테스트 232줄</li></ul><div class="tags"><span class="tag">TypeScript</span><span class="tag">Unit Test</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.11 ~</time></div><div class="proj-body"><h4>웹 성능 최적화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> tui-grid 등 무거운 라이브러리가 초기 번들에 포함, 모든 페이지 코드가 한 번에 로딩</li><li><strong>해결:</strong> tui-grid 제거 + AG Grid 지연 로딩, 전 페이지 lazy loading, manualChunks 4분할</li></ul><div class="tags"><span class="tag">Vite</span><span class="tag">React.lazy</span><span class="tag">Suspense</span></div><a href="portfolio.html#performance" class="detail-link">상세 →</a></div></article>
+  </section>
+    <section class="skills"><h2>Skills</h2>
+    <dl>
+      <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
+      <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
+      <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
+      <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
+      <dt>Infra</dt><dd>AWS Lambda</dd>
+    </dl>
+  </section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+</div>
+
+<div id="ufintech" class="tab-content">
+  <section class="about"><h2>About</h2>
+    <p>What to do보다 How to do를 고민하는 프론트엔드 개발자입니다. 이커머스 SaaS에서 <strong>1인 프론트엔드</strong>로 결제·구독·광고 분석·백오피스 등 서비스와 어드민 전반을 개발·운영하며, 더 나은 아키텍처와 코드를 추구해왔습니다.</p>
+    <p>디자인 시스템을 0에서 구축해 UI 작업 생산성을 8배 향상시켰고, 결제 PG 전환(Inicis→Toss)을 무장애로 완료했으며, 번들 최적화(tui-grid 제거, lazy loading, manualChunks)로 성능을 개선했습니다. React Query 기반 서버 상태 관리와 Zustand 클라이언트 상태 관리를 실무에서 사용하고 있습니다.</p>
+  </section>
+  <section><h2>Experience</h2>
+    <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+    <h4 class="sub-title">역할 요약</h4>
+    <ul class="bullets">
+      <li>1인 프론트엔드로서 서비스 앱과 백오피스(Vue 3)를 함께 개발·운영하며, UI/UX 디테일을 챙기면서도 더 나은 아키텍처를 추구해왔습니다.</li>
+      <li>서비스 개발 중 반복되는 비효율을 체감해 디자인 시스템·트래킹 인프라·결제 모듈화·번들 최적화 같은 구조적 개선을 직접 설계하고 구축했습니다.</li>
+    </ul>
+  </section>
+  <div class="stats"><span><strong>신규 기능 25+</strong></span><span><strong>구조 개선 10+</strong></span><span><strong>릴리즈 40+</strong></span><span><strong>기여 레포 5개</strong></span></div>
+  <p class="stats-label">서비스 기능 개발과 플랫폼 작업을 함께 경험해왔습니다</p>
+  <section><h2>Project</h2>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">01 — 서비스 개발</h4>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~ 03</time></div><div class="proj-body"><h4>결제 시스템 전환 · 구독 체계</h4><ul class="bullets"><li>구/신 결제 런타임 분기로 개발/운영 환경을 분리해 점진적 전환</li><li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선</li></ul><p class="proj-note">결제 전환과 구독 정책 구현 과정에서 드러난 플랜 체크 분산 문제는 이후 접근 제어 구조 개선으로 연결됐습니다.</p><div class="tags"><span class="tag">Toss Payments</span><span class="tag">React</span><span class="tag">TypeScript</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~ 2026.01</time></div><div class="proj-body"><h4>쿠팡 광고 분석 · 로딩 UX 개선</h4><ul class="bullets"><li>캠페인별 수익성 진단 대시보드를 구현하고, 행동 지침이 공격적이라 판단해 단계별 가이드 형태로 조정</li><li>풀페이지 로딩을 컴포넌트별 독립 로딩으로 전환하고, 대시보드 워터폴 로딩 제거·API 병렬화로 체감 대기 시간 단축</li></ul><p class="proj-note">광고 분석 기능과 퍼널 계측이 늘면서 산재한 이벤트 코드를 공통 트래킹 체계로 정리할 필요를 확인했습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">Hackle</span><span class="tag">GA4</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.03 ~</time></div><div class="proj-body"><h4>장사왕 크롬 익스텐션</h4><ul class="bullets"><li>소싱 유저를 타깃으로 쿠팡/스마트스토어 마진 계산기를 기획부터 배포·운영까지 독립적으로 개발, 940+ 다운로드</li><li>서비스 유입 채널 가설을 검증한 결과 유효 사용자 유입은 만들었지만 전환 증대 효과는 제한적이었고, 메인 타깃과의 간극을 확인</li></ul><div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.10 ~ 2025.04</time></div><div class="proj-body"><h4>상품별 순이익 · 대시보드 · 온보딩 UI</h4><ul class="bullets"><li>트리 형태의 상품-옵션 데이터를 AG Grid master/detail로 제안해 구현, 사용자 방문율 3위 페이지 달성</li><li>주문 목록·매입원가의 컬럼 접기·전체화면, 대시보드 매출 상세 뷰 전환, 트라이얼·NUX 온보딩 UI를 연속적으로 개선</li></ul><p class="proj-note">여러 화면을 반복 개발하며 스타일 기준 부재로 같은 UI도 매번 새로 판단해야 했고, 이후 디자인 시스템 구축으로 이어졌습니다.</p><div class="tags"><span class="tag">React</span><span class="tag">AG Grid</span><span class="tag">TypeScript</span><span class="tag">ChannelTalk</span></div></div></article>
+    <h4 class="sub-title" style="color:var(--text-sub); font-size:0.78rem;">02 — 서비스 개발 과정의 병목을 해결한 플랫폼 작업</h4>
+    <p class="proj-note" style="margin-top:0; margin-bottom:14px;">기능을 계속 만들수록 플랜 정책, 트래킹, 스타일 기준, 성능 같은 공통 문제가 반복돼 이를 플랫폼 관점의 작업으로 정리했습니다.</p>
+    <article class="proj"><div class="proj-period"><time>2025.07 ~ 2026.03</time></div><div class="proj-body"><h4>디자인 시스템 구축 · 컴포넌트 아키텍처 전환</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 스타일링 기준이 없어 같은 UI를 만들 때마다 색상·간격·레이아웃을 매번 판단 — 하루 이상 소요</li><li><strong>해결:</strong> 0에서 토큰 파이프라인 설계(단일 소스 → CSS·Tailwind·MUI 동시 생성), 레거시 565개 파일 전환, Feature-Sliced Design 계층 구조 도입, CI 게이트로 회귀·레이어 위반 자동 차단</li><li><strong>결과:</strong> UI 작업 하루 → 1시간 이내, 결과적으로 새 기능 구현·실험 속도 가속</li></ul><div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI 7</span><span class="tag">CSS Custom Properties</span><span class="tag">CI/CD</span><span class="tag">FSD</span></div><a href="portfolio.html#design-system" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2025.12 ~</time></div><div class="proj-body"><h4>GTM 트래킹 체계 통합</h4><ul class="bullets"><li><strong>체감한 문제:</strong> Mixpanel·Hotjar·GTM이 한 파일에 혼재, 광고 분석 페이지는 자체 트래킹 유틸리티를 162줄 별도 작성</li><li><strong>해결:</strong> GTM/GA4를 6개 도메인 훅으로 분리, 이벤트별 타입으로 페이로드 오류 컴파일 타임 차단</li><li><strong>결과:</strong> 새 이벤트 추가를 constant → type → hook 패턴으로 단순화</li></ul><div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">React Hooks</span></div><a href="portfolio.html#gtm" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2026.01 ~</time></div><div class="proj-body"><h4>요금제별 기능 제한 — 3단계 고도화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> 요금제 체크가 문자열 비교로 분산, 새 요금제 추가 시 전수 수정, 레거시 호환 버그</li><li><strong>해결:</strong> 타입 안전한 요금제 체계 + 훅으로 통합 → 사용자 유형 구분 한계 발견 → 유형별 접근 정책을 config에 선언하고 라우트 단위로 자동 차단하는 구조로 고도화</li><li><strong>결과:</strong> 새 요금제 추가 시 매핑 1개만 수정, 기능별 전제조건도 config에서 관리, 테스트 232줄</li></ul><div class="tags"><span class="tag">TypeScript</span><span class="tag">Unit Test</span></div><a href="portfolio.html#payment" class="detail-link">상세 →</a></div></article>
+    <article class="proj"><div class="proj-period"><time>2024.11 ~</time></div><div class="proj-body"><h4>웹 성능 최적화</h4><ul class="bullets"><li><strong>체감한 문제:</strong> tui-grid 등 무거운 라이브러리가 초기 번들에 포함, 모든 페이지 코드가 한 번에 로딩</li><li><strong>해결:</strong> tui-grid 제거 + AG Grid 지연 로딩, 전 페이지 lazy loading, manualChunks 4분할</li></ul><div class="tags"><span class="tag">Vite</span><span class="tag">React.lazy</span><span class="tag">Suspense</span></div><a href="portfolio.html#performance" class="detail-link">상세 →</a></div></article>
+  </section>
+    <section class="skills"><h2>Skills</h2>
+    <dl>
+      <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
+      <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
+      <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
+      <dt>Analytics</dt><dd>GA4</dd>
+      <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
+      <dt>Infra</dt><dd>AWS Lambda</dd>
+    </dl>
+  </section>
+  <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+  <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
 </div>
 
     <!-- AI Easter Egg -->
@@ -578,6 +819,7 @@
   </main>
 
   <script>
+    // Tab switching
     document.querySelectorAll('.sidebar button[data-tab]').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.sidebar button[data-tab]').forEach(b => b.classList.remove('active'));
@@ -585,6 +827,47 @@
         btn.classList.add('active');
         document.getElementById(btn.dataset.tab).classList.add('active');
       });
+    });
+
+    // Application status toggle (localStorage)
+    const STATUSES = ['대기', '지원', '면접', '탈락'];
+    const STATUS_CLASSES = ['status-pending', 'status-applied', 'status-interview', 'status-rejected'];
+
+    function getStatusStore() {
+      try { return JSON.parse(localStorage.getItem('resume-status') || '{}'); } catch { return {}; }
+    }
+
+    document.querySelectorAll('.sidebar-link .status').forEach(badge => {
+      const link = badge.closest('.sidebar-link');
+      const key = link.textContent.trim().split(' ↗')[0];
+      const store = getStatusStore();
+
+      // Restore saved status
+      if (store[key] !== undefined) {
+        const idx = store[key];
+        badge.textContent = STATUSES[idx];
+        badge.className = 'status ' + STATUS_CLASSES[idx];
+        if (idx === 3) link.classList.add('rejected');
+        else link.classList.remove('rejected');
+      }
+
+      // Click to cycle status
+      badge.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const store = getStatusStore();
+        const current = store[key] || 0;
+        const next = (current + 1) % STATUSES.length;
+        store[key] = next;
+        localStorage.setItem('resume-status', JSON.stringify(store));
+        badge.textContent = STATUSES[next];
+        badge.className = 'status ' + STATUS_CLASSES[next];
+        if (next === 3) link.classList.add('rejected');
+        else link.classList.remove('rejected');
+      });
+
+      // Make badge clickable
+      badge.style.cursor = 'pointer';
     });
   </script>
 </body>
