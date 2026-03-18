@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이수민 | Project Detail</title>
-  <meta name="description" content="프론트엔드 개발자 이수민 포트폴리오. 결제 시스템 전환, GTM 트래킹 통합, 디자인 시스템 전환, 웹 성능 최적화 상세 기여 내역.">
+  <meta name="description" content="프론트엔드 개발자 이수민 포트폴리오. 디자인 시스템 구축, 결제 시스템 전환, 웹 성능 최적화, 페이지 스캐폴더, GTM 트래킹 통합 상세 기여 내역.">
   <meta name="author" content="이수민">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:title" content="이수민 | Project Detail">
-  <meta property="og:description" content="결제·트래킹·디자인 시스템·성능 최적화 프로젝트 상세 기여.">
+  <meta property="og:description" content="디자인 시스템·결제·성능 최적화·페이지 스캐폴더·트래킹 프로젝트 상세 기여.">
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="ko_KR">
 
@@ -29,33 +29,33 @@
     "hasPart": [
       {
         "@type": "CreativeWork",
-        "name": "결제 시스템 전환 및 안정화",
-        "description": "PortOne/Inicis → Toss Payments 전환, 결제 로직 83+ 파일 → 10개 핵심 모듈 재설계",
-        "dateCreated": "2026-01"
-      },
-      {
-        "@type": "CreativeWork",
-        "name": "GTM 트래킹 체계 통합",
-        "description": "화면별 분산 트래킹을 7개 도메인 훅 · 57개 표준 이벤트 체계로 통합",
-        "dateCreated": "2025-12"
-      },
-      {
-        "@type": "CreativeWork",
         "name": "디자인 시스템 전환",
         "description": "MUI 5→7 업그레이드, styled/sx 565개 파일 대상 Tailwind 토큰 체계 전환",
         "dateCreated": "2026-03"
       },
       {
         "@type": "CreativeWork",
-        "name": "웹 성능 및 런타임 안정화",
-        "description": "46개 라우트 lazy loading + 4-chunk 번들 분리로 점진적 렌더링 전환",
-        "dateCreated": "2025-12"
+        "name": "결제 시스템 전환 및 안정화",
+        "description": "기존 PG에서 새 PG로 전환하고, 결제 로직 83+ 파일을 10개 핵심 모듈로 재설계하며 요금제 접근 정책을 타입 기반으로 정리",
+        "dateCreated": "2026-01"
       },
       {
         "@type": "CreativeWork",
-        "name": "매입원가 관리 UX 반복 개선",
-        "description": "서비스 핵심 지표인 매입원가 입력률 개선을 위해 3주간 10회 반복 릴리즈. 입력 즉시 결과 확인, 크로스 페이지 맥락 유지, 변경분 감지 설계",
-        "dateCreated": "2025-11"
+        "name": "웹 성능 및 런타임 안정화",
+        "description": "1차 최적화에서 메인 JS 10.4MB→2.4MB, 후속 최적화에서 메인 엔트리 청크 2.53MB→683KB로 축소하고 대시보드 첫 진입 2.5~3.5초→1.5~2.0초 개선",
+        "dateCreated": "2024-11"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "신규 페이지 스캐폴더 구축 · 초기 셋업 자동화",
+        "description": "신규 페이지 생성 시 수동 보일러플레이트, route·menu 등록, 검색·리스트형 화면 골격을 CLI 스캐폴더로 자동화",
+        "dateCreated": "2026-03"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "GTM 트래킹 체계 통합",
+        "description": "공용 추적 코드에 섞여 있던 트래킹을 분리하고 GA4 계측 레이어를 타입 안전한 구조로 재정리",
+        "dateCreated": "2025-12"
       }
     ]
   }
@@ -229,88 +229,12 @@
       <p class="nav"><a href="index.html">← 이력서로 돌아가기</a></p>
     </header>
 
-    <!-- ════════════ 1. 결제 시스템 전환 ════════════ -->
-    <article class="entry" id="payment" aria-label="결제 시스템 전환 및 안정화">
-      <div class="entry-header">
-        <h2>결제 시스템 전환 및 안정화</h2>
-        <p class="meta">
-          (주)뭉클랩 · 장사왕 ·
-          <time datetime="2026-01">2026.01</time> ~ <time datetime="2026-03">03</time>
-        </p>
-      </div>
+    <p class="summary">
+      이 페이지는 이커머스 셀러용 정산·수익 분석 SaaS인 장사왕에서 1인 프론트엔드로 진행한 대표 작업을 정리한 문서입니다.
+      내부 구현명보다 어떤 문제를 왜 풀었는지, 결과적으로 무엇이 달라졌는지 중심으로 설명했습니다.
+    </p>
 
-      <p class="summary">
-        PortOne/Inicis 기반 결제를 Toss Payments로 전환하면서,
-        구독 정책의 모호함과 시스템 간 불일치를 사용자 시나리오 기준으로 정리한 프로젝트입니다.
-      </p>
-
-      <div class="metrics" aria-label="핵심 지표">
-        <span class="metric">결제 로직 83+ → 10개 모듈</span>
-        <span class="metric">매직 스트링 100+ → 0</span>
-        <span class="metric">PlanTier 23종 enum</span>
-        <span class="metric">13페이지 마이그레이션</span>
-        <span class="metric">구/신 결제 동시 운영</span>
-      </div>
-
-      <h3 class="sub-title">What I Did</h3>
-      <ul class="bullets">
-        <li>구/신 결제를 동시 운영할 수 있도록 런타임 분기 구조를 설계하고, 개발/운영 환경을 분리해 점진적으로 전환했습니다.</li>
-        <li>해지 예약·요금제 변경·기존 할인 유지(grandfather) 등 구독 플로우를 구현하면서, 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선했습니다.</li>
-        <li>백엔드 저장 방식과 API 제약을 함께 확인해 누락된 케이스를 드러내고, 처리 기준과 사용자 안내 방식을 구체화했습니다.</li>
-        <li>결제 관련 매직 스트링 100+개를 제거하고, PlanTier 23종 enum + 타입 가드 체계로 13개 페이지 접근 제어를 마이그레이션했습니다.</li>
-      </ul>
-
-      <h3 class="sub-title">Challenge & Decision</h3>
-      <ul class="bullets">
-        <li>기존 결제 코드가 83+개 파일에 분산되어 있어, 어디를 고쳐야 하는지 파악하는 것 자체가 첫 번째 과제였습니다.</li>
-        <li>카드사 심사가 개발 서버에서만 가능했고, 결제 작업 중에도 다른 기능을 계속 릴리즈해야 했기 때문에 브랜치 분리가 아닌 런타임 분기를 선택했습니다. 개발 환경에서는 Toss, 운영에서는 Inicis가 동작하는 구조로, 이후 사용자 결제 데이터 기반 자동 감지로 전환했습니다.</li>
-        <li>정책이 문서보다 사람마다 다르게 이해되고 있었기 때문에, 화면부터 만들기보다 사용자 케이스와 저장/API 제약을 먼저 맞춰서 어디서 UX가 깨지는지 드러낸 뒤 정책을 구체화했습니다.</li>
-        <li>PlanTier enum을 도입할 때 기존 문자열과의 호환을 위해 타입 가드를 함께 작성해 점진적 마이그레이션이 가능하도록 했습니다.</li>
-      </ul>
-
-      <p class="tech-label">React · TypeScript · Toss Payments SDK · PortOne</p>
-    </article>
-
-    <!-- ════════════ 2. GTM 트래킹 ════════════ -->
-    <article class="entry" id="gtm" aria-label="GTM 트래킹 체계 통합">
-      <div class="entry-header">
-        <h2>GTM 트래킹 체계 통합</h2>
-        <p class="meta">
-          (주)뭉클랩 · 장사왕 ·
-          <time datetime="2025-12">2025.12</time> ~
-        </p>
-      </div>
-
-      <p class="summary">
-        Mixpanel·Hotjar·GTM이 한 파일에 혼재되고, 일부 페이지는 자체 트래킹 유틸리티를 별도로 만들어 사용하던 구조를
-        6개 도메인 훅 기반의 shared 모듈로 통합한 프로젝트입니다.
-      </p>
-
-      <div class="metrics" aria-label="핵심 지표">
-        <span class="metric">6개 도메인 훅</span>
-        <span class="metric">430줄 이벤트별 타입 인터페이스</span>
-        <span class="metric">816 additions / 454 deletions</span>
-      </div>
-
-      <h3 class="sub-title">What I Did</h3>
-      <ul class="bullets">
-        <li>도메인 구분 없이 한 파일(trackingHelper.ts)에 혼재되던 트래킹을 6개 도메인 훅(Account, Auth, Service, Ecommerce, AdAnalysis, Calculator)으로 분리했습니다.</li>
-        <li>이벤트별 타입 인터페이스를 정의해 잘못된 페이로드를 컴파일 타임에 차단하고, dataLayer push 전 이전 파라미터 초기화로 데이터 오염을 방지했습니다.</li>
-        <li>새 이벤트 추가를 constant → type → hook 패턴으로 단순화하고, 산재된 로컬 트래킹 유틸리티(adsDiagnosisAnalytics.ts 등)를 shared 모듈로 통합했습니다.</li>
-        <li>GTM/GA4를 Mixpanel/Hotjar와 완전 분리해, 기존 Mixpanel 트래킹에 영향 없이 GA4 체계를 독립적으로 구축했습니다.</li>
-      </ul>
-
-      <h3 class="sub-title">Challenge & Decision</h3>
-      <ul class="bullets">
-        <li>기존 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어 있었고, 일부 페이지는 자체 트래킹 유틸리티를 162줄짜리로 별도 작성해 사용하고 있었습니다.</li>
-        <li>GTM/GA4만 도메인 훅으로 분리하고 Mixpanel/Hotjar는 기존 헬퍼에 그대로 두는 방식으로, 전면 교체 없이 점진적으로 전환했습니다.</li>
-        <li>도메인별 훅으로 분리해 컴포넌트는 "무엇을 추적할지"만 선언하고, "어떻게 보낼지"는 훅이 담당하게 해 관심사를 분리했습니다.</li>
-      </ul>
-
-      <p class="tech-label">GTM · GA4 · React Hooks · TypeScript</p>
-    </article>
-
-    <!-- ════════════ 3. 디자인 시스템 전환 ════════════ -->
+    <!-- ════════════ 1. 디자인 시스템 전환 ════════════ -->
     <article class="entry" id="design-system" aria-label="디자인 시스템 구축">
       <div class="entry-header">
         <h2>디자인 시스템 구축 · Tailwind 전환</h2>
@@ -321,7 +245,8 @@
       </div>
 
       <p class="summary">
-        디자인 시스템을 0에서 설계해 단일 소스에서 CSS·Tailwind·MUI 테마를 자동 생성하는 파이프라인을 구축하고,
+        화면마다 제각각이던 스타일 기준을 통일하기 위해 디자인 시스템을 0에서 설계하고,
+        단일 디자인 토큰 소스에서 CSS·Tailwind·MUI 테마를 자동 생성하는 파이프라인을 구축했습니다.
         레거시 565개 파일을 전환한 뒤 CI 게이트로 회귀를 차단했습니다.
         결과적으로 하루 이상 걸리던 UI 작업을 1시간 이내로 단축했습니다.
       </p>
@@ -329,16 +254,16 @@
       <div class="metrics" aria-label="핵심 지표">
         <span class="metric">UI 작업 시간 하루 → 1시간 이내</span>
         <span class="metric">대상 565개 파일</span>
-        <span class="metric">CSS 커스텀 프로퍼티 202개</span>
-        <span class="metric">15 토큰 카테고리 · ~215 토큰</span>
+        <span class="metric">3개 스타일 포맷 동시 생성</span>
+        <span class="metric">회귀 차단 CI 게이트</span>
       </div>
 
       <h3 class="sub-title">What I Did</h3>
       <ul class="bullets">
-        <li>디자인 시스템을 0에서 설계 — 단일 source.js에서 CSS 커스텀 프로퍼티 202개 + Tailwind config + MUI 테마를 동시 생성하는 파이프라인을 구축했습니다.</li>
+        <li>디자인 시스템을 0에서 설계하고, 단일 디자인 토큰 소스에서 CSS 변수·Tailwind 설정·MUI 테마를 동시에 생성하는 파이프라인을 구축했습니다.</li>
         <li>토큰 기반 래퍼 컴포넌트(PageWrapper, ListContainer, Modal 등)를 만들어 화면 구성 시 스타일링 의사결정 비용을 제거했습니다.</li>
         <li>AI 협업 워크플로우(기준 문서화 → 구조 정리 → AI 전환 → 수동 검수 → 이슈 환류)로 565개 파일 대규모 전환을 실행했습니다.</li>
-        <li>스타일 경계 검사 CI 게이트(check-style-system-boundary.mjs)를 적용해 전환 완료 컴포넌트에 MUI sx/styled() 재유입 시 배포를 자동 차단했습니다.</li>
+        <li>스타일 경계 검사 CI를 적용해 전환 완료 컴포넌트에 기존 스타일링 방식이 다시 들어오면 배포를 자동 차단했습니다.</li>
       </ul>
 
       <h3 class="sub-title">Challenge & Decision</h3>
@@ -352,7 +277,49 @@
       <p class="tech-label">Tailwind CSS v4 · MUI 7 · CSS Custom Properties · CI/CD · AI Workflow</p>
     </article>
 
-    <!-- ════════════ 4. 웹 성능 최적화 ════════════ -->
+    <!-- ════════════ 2. 결제 시스템 전환 ════════════ -->
+    <article class="entry" id="payment" aria-label="결제 시스템 전환 및 안정화">
+      <div class="entry-header">
+        <h2>결제 시스템 전환 및 안정화</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2026-01">2026.01</time> ~ <time datetime="2026-03">03</time>
+        </p>
+      </div>
+
+      <p class="summary">
+        기존 PG 기반 결제를 새 PG인 Toss Payments로 전환하면서,
+        구독 정책의 모호함과 시스템 간 불일치를 사용자 시나리오 기준으로 정리한 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">결제 로직 83+ → 10개 모듈</span>
+        <span class="metric">매직 스트링 100+ → 0</span>
+        <span class="metric">요금제 접근 정책 타입화</span>
+        <span class="metric">13페이지 마이그레이션</span>
+        <span class="metric">구/신 결제 동시 운영</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>구/신 결제를 동시 운영할 수 있도록 런타임 분기 구조를 설계하고, 개발/운영 환경을 분리해 점진적으로 전환했습니다.</li>
+        <li>해지 예약·요금제 변경·기존 할인 유지 등 구독 플로우를 구현하면서, 정책이 모호하거나 사용자 혼란을 줄 수 있는 케이스를 발견해 PO·백엔드와 함께 정리하고 개선했습니다.</li>
+        <li>백엔드 저장 방식과 API 제약을 함께 확인해 누락된 케이스를 드러내고, 처리 기준과 사용자 안내 방식을 구체화했습니다.</li>
+        <li>결제/요금제 조건을 문자열 비교 대신 타입 기반 정책으로 정리하고, 13개 페이지 접근 제어를 점진적으로 마이그레이션했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>기존 결제 코드가 83+개 파일에 분산되어 있어, 어디를 고쳐야 하는지 파악하는 것 자체가 첫 번째 과제였습니다.</li>
+        <li>카드사 심사가 개발 서버에서만 가능했고, 결제 작업 중에도 다른 기능을 계속 릴리즈해야 했기 때문에 브랜치 분리가 아닌 런타임 분기를 선택했습니다. 개발 환경에서는 새 PG, 운영에서는 기존 PG가 동작하는 구조로 시작한 뒤, 이후 사용자 결제 데이터 기반 자동 감지로 전환했습니다.</li>
+        <li>정책이 문서보다 사람마다 다르게 이해되고 있었기 때문에, 화면부터 만들기보다 사용자 케이스와 저장/API 제약을 먼저 맞춰서 어디서 UX가 깨지는지 드러낸 뒤 정책을 구체화했습니다.</li>
+        <li>기존 문자열 기반 로직과의 호환 계층을 함께 두어, 운영 중인 화면을 한 번에 뒤집지 않고 점진적으로 옮길 수 있게 설계했습니다.</li>
+      </ul>
+
+      <p class="tech-label">React · TypeScript · Toss Payments SDK · PG Integration</p>
+    </article>
+
+    <!-- ════════════ 3. 웹 성능 최적화 ════════════ -->
     <article class="entry" id="performance" aria-label="웹 성능 및 런타임 안정화">
       <div class="entry-header">
         <h2>웹 성능 및 런타임 안정화</h2>
@@ -363,30 +330,116 @@
       </div>
 
       <p class="summary">
-        tui-grid 제거, 전 페이지 lazy loading, manualChunks 4분할 등
-        초기 번들을 분리하고 체감 대기 시간을 단축한 프로젝트입니다.
+        대시보드 첫 진입에 2.5~3.5초가 걸리던 문제를 줄이기 위해,
+        첫 화면에서 필요하지 않은 무거운 편집기·그리드·SDK를 공통 진입 경로에서 단계적으로 분리한 프로젝트입니다.
+        1차로 메인 JS를 10.4MB에서 2.4MB로 줄였고, 후속 최적화로 현재 메인 엔트리 청크를
+        2.53MB에서 683KB까지 추가 축소했습니다.
       </p>
 
       <div class="metrics" aria-label="핵심 지표">
-        <span class="metric">46개 라우트 lazy loading</span>
-        <span class="metric">4-chunk 번들 분리</span>
-        <span class="metric">6개 멀티앱 빌드 타겟</span>
+        <span class="metric">36개 페이지 lazy loading</span>
+        <span class="metric">1차: 메인 JS 10.4MB → 2.4MB</span>
+        <span class="metric">후속: 메인 엔트리 청크 2.53MB → 683KB</span>
+        <span class="metric">대시보드 첫 진입 2.5~3.5s → 1.5~2.0s</span>
       </div>
 
       <h3 class="sub-title">What I Did</h3>
       <ul class="bullets">
-        <li>Vite manualChunks를 vendor/mui/charts/grid로 4분할하고, 46개 라우트에 lazy loading을 적용해 초기 로딩 경로를 분리했습니다.</li>
-        <li>AG Grid 초기화를 유휴 시점으로 지연하고, Suspense 경계를 적용해 준비된 영역부터 먼저 노출되도록 했습니다.</li>
-        <li>데이터가 많은 화면에서도 부분 렌더링으로 사용자 체감 대기 시간을 단축했습니다.</li>
+        <li>정적으로 한 번에 로드되던 36개 페이지를 페이지 단위 지연 로딩으로 전환하고, 준비된 영역부터 먼저 렌더되도록 구성했습니다.</li>
+        <li>AG Grid 초기화와 전역 설정을 앱 공통 경로에서 분리해, 그리드가 필요한 화면에서만 무거운 런타임 비용이 발생하도록 구조를 변경했습니다.</li>
+        <li>번들 분리와 대시보드 워터폴 로딩 제거로 초기 진입 경로를 단순화했고, 이후 편집기·결제 SDK·추적 SDK까지 사용 시점 로딩으로 고도화했습니다.</li>
+        <li>1차 최적화에서 메인 JS를 10.4MB에서 2.4MB로 줄였고, 후속 최적화에서 현재 메인 엔트리 청크를 2.53MB에서 683KB 수준까지 추가 축소했습니다.</li>
       </ul>
 
       <h3 class="sub-title">Challenge & Decision</h3>
       <ul class="bullets">
-        <li>AG Grid처럼 무거운 서드파티 라이브러리가 초기 번들에 포함되어 전체 로딩을 지연시키고 있었습니다.</li>
-        <li>manualChunks로 서드파티를 분리하고, 라우트 단위 lazy loading으로 "필요한 것만 필요할 때" 로딩하는 구조를 만들었습니다.</li>
+        <li>초기 공통 경로에 AG Grid, Toast UI, tui-grid, 각종 SDK가 함께 얹혀 있어 실제로 사용하지 않는 기능의 비용도 첫 화면에서 모두 지불하는 구조였습니다.</li>
+        <li>무조건 잘게 쪼개기보다 라우트 단위 분리와 초기화 분리를 먼저 적용해 공통 진입 경로를 줄이고, 사용 빈도가 낮은 기능부터 순차적으로 공통 경로에서 제거하는 단계적 전략을 선택했습니다.</li>
+        <li>단순 번들 크기 축소보다 실제 체감 대기 시간 개선에 집중해, 대시보드에서 풀페이지 로딩을 부분 렌더링과 병렬화 구조로 전환했습니다.</li>
       </ul>
 
-      <p class="tech-label">Vite · React.lazy · Suspense · AG Grid · manualChunks</p>
+      <p class="tech-label">Vite · React.lazy · Suspense · AG Grid · Code Splitting · SDK Deferral</p>
+    </article>
+
+    <!-- ════════════ 4. 페이지 스캐폴더 ════════════ -->
+    <article class="entry" id="page-scaffold" aria-label="신규 페이지 스캐폴더 구축 및 초기 셋업 자동화">
+      <div class="entry-header">
+        <h2>신규 페이지 스캐폴더 구축 · 초기 셋업 자동화</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2026-03">2026.03</time> ~
+        </p>
+      </div>
+
+      <p class="summary">
+        신규 기능 화면을 만들 때마다 기본 파일/폴더 생성, 라우트·메뉴 연결, 검색/목록형 화면 골격을 반복 작성하던 흐름을
+        CLI 스캐폴더로 통합한 내부 DX 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">8~10개 파일 자동 생성</span>
+        <span class="metric">6~8개 디렉터리 자동 셋업</span>
+        <span class="metric">98~106줄 보일러플레이트 자동화</span>
+        <span class="metric">라우트 · 메뉴 자동 등록</span>
+        <span class="metric">검색/목록형 화면 템플릿</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>`npm run scaffold:page -- &lt;FeatureName&gt; [--with-api] [--with-mobile]` 기반으로 신규 화면 기본 구조를 생성하는 CLI를 구축했습니다.</li>
+        <li>기본 페이지 구조와 optional API/mobile 템플릿을 포함해, 화면 초기 구조를 동일한 패턴으로 시작할 수 있게 만들었습니다.</li>
+        <li>검색 조건 + 목록 + 페이지네이션이 필요한 화면 템플릿과 라우트·좌측 메뉴 등록 옵션을 추가해, 신규 화면 시작 흐름을 한 번의 명령으로 통합했습니다.</li>
+        <li>신규 페이지 생성 시 수동으로 만들던 8~10개 파일, 6~8개 디렉터리, 98~106줄 보일러플레이트를 CLI 스캐폴더로 자동화했습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>신규 화면을 만들 때마다 기본 파일/폴더 생성, 라우트 등록, 좌측 메뉴 등록, 검색/목록형 화면 구성을 각각 수동으로 처리해야 했고, 이 과정에서 구조 편차가 쉽게 발생했습니다.</li>
+        <li>단순 폴더 생성기가 아니라 실제 서비스 관례를 반영한 온보딩 도구가 필요했기 때문에, 검색/목록형 화면 패턴과 라우트·메뉴 등록까지 포함하는 방향으로 확장했습니다.</li>
+        <li>전체 기능을 완성하는 도구가 아니라 "기능 구현에 바로 진입할 수 있는 초기 셋업 자동화"에 범위를 제한해, 과한 추상화 없이 실무에 바로 쓰이는 형태로 유지했습니다.</li>
+      </ul>
+
+      <p class="tech-label">Node.js · ESM · Template Scaffolding · DX Automation</p>
+    </article>
+
+    <!-- ════════════ 5. GTM 트래킹 ════════════ -->
+    <article class="entry" id="gtm" aria-label="GTM 트래킹 체계 통합">
+      <div class="entry-header">
+        <h2>GTM 트래킹 체계 통합</h2>
+        <p class="meta">
+          (주)뭉클랩 · 장사왕 ·
+          <time datetime="2025-12">2025.12</time> ~
+        </p>
+      </div>
+
+      <p class="summary">
+        공용 추적 유틸 하나에 Mixpanel·Hotjar·GTM이 섞여 있어 GA4만 수정해도 영향 범위가 넓던 구조를,
+        GA4 계측 레이어 분리와 타입 강제로 재정리한 프로젝트입니다.
+      </p>
+
+      <div class="metrics" aria-label="핵심 지표">
+        <span class="metric">6개 도메인 훅</span>
+        <span class="metric">430줄 이벤트 타입 인터페이스</span>
+        <span class="metric">GA4 레이어 분리</span>
+        <span class="metric">광고 · 회원가입 · 결제 계측 통합</span>
+      </div>
+
+      <h3 class="sub-title">What I Did</h3>
+      <ul class="bullets">
+        <li>공용 추적 유틸에 섞여 있던 GA4 계층을 분리하고, 계정·인증·서비스·이커머스·광고 분석·계산기 도메인별 훅 구조로 재정리했습니다.</li>
+        <li>이벤트별 타입 인터페이스를 정의해 잘못된 페이로드를 컴파일 타임에 차단하고, dataLayer push 전 이전 파라미터 초기화로 데이터 오염을 방지했습니다.</li>
+        <li>GA4 이벤트 추가·변경이 특정 도메인 훅 안에서 닫히도록 정리해, 광고·회원가입·결제 계측을 더 빠르게 수정할 수 있는 구조로 바꿨습니다.</li>
+        <li>페이지별로 따로 들고 있던 중복 계측 코드도 공용 모듈로 흡수해 GA4 설정의 유연성을 높였습니다.</li>
+      </ul>
+
+      <h3 class="sub-title">Challenge & Decision</h3>
+      <ul class="bullets">
+        <li>기존 공용 추적 코드에 Mixpanel·Hotjar·GTM이 혼재되어 있었고, 일부 페이지는 자체 계측 코드를 별도로 들고 있어 변경 범위가 쉽게 커지는 구조였습니다.</li>
+        <li>전면 교체 대신 GA4만 우선 분리하고 Mixpanel/Hotjar는 기존 헬퍼에 유지하는 점진적 전환을 선택해, 기존 계측을 깨지 않고 구조를 개선했습니다.</li>
+        <li>목표는 모든 트래킹 툴 통합이 아니라 "GA4만 작업할 때도 빠르고 안전하게 수정 가능한 구조"를 만드는 것이었기 때문에, 계측 레이어 분리와 타입 안전성 확보에 집중했습니다.</li>
+      </ul>
+
+      <p class="tech-label">GTM · GA4 · React Hooks · TypeScript</p>
     </article>
 
   </main>
