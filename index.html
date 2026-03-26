@@ -253,6 +253,26 @@
     }
     .skills dt { font-weight: 600; font-size: 0.82rem; }
     .skills dd { font-size: 0.88rem; color: var(--text-sub); }
+    .skill-approach {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+    }
+    .skill-approach article {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+    .skill-approach h3 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .skill-approach p {
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      word-break: keep-all;
+    }
     .edu { font-size: 0.88rem; color: var(--text-sub); }
     .edu strong { color: var(--text); font-weight: 600; }
 
@@ -413,6 +433,24 @@
           <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
           <dt>Infra</dt><dd>AWS Lambda</dd>
         </dl>
+        <div class="skill-approach">
+          <article>
+            <h3>React / State</h3>
+            <p>상태를 먼저 성격별로 나눠 설계합니다. 파생 값은 가능하면 계산으로 처리하고, 서버 상태는 React Query, 국소 UI 상태는 로컬 state나 작은 store로 분리하며, 전역 상태는 필요한 경우에만 신중히 사용합니다.</p>
+          </article>
+          <article>
+            <h3>TypeScript</h3>
+            <p>TypeScript를 제약을 코드로 옮기는 도구로 사용합니다. 정책과 도메인 규칙은 타입, 유니온, 타입 가드, config 객체로 모델링하고, strict는 기존 코드베이스 상황에 맞춰 점진적으로 강화합니다.</p>
+          </article>
+          <article>
+            <h3>Styling</h3>
+            <p>신규 코드와 정리하는 영역에서는 Tailwind와 디자인 토큰을 우선합니다. 반복되는 패턴은 공통 컴포넌트로 올리고, 스타일 책임이 여러 레이어에 흩어지지 않도록 관리합니다.</p>
+          </article>
+          <article>
+            <h3>AI Workflow</h3>
+            <p>AI는 구조가 명확할수록 잘 작동한다고 생각합니다. 상태 경계와 규칙을 먼저 정리한 뒤, AI를 구현, 리팩터링, 테스트 보조, 디자인-코드 전환에 활용합니다.</p>
+          </article>
+        </div>
       </section>
 
       <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
