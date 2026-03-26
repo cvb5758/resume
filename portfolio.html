@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이수민 | 이력서 상세</title>
-  <meta name="description" content="프론트엔드 개발자 이수민의 프로젝트 상세. 요금제 구조 개편, 스타일링 환경 재구축, GTM 트래킹, 성능 개선, DataGrid, 스캐폴딩 도구.">
+  <meta name="description" content="프론트엔드 개발자 이수민의 프로젝트 상세. 요금제 구조 개편, 분기 검증용 데이터셋 구축, 스타일링 환경 재구축, GTM 트래킹, 성능 개선, DataGrid, 스캐폴딩 도구.">
   <meta name="author" content="이수민">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="이수민 | 이력서 상세">
@@ -100,12 +100,6 @@
       line-height: 1.75;
     }
 
-    .tech-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 16px;
-    }
-
     .print-btn {
       position: fixed; bottom: 32px; right: 32px;
       padding: 10px 20px; font-size: 0.82rem; font-weight: 500;
@@ -143,7 +137,7 @@
     <article class="entry" id="proj-plan">
       <div class="entry-header">
         <h2>요금제 구조 개편 · 결제 시스템 전환</h2>
-        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.01</time> ~ <time>03</time></p>
+        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.03</time></p>
       </div>
 
       <span class="section-label">Why</span>
@@ -153,14 +147,31 @@
       <p>기능별 접근 정책을 FeatureMatrix config 한 곳에 선언하고, 라우트 레벨에서 자동 차단하는 구조로 바꿨다. 페이지에서 요금제를 직접 판단하던 코드가 없어졌고, 새 요금제 추가 시 매핑 하나만 수정하면 됐다. 정리 후에는 원하는 동작을 프롬프트에 적으면 원샷으로 작업이 됐다.</p>
       <p>결제 PG 전환에서 가장 중요했던 건 이관 작업 중에도 다른 기능 릴리즈가 막히지 않는 것이었다. 당장 가장 빠르게 할 수 있는 방법이 환경변수로 결제 시스템을 분리하는 거였고, 최선인지는 모르겠지만 실제로 전환 기간 동안 신기능 릴리즈에 문제가 없었다. 달리는 차에서 바퀴를 갈아끼운 게 아니라, 차를 두 대 굴린 것에 가깝다.</p>
 
-      <p class="tech-label">TypeScript · React · Toss Payments</p>
     </article>
 
-    <!-- 2. 스타일링 환경 재구축 -->
+    <!-- 2. 복잡한 분기 검증용 결제 · 연동 데이터셋 구축 -->
+    <article class="entry" id="proj-branch-dataset">
+      <div class="entry-header">
+        <h2>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h2>
+        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.01</time> ~ <time>03</time></p>
+      </div>
+
+      <span class="section-label">Why</span>
+      <p>신규·레거시 요금제가 함께 운영되고 있었고, 같은 티어처럼 보여도 guardrail 차이 때문에 서로 다른 온보딩이나 페이지를 보게 되는 경우가 있었다. 여기에 쇼핑몰·광고 연동 상태까지 함께 엮이면서 화면 분기가 더 복잡해졌는데, 기존에는 결제는 어드민에서 직접 수정해야 했고 쇼핑몰은 실제로 연동하거나 이미 연동된 계정을 찾아야 해서 테스트가 번거롭고 비용이 컸다. 요금제 변경과 연동 상태 관련 작업이 이어지면서 더는 이 병목을 그대로 둘 수 없다고 판단했다.</p>
+
+      <span class="section-label">How</span>
+      <p>결제/요금제 상태는 dataset으로, 쇼핑몰·광고 연동 상태는 preset으로 모델링했다. 로컬에서 원하는 조합을 바로 바꿔볼 수 있게 만들어, 실제 어드민 데이터나 외부 연동 상태를 건드리지 않고도 온보딩, 페이지 진입, CTA, 안내 문구 같은 분기 UI를 재현할 수 있게 했다. 구현 자체보다 중요한 건 테스트 입력을 코드로 통제 가능한 형태로 바꾼 것이었다.</p>
+
+      <span class="section-label">Result</span>
+      <p>외부 상태를 맞추기 위해 반복하던 수동 작업이 사라졌고, 퍼블리싱 검토, QA, 회귀 테스트를 훨씬 빠르게 돌릴 수 있게 됐다. 단순히 mock 데이터를 추가한 것이 아니라, 복잡한 분기를 병목 없이 검증할 수 있는 개발 환경을 만든 셈이었다.</p>
+
+    </article>
+
+    <!-- 3. 스타일링 환경 재구축 -->
     <article class="entry" id="proj-styling">
       <div class="entry-header">
         <h2>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h2>
-        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.07</time> ~ <time>2026.03</time></p>
+        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.12</time> ~ <time>2026.03</time></p>
       </div>
 
       <span class="section-label">Why</span>
@@ -173,14 +184,13 @@
       <p>스타일 토큰화와 공통 컴포넌트 정리를 진행하면서 점진적으로 적용해나갔다. 어느 정도 마무리된 시점에서 피그마 MCP를 사용했을 때 히트율이 체감될 만큼 올라갔다. 이전에는 MCP를 사용해도 레이아웃은 반드시 수작업으로 잡아야 했는데, 이후에는 디테일한 부분만 손보면 되는 수준이었고, 때로는 그마저도 필요 없을 정도의 완성도가 나왔다.</p>
       <p>다만 MUI/Emotion을 전부 걷어내지는 못했다. 최대한 작업한 결과가 MUI + Tailwind 혼용 수준이었지만, 골자는 Tailwind로 옮겼고 AI 레버리지도 크게 올라 만족스러운 결과를 얻었다. 최종적으로는 토큰과 공통 컴포넌트를 Pencil이나 Stitch에 넣어 디자이너 공수까지 줄이고 싶었지만, 거기까지는 도달하지 못했다.</p>
 
-      <p class="tech-label">Tailwind CSS v4 · MUI · Figma MCP</p>
     </article>
 
-    <!-- 3. GTM 트래킹 체계 분리 -->
+    <!-- 4. GTM 트래킹 체계 분리 -->
     <article class="entry" id="proj-gtm">
       <div class="entry-header">
         <h2>GTM 트래킹 체계 분리</h2>
-        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.12</time> ~</p>
+        <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.01</time></p>
       </div>
 
       <span class="section-label">Why</span>
@@ -192,10 +202,9 @@
       <span class="section-label">Result</span>
       <p>실제로 효과를 체감한 건 광고 분석 GA4 이벤트 15개를 추가할 때였다. 분리된 훅 파일에는 동일한 형태의 함수만 있으니까, AI한테 "새 이벤트 하나 추가해"라고 했을 때 틀릴 수가 거의 없는 구조가 됐다.</p>
 
-      <p class="tech-label">GTM · GA4 · TypeScript · React Hooks</p>
     </article>
 
-    <!-- 4. 초기 로딩 성능 개선 -->
+    <!-- 5. 초기 로딩 성능 개선 -->
     <article class="entry" id="proj-performance">
       <div class="entry-header">
         <h2>초기 로딩 성능 개선</h2>
@@ -208,10 +217,9 @@
       <span class="section-label">Result</span>
       <p>React.lazy와 Suspense 기반 코드 스플리팅을 전체 라우트에 적용해 메인 번들을 10MB에서 2MB로 줄였고, 로딩 중에도 fallback UI로 로딩 상태를 표시하도록 변경했다. 이후 간간이 들어오던 흰 화면 버그 리포트가 사라졌다.</p>
 
-      <p class="tech-label">React.lazy · Suspense</p>
     </article>
 
-    <!-- 5. DataGrid 전체화면 · 컬럼 접기 -->
+    <!-- 6. DataGrid 전체화면 · 컬럼 접기 -->
     <article class="entry" id="proj-datagrid">
       <div class="entry-header">
         <h2>DataGrid 전체화면 · 컬럼 접기</h2>
@@ -228,10 +236,9 @@
       <span class="section-label">Result</span>
       <p>원인이 "그리드가 2개"라는 게 명확했으니까 Dialog를 바로 걷어내고, 기존 그리드 컨테이너에 position: fixed를 적용하는 방식으로 바꿨다. 그리드 인스턴스는 하나 그대로 두고 감싸는 박스의 CSS만 토글하는 거라, 전체화면을 켜고 꺼도 스크롤·정렬·필터 상태가 그대로 유지된다.</p>
 
-      <p class="tech-label">AG Grid · CSS</p>
     </article>
 
-    <!-- 6. 숫자 0과 미입력 구분 -->
+    <!-- 7. 숫자 0과 미입력 구분 -->
     <article class="entry" id="proj-null">
       <div class="entry-header">
         <h2>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</h2>
@@ -247,10 +254,9 @@
       <span class="section-label">Result</span>
       <p>모든 null 체크를 === null || === undefined로 교체하고, 미입력 상태와 0 입력을 구분할 수 있도록 값 변환 로직을 정비했다. 같은 falsy 패턴이 계산 로직 곳곳에도 있어서 순이익·마진율 계산에도 영향이 있을 수 있다고 판단해 함께 수정했지만, 실제로 계산 결과가 어디까지 왜곡되고 있었는지를 정밀하게 검증하지는 못했다.</p>
 
-      <p class="tech-label">JavaScript · AG Grid</p>
     </article>
 
-    <!-- 7. 페이지 스캐폴딩 도구 -->
+    <!-- 8. 페이지 스캐폴딩 도구 -->
     <article class="entry" id="proj-scaffold">
       <div class="entry-header">
         <h2>페이지 스캐폴딩 도구</h2>
@@ -266,10 +272,9 @@
       <span class="section-label">Context</span>
       <p>서비스가 PMF를 찾지 못한 상황이어서 신규 기능을 빠르게 테스트할 수 있는 환경이 필요했다. 이 도구를 만들면서 다른 단순 반복 작업들도 충분히 스캐폴딩으로 자동화할 수 있다고 생각했다. 현재 온보딩 페이지 스캐폴딩을 추가 작업 중이고, 마무리되면 비개발자나 다른 개발자도 간편하게 사용할 수 있도록 Claude·Codex skills로 구축할 예정이다.</p>
 
-      <p class="tech-label">Node.js · CLI · Template</p>
     </article>
 
-    <!-- 8. 크롬 익스텐션 -->
+    <!-- 9. 크롬 익스텐션 -->
     <article class="entry" id="proj-extension">
       <div class="entry-header">
         <h2>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h2>
@@ -285,7 +290,6 @@
       <span class="section-label">Result</span>
       <p>최신 기준 1,000+ 다운로드를 기록했지만, 실제로 서비스에 유입되어 결제까지 이어지는 비율은 현저히 낮았다. 우리가 타겟하는 고객층이 아니었다는 결론이 나왔다.</p>
 
-      <p class="tech-label">React · Tailwind CSS · Chrome Extension</p>
     </article>
 
   </main>

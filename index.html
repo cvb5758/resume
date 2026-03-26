@@ -112,6 +112,22 @@
     .github-link { border-bottom: none; }
     .github-link svg { opacity: 0.6; transition: opacity 0.15s; }
     .github-link:hover svg { opacity: 1; }
+    .view-link {
+      display: inline-block;
+      padding: 2px 8px;
+      margin-left: 2px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      color: var(--text-sub);
+      background: var(--bg-card);
+      text-decoration: none;
+    }
+    .view-link:hover {
+      color: var(--text);
+      border-color: var(--text);
+      background: var(--bg);
+    }
 
     section { margin-top: 44px; }
     section > h2 {
@@ -203,16 +219,6 @@
       color: var(--text-muted);
       font-style: italic;
     }
-    .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
-    .tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 0.7rem;
-      color: var(--text-sub);
-      white-space: nowrap;
-    }
     .detail-link {
       display: inline-block;
       margin-top: 8px;
@@ -284,6 +290,7 @@
       .proj { break-inside: avoid; }
       .detail-link { display: none !important; }
       .portfolio-link { display: none !important; }
+      .view-link { display: none !important; }
       .github-link { border-bottom: none !important; }
       a { border-bottom: none; }
     }
@@ -314,6 +321,7 @@
         <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
         <a href="https://github.com/cvb5758" rel="me" class="github-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> cvb5758</a> ·
         <a href="portfolio.html" class="portfolio-link">Portfolio</a>
+        <a href="index-detailed.html" class="view-link">상세 이력서</a>
       </p>
     </header>
 
@@ -339,12 +347,21 @@
             <p>요금제 체크 로직이 13개 페이지에 분산되어 AI 컨텍스트가 오염됐고, 신규 요금제 추가 시 더 악화될 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
             <span class="proj-label">Result</span>
             <p>FeatureMatrix config로 일원화한 뒤 AI 원샷 작업이 가능해졌고, 결제 PG 전환은 환경변수로 시스템을 분리해 신기능 릴리즈를 막지 않았다.</p>
-            <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Toss Payments</span></div>
           </div>
         </article>
 
         <article class="proj">
-          <div class="proj-title"><h4>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h4><time>2025.07 ~ 2026.03</time></div>
+          <div class="proj-title"><h4>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h4><time>2026.03</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>요금제와 쇼핑몰·광고 연동 상태 조합에 따라 화면 분기가 크게 달랐는데, 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용이 컸다.</p>
+            <span class="proj-label">Result</span>
+            <p>결제/요금제 dataset과 연동 preset을 만들어 로컬에서 분기 조합을 바로 재현할 수 있게 했고, 외부 상태 변경 없이 퍼블리싱·QA·회귀 검증을 빠르게 반복할 수 있게 됐다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h4><time>2025.12 ~ 2026.03</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
             <p>스타일 토큰화가 전혀 없고 공통 컴포넌트도 정리되지 않아, AI로 UI 작업 시 컨텍스트가 오염되고 히트율이 낮았다. 코드 환경부터 정돈해야 한다고 판단했다.</p>
@@ -352,18 +369,16 @@
             <p>Next.js 대비 runtime CSS의 기술부채, MUI의 AI 비친화성을 근거로 Tailwind로 전환했다.</p>
             <span class="proj-label">Result</span>
             <p>피그마 MCP 사용 시 레이아웃 수작업이 필수였던 것이, 디테일만 손보면 되는 수준으로 개선됐다. MUI를 전부 걷어내지는 못했지만 골자는 Tailwind로 옮겼다.</p>
-            <div class="tags"><span class="tag">Tailwind CSS v4</span><span class="tag">MUI</span><span class="tag">Figma MCP</span></div>
           </div>
         </article>
 
         <article class="proj">
-          <div class="proj-title"><h4>GTM 트래킹 체계 분리</h4><time>2025.12 ~</time></div>
+          <div class="proj-title"><h4>GTM 트래킹 체계 분리</h4><time>2025.01</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
             <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어, AI 작업 시 관심사가 섞인 파일이 오히려 방해가 됐다.</p>
             <span class="proj-label">Result</span>
             <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 틀릴 수 없는 구조가 됐다.</p>
-            <div class="tags"><span class="tag">GTM</span><span class="tag">GA4</span><span class="tag">TypeScript</span><span class="tag">React Hooks</span></div>
           </div>
         </article>
 
@@ -374,7 +389,6 @@
             <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. lazy loading이 전혀 없어 메인 번들이 10MB를 넘었다.</p>
             <span class="proj-label">Result</span>
             <p>전체 라우트에 코드 스플리팅을 적용해 메인 번들을 2MB로 줄이고 fallback UI를 추가했다. 이후 흰 화면 버그 리포트가 사라졌다.</p>
-            <div class="tags"><span class="tag">React.lazy</span><span class="tag">Suspense</span></div>
           </div>
         </article>
 
@@ -385,7 +399,6 @@
             <p>데이터가 많아 한눈에 보기 어려운 그리드에 전체화면 기능을 붙였는데, MUI Dialog(Portal)로 구현하니 그리드가 2개가 되어 상태가 단절됐다.</p>
             <span class="proj-label">Result</span>
             <p>Dialog를 걷어내고 기존 컨테이너에 position: fixed를 적용해, 인스턴스 하나로 스크롤·정렬·필터 상태를 유지하는 방식으로 해결했다.</p>
-            <div class="tags"><span class="tag">AG Grid</span><span class="tag">CSS</span></div>
           </div>
         </article>
 
@@ -396,7 +409,6 @@
             <p>매입원가에 0을 입력하면 미입력으로 표시되는 버그를 추적했더니, 공통 유틸이 0을 빈 값으로 판정하고 있었고 JavaScript falsy 패턴이 계산 로직 곳곳에 걸쳐 있었다.</p>
             <span class="proj-label">Result</span>
             <p>명시적 null 체크로 교체해 미입력과 0을 구분하도록 정비했다. 다만 계산 결과가 어디까지 왜곡되고 있었는지는 정밀하게 검증하지 못했다.</p>
-            <div class="tags"><span class="tag">JavaScript</span><span class="tag">AG Grid</span></div>
           </div>
         </article>
 
@@ -407,7 +419,6 @@
             <p>AI한테 새 페이지를 맡기면 폴더와 파일은 만들지만 라우터·메뉴 등록까지는 놓칠 때가 있었다. 코드 구조를 정비하는 방법은 확신이 없었고 리소스 대비 효과가 불확실했다.</p>
             <span class="proj-label">Result</span>
             <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 스캐폴딩 도구를 만들어 해결했다. PMF를 못 찾은 상황에서 빠른 기능 테스트 환경이 필요했다.</p>
-            <div class="tags"><span class="tag">Node.js</span><span class="tag">CLI</span><span class="tag">Template</span></div>
           </div>
         </article>
 
@@ -418,7 +429,6 @@
             <p>소싱 유저를 서비스에 끌어들이기 위해 쿠팡·네이버 마진 계산기 익스텐션을 기획부터 개발까지 독립적으로 진행했다.</p>
             <span class="proj-label">Result</span>
             <p>1,000+ 다운로드를 기록했지만 결제 전환율은 현저히 낮았고, 타겟 고객층이 아니었다는 결론이 나왔다.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">Chrome Extension</span></div>
           </div>
         </article>
 
@@ -426,12 +436,9 @@
 
       <section class="skills"><h2>Skills</h2>
         <dl>
-          <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3 · Vite · Chrome Extension</dd>
-          <dt>Styling</dt><dd>Tailwind CSS · MUI · Emotion (styled)</dd>
-          <dt>State / Data</dt><dd>React Query · Zustand · AG Grid</dd>
-          <dt>Analytics</dt><dd>GA4</dd>
-          <dt>Workflow</dt><dd>Git · Cursor · Claude Code · Codex</dd>
-          <dt>Infra</dt><dd>AWS Lambda</dd>
+          <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3</dd>
+          <dt>State / Data</dt><dd>React Query · Zustand</dd>
+          <dt>Styling</dt><dd>Tailwind CSS · MUI</dd>
         </dl>
         <div class="skill-approach">
           <article>
