@@ -75,6 +75,53 @@
       font-weight: 700;
       letter-spacing: -0.01em;
     }
+    .entry-header .num {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 6px;
+    }
+
+    .toc {
+      margin-top: 32px;
+      padding: 20px 24px;
+      background: var(--bg-card);
+      border-radius: 8px;
+    }
+    .toc h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+      counter-reset: toc;
+    }
+    .toc li {
+      counter-increment: toc;
+      font-size: 0.86rem;
+    }
+    .toc li::before {
+      content: counter(toc) ".";
+      display: inline-block;
+      width: 20px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .toc a {
+      color: var(--text-sub);
+      border-bottom: none;
+    }
+    .toc a:hover {
+      color: var(--text);
+    }
     .entry-header .meta {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -133,10 +180,25 @@
       <p class="nav"><a href="index.html">← 이력서로 돌아가기</a></p>
     </header>
 
+    <nav class="toc">
+      <h2>Projects</h2>
+      <ol>
+        <li>요금제 구조 개편 · 결제 시스템 전환</li>
+        <li>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</li>
+        <li>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</li>
+        <li>GTM 트래킹 체계 분리</li>
+        <li>초기 로딩 성능 개선</li>
+        <li>DataGrid 전체화면 · 컬럼 접기</li>
+        <li>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</li>
+        <li>페이지 스캐폴딩 도구</li>
+        <li>크롬 익스텐션 — 소싱 유저 유입 채널 검증</li>
+      </ol>
+    </nav>
+
     <!-- 1. 요금제 구조 개편 · 결제 시스템 전환 -->
     <article class="entry" id="proj-plan">
       <div class="entry-header">
-        <h2>요금제 구조 개편 · 결제 시스템 전환</h2>
+        <h2><span class="num">1</span>요금제 구조 개편 · 결제 시스템 전환</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.03</time></p>
       </div>
 
@@ -152,7 +214,7 @@
     <!-- 2. 복잡한 분기 검증용 결제 · 연동 데이터셋 구축 -->
     <article class="entry" id="proj-branch-dataset">
       <div class="entry-header">
-        <h2>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h2>
+        <h2><span class="num">2</span>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.01</time> ~ <time>03</time></p>
       </div>
 
@@ -170,7 +232,7 @@
     <!-- 3. 스타일링 환경 재구축 -->
     <article class="entry" id="proj-styling">
       <div class="entry-header">
-        <h2>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h2>
+        <h2><span class="num">3</span>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.12</time> ~ <time>2026.03</time></p>
       </div>
 
@@ -189,7 +251,7 @@
     <!-- 4. GTM 트래킹 체계 분리 -->
     <article class="entry" id="proj-gtm">
       <div class="entry-header">
-        <h2>GTM 트래킹 체계 분리</h2>
+        <h2><span class="num">4</span>GTM 트래킹 체계 분리</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.01</time></p>
       </div>
 
@@ -207,7 +269,7 @@
     <!-- 5. 초기 로딩 성능 개선 -->
     <article class="entry" id="proj-performance">
       <div class="entry-header">
-        <h2>초기 로딩 성능 개선</h2>
+        <h2><span class="num">5</span>초기 로딩 성능 개선</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2024.11</time></p>
       </div>
 
@@ -222,7 +284,7 @@
     <!-- 6. DataGrid 전체화면 · 컬럼 접기 -->
     <article class="entry" id="proj-datagrid">
       <div class="entry-header">
-        <h2>DataGrid 전체화면 · 컬럼 접기</h2>
+        <h2><span class="num">6</span>DataGrid 전체화면 · 컬럼 접기</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.01</time> ~ <time>02</time></p>
       </div>
 
@@ -241,7 +303,7 @@
     <!-- 7. 숫자 0과 미입력 구분 -->
     <article class="entry" id="proj-null">
       <div class="entry-header">
-        <h2>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</h2>
+        <h2><span class="num">7</span>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.07</time></p>
       </div>
 
@@ -259,7 +321,7 @@
     <!-- 8. 페이지 스캐폴딩 도구 -->
     <article class="entry" id="proj-scaffold">
       <div class="entry-header">
-        <h2>페이지 스캐폴딩 도구</h2>
+        <h2><span class="num">8</span>페이지 스캐폴딩 도구</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2026.03</time> ~</p>
       </div>
 
@@ -277,7 +339,7 @@
     <!-- 9. 크롬 익스텐션 -->
     <article class="entry" id="proj-extension">
       <div class="entry-header">
-        <h2>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h2>
+        <h2><span class="num">9</span>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h2>
         <p class="meta">(주)뭉클랩 · 장사왕 · <time>2025.03</time> ~</p>
       </div>
 
