@@ -177,6 +177,20 @@
       line-height: 1.7;
       word-break: keep-all;
     }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin: 20px 0 8px;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+    .stats span { white-space: nowrap; }
+    .stats strong { color: var(--text); font-weight: 600; }
+
     .edu { font-size: 0.88rem; color: var(--text-sub); }
     .edu strong { color: var(--text); font-weight: 600; }
 
@@ -300,6 +314,8 @@
           <li>1인 프론트엔드로서 결제·광고·상품·주문·연동·온보딩 등 제품 전 영역의 개발과 운영을 맡고 있습니다.</li>
         </ul>
       </section>
+
+      <div class="stats"><span><strong>신규 페이지 8+</strong></span><span><strong>페이지 개편 10+</strong></span><span><strong>구조 개선 15+</strong></span><span><strong>릴리즈 40+</strong></span></div>
 
       <section><h2>Project</h2>
         <div id="project-list">
