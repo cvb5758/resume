@@ -105,32 +105,17 @@
       letter-spacing: 0;
     }
     .contact {
-      margin-top: 8px;
+      margin-top: 4px;
       font-size: 0.88rem;
       color: var(--text-sub);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px 0;
     }
-    .contact-item {
-      display: inline-flex;
-      align-items: center;
-      min-width: 0;
-    }
-    .contact-item + .contact-item::before {
-      content: "·";
-      color: var(--text-muted);
-      margin: 0 10px;
-    }
-    .contact a { overflow-wrap: anywhere; }
     .github-link { border-bottom: none; }
     .github-link svg { opacity: 0.6; transition: opacity 0.15s; }
     .github-link:hover svg { opacity: 1; }
     .view-link {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       padding: 2px 8px;
+      margin-left: 2px;
       border: 1px solid var(--border);
       border-radius: 999px;
       font-size: 0.76rem;
@@ -315,28 +300,11 @@
     }
 
     @media (max-width: 560px) {
-      main { padding: 32px 16px 56px; }
-      header h1 { font-size: 1.5rem; line-height: 1.2; }
-      .title-role { display: block; margin-top: 4px; }
-      .contact {
-        margin-top: 14px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      .contact-item + .contact-item::before { content: none; }
-      .contact-item { line-height: 1.45; }
-      section { margin-top: 36px; }
-      .company-head .role,
-      .company-head .desc { line-height: 1.6; }
+      main { padding: 40px 16px 64px; }
+      header h1 { font-size: 1.5rem; }
       .skills dl { grid-template-columns: 1fr; }
       .skills dt { margin-top: 10px; }
-      .proj-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-      .stats span { white-space: normal; }
+      .proj-title { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -350,11 +318,10 @@
     <header>
       <h1>이수민 <span class="title-role">| Frontend Developer</span></h1>
       <p class="contact">
-        <a href="mailto:cvb575859@gmail.com" class="contact-item">cvb575859@gmail.com</a>
-        <span class="contact-item">010-6515-8230</span>
-        <a href="https://github.com/cvb5758" rel="me" class="contact-item github-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> cvb5758</a>
-        <a href="portfolio.html" class="contact-item portfolio-link">Portfolio</a>
-        <a href="index.html" class="contact-item view-link">기본 이력서</a>
+        <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
+        <a href="https://github.com/cvb5758" rel="me" class="github-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> cvb5758</a> ·
+        <a href="portfolio.html" class="portfolio-link">Portfolio</a>
+        <a href="index.html" class="view-link">기본 이력서</a>
       </p>
     </header>
 
