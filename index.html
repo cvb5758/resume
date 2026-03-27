@@ -354,7 +354,7 @@
           <div class="proj-title"><h4>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h4><time>2026.03</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
-            <p>요금제와 쇼핑몰·광고 연동 상태 조합에 따라 화면 분기가 크게 달랐는데, 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용이 컸다.</p>
+            <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 함께 얽히며, 같은 티어처럼 보여도 실제 노출 화면이 달라져 분기가 복잡해졌다. 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용도 컸다.</p>
             <span class="proj-label">Result</span>
             <p>결제/요금제 dataset과 연동 preset을 만들어 로컬에서 분기 조합을 바로 재현할 수 있게 했고, 외부 상태 변경 없이 퍼블리싱·QA·회귀 검증을 빠르게 반복할 수 있게 됐다.</p>
           </div>
@@ -396,7 +396,7 @@
           <div class="proj-title"><h4>DataGrid 전체화면 · 컬럼 접기</h4><time>2025.01 ~ 02</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
-            <p>데이터가 많아 한눈에 보기 어려운 그리드에 전체화면 기능을 붙였는데, MUI Dialog(Portal)로 구현하니 그리드가 2개가 되어 상태가 단절됐다.</p>
+            <p>데이터가 많아 한눈에 보기 어려웠고, 저해상도 환경에서는 특히 불편해 전체화면 기능이 필요했다. 그런데 MUI Dialog(Portal)로 구현하니 그리드가 2개가 되어 상태가 단절됐다.</p>
             <span class="proj-label">Result</span>
             <p>Dialog를 걷어내고 기존 컨테이너에 position: fixed를 적용해, 인스턴스 하나로 스크롤·정렬·필터 상태를 유지하는 방식으로 해결했다.</p>
           </div>
@@ -406,7 +406,7 @@
           <div class="proj-title"><h4>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</h4><time>2025.07</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
-            <p>매입원가에 0을 입력하면 미입력으로 표시되는 버그를 추적했더니, 공통 유틸이 0을 빈 값으로 판정하고 있었고 JavaScript falsy 패턴이 계산 로직 곳곳에 걸쳐 있었다.</p>
+            <p>매입원가에 0을 입력하면 미입력으로 표시돼 0원 상품을 관리할 수 없는 버그가 있었다. 추적해보니 공통 유틸이 0을 빈 값으로 판정하고 있었고 JavaScript falsy 패턴이 계산 로직 곳곳에 걸쳐 있었다.</p>
             <span class="proj-label">Result</span>
             <p>명시적 null 체크로 교체해 미입력과 0을 구분하도록 정비했다. 다만 계산 결과가 어디까지 왜곡되고 있었는지는 정밀하게 검증하지 못했다.</p>
           </div>
@@ -426,7 +426,7 @@
           <div class="proj-title"><h4>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h4><time>2025.03 ~</time></div>
           <div class="proj-body">
             <span class="proj-label">Why</span>
-            <p>소싱 유저를 서비스에 끌어들이기 위해 쿠팡·네이버 마진 계산기 익스텐션을 기획부터 개발까지 독립적으로 진행했다.</p>
+            <p>소싱 유저 유입 채널을 찾던 중 경쟁사들이 익스텐션으로 홍보하는 것을 보고, 브라우저 안에서 즉시 마진을 계산해주는 경험이 유입 실험에 적합하다고 판단했다.</p>
             <span class="proj-label">Result</span>
             <p>1,000+ 다운로드를 기록했지만 결제 전환율은 현저히 낮았고, 타겟 고객층이 아니었다는 결론이 나왔다.</p>
           </div>
