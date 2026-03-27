@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이수민 | Frontend Developer</title>
+  <meta name="description" content="AI를 적극적으로 활용하며, 코드 환경을 정비해 AI 레버리지를 높이는 프론트엔드 개발자 이수민.">
+  <meta name="author" content="이수민">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="이수민 | Frontend Developer">
+  <meta property="og:description" content="AI를 적극적으로 활용하며, 코드 환경을 정비해 AI 레버리지를 높이는 프론트엔드 개발자.">
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="ko_KR">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [{
+      "@type": "Person",
+      "name": "이수민",
+      "jobTitle": "Frontend Developer",
+      "email": "cvb575859@gmail.com",
+      "url": "https://github.com/cvb5758",
+      "sameAs": ["https://github.com/cvb5758", "https://github.com/suminlee-moonklabs"],
+      "knowsAbout": ["React", "TypeScript", "Next.js", "Vue 3", "Vite", "Tailwind CSS", "MUI", "Emotion", "React Query", "Zustand", "AG Grid", "GTM", "GA4", "Toss Payments", "Chrome Extension", "AWS Lambda"],
+      "worksFor": {"@type": "Organization", "name": "(주)뭉클랩", "description": "이커머스 정산/순이익 분석 SaaS"},
+      "alumniOf": {"@type": "EducationalOrganization", "name": "한국폴리텍대학 인천캠퍼스", "department": "컴퓨터정보과(2년제)"}
+    }]
+  }
+  </script>
+
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-sub: #555;
+      --text-muted: #999;
+      --border: #e0e0e0;
+      --border-light: #f0f0f0;
+      --bg: #fff;
+      --bg-card: #f8f8f8;
+      --accent: #2563eb;
+      --max-w: 800px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--text-sub);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s;
+    }
+    a:hover { border-color: var(--text); color: var(--text); }
+
+    .sidebar {
+      position: fixed;
+      right: max(24px, calc((100vw - var(--max-w)) / 2 - 210px));
+      top: 33%;
+      transform: translateY(-50%);
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 16px 16px 0;
+      z-index: 20;
+    }
+    .sidebar .print-btn {
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: none;
+      color: var(--text-muted);
+      border: none;
+      border-left: 1.5px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: left;
+      transition: color 0.15s;
+    }
+    .sidebar .print-btn:hover { color: var(--text-sub); }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .title-role {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      letter-spacing: 0;
+    }
+    .contact {
+      margin-top: 4px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+    .github-link { border-bottom: none; }
+    .github-link svg { opacity: 0.6; transition: opacity 0.15s; }
+    .github-link:hover svg { opacity: 1; }
+    .view-link {
+      display: inline-block;
+      padding: 2px 8px;
+      margin-left: 2px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      color: var(--text-sub);
+      background: var(--bg-card);
+      text-decoration: none;
+    }
+    .view-link:hover {
+      color: var(--text);
+      border-color: var(--text);
+      background: var(--bg);
+    }
+
+    section { margin-top: 44px; }
+    section > h2 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .about p {
+      color: var(--text-sub);
+      margin-bottom: 10px;
+      word-break: keep-all;
+    }
+    .company-head h3 { font-size: 1.1rem; font-weight: 700; }
+    .company-head .role { font-size: 0.88rem; color: var(--text-sub); }
+    .company-head .desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+    .sub-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 24px 0 12px;
+    }
+    .bullets { list-style: none; padding: 0; }
+    .bullets li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      word-break: keep-all;
+    }
+    .bullets li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .proj {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .proj:last-child { border-bottom: none; }
+    .proj-title {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .proj-title h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+    .proj-title time {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .proj-body p {
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+      word-break: keep-all;
+      line-height: 1.7;
+    }
+    .proj-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      margin-top: 8px;
+    }
+    .proj-label:first-child { margin-top: 0; }
+    .proj-note {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .detail-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-link:hover { color: var(--text); border-color: var(--text); }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin: 20px 0 8px;
+      padding: 12px 16px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+    .stats span { white-space: nowrap; }
+    .stats strong { color: var(--text); font-weight: 600; }
+    .stats-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-top: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .skills dl {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      row-gap: 6px;
+      column-gap: 20px;
+      align-items: baseline;
+    }
+    .skills dt { font-weight: 600; font-size: 0.82rem; }
+    .skills dd { font-size: 0.88rem; color: var(--text-sub); }
+    .skill-approach {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+    }
+    .skill-approach article {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+    .skill-approach h3 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .skill-approach p {
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+    .edu { font-size: 0.88rem; color: var(--text-sub); }
+    .edu strong { color: var(--text); font-weight: 600; }
+
+    @media print {
+      .sidebar { display: none !important; }
+      main { padding: 16px 0; }
+      section { margin-top: 24px; }
+      .proj { break-inside: avoid; }
+      .proj { break-inside: avoid; }
+      .detail-link { display: none !important; }
+      .portfolio-link { display: none !important; }
+      .view-link { display: none !important; }
+      .github-link { border-bottom: none !important; }
+      a { border-bottom: none; }
+    }
+
+    @media (max-width: 1100px) {
+      .sidebar { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      main { padding: 40px 16px 64px; }
+      header h1 { font-size: 1.5rem; }
+      .skills dl { grid-template-columns: 1fr; }
+      .skills dt { margin-top: 10px; }
+      .proj-title { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="sidebar" aria-label="이력서 도구">
+    <button class="print-btn" onclick="window.print()">PDF 저장</button>
+  </nav>
+
+  <main>
+    <header>
+      <h1>이수민 <span class="title-role">| Frontend Developer</span></h1>
+      <p class="contact">
+        <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
+        <a href="https://github.com/cvb5758" rel="me" class="github-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> cvb5758</a> ·
+        <a href="portfolio.html" class="portfolio-link">Portfolio</a>
+        <a href="index-detailed.html" class="view-link">상세 이력서</a>
+      </p>
+    </header>
+
+    <div class="resume-content">
+      <section class="about"><h2>About</h2>
+        <p>AI를 적극적으로 활용하는 1인 프론트엔드 개발자입니다. 다만 AI를 잘 쓰는 일은 프롬프트보다 코드 환경을 정돈하는 일에 가깝다고 생각합니다. 로직이 흩어져 있으면 구조를 먼저 정리하고, 스타일 기준이 없으면 토큰 체계부터 잡습니다. 중요한 건 정리 자체가 아니라 이후 기능 개발, 검증, 실험 속도가 실제로 올라가느냐이며, 항상 실제 레버리지가 생기는 방향인지 고민합니다.</p>
+      </section>
+
+      <section><h2>Experience</h2>
+        <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+        <h4 class="sub-title">역할 요약</h4>
+        <ul class="bullets">
+          <li>1인 프론트엔드로서 결제·광고·상품·주문·연동·온보딩 등 제품 전 영역의 개발과 운영을 맡고 있습니다.</li>
+        </ul>
+      </section>
+
+      <section><h2>Project</h2>
+
+        <article class="proj">
+          <div class="proj-title"><h4>요금제 구조 개편 · 결제 시스템 전환</h4><time>2026.01 ~ 03</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>요금제 체크 로직이 13개 페이지에 분산되어 AI 컨텍스트가 오염됐고, 신규 요금제 추가 시 더 악화될 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
+            <span class="proj-label">Result</span>
+            <p>FeatureMatrix config로 일원화한 뒤 AI 원샷 작업이 가능해졌고, 결제 PG 전환은 환경변수로 시스템을 분리해 신기능 릴리즈를 막지 않았다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h4><time>2026.03</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 함께 얽히며, 같은 티어처럼 보여도 실제 노출 화면이 달라져 분기가 복잡해졌다. 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용도 컸다.</p>
+            <span class="proj-label">Result</span>
+            <p>결제/요금제 dataset과 연동 preset을 만들어 로컬에서 분기 조합을 바로 재현할 수 있게 했고, 외부 상태 변경 없이 퍼블리싱·QA·회귀 검증을 빠르게 반복할 수 있게 됐다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h4><time>2025.12 ~ 2026.03</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>스타일 토큰화가 전혀 없고 공통 컴포넌트도 정리되지 않아, AI로 UI 작업 시 컨텍스트가 오염되고 히트율이 낮았다. 코드 환경부터 정돈해야 한다고 판단했다.</p>
+            <span class="proj-label">Decision</span>
+            <p>Next.js 대비 runtime CSS의 기술부채, MUI의 AI 비친화성을 근거로 Tailwind로 전환했다.</p>
+            <span class="proj-label">Result</span>
+            <p>피그마 MCP 사용 시 레이아웃 수작업이 필수였던 것이, 디테일만 손보면 되는 수준으로 개선됐다. MUI를 전부 걷어내지는 못했지만 골자는 Tailwind로 옮겼다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>GTM 트래킹 체계 분리</h4><time>2025.01</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어, AI 작업 시 관심사가 섞인 파일이 오히려 방해가 됐다.</p>
+            <span class="proj-label">Result</span>
+            <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 틀릴 수 없는 구조가 됐다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>초기 로딩 성능 개선</h4><time>2024.11</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. lazy loading이 전혀 없어 메인 번들이 10MB를 넘었다.</p>
+            <span class="proj-label">Result</span>
+            <p>전체 라우트에 코드 스플리팅을 적용해 메인 번들을 2MB로 줄이고 fallback UI를 추가했다. 이후 흰 화면 버그 리포트가 사라졌다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>DataGrid 전체화면 · 컬럼 접기</h4><time>2025.01 ~ 02</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>데이터가 많아 한눈에 보기 어려웠고, 저해상도 환경에서는 특히 불편해 전체화면 기능이 필요했다. 그런데 MUI Dialog(Portal)로 구현하니 그리드가 2개가 되어 상태가 단절됐다.</p>
+            <span class="proj-label">Result</span>
+            <p>Dialog를 걷어내고 기존 컨테이너에 position: fixed를 적용해, 인스턴스 하나로 스크롤·정렬·필터 상태를 유지하는 방식으로 해결했다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>숫자 0과 미입력을 구분하지 못하는 문제 추적 · 수정</h4><time>2025.07</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>매입원가에 0을 입력하면 미입력으로 표시돼 0원 상품을 관리할 수 없는 버그가 있었다. 추적해보니 공통 유틸이 0을 빈 값으로 판정하고 있었고 JavaScript falsy 패턴이 계산 로직 곳곳에 걸쳐 있었다.</p>
+            <span class="proj-label">Result</span>
+            <p>명시적 null 체크로 교체해 미입력과 0을 구분하도록 정비했다. 다만 계산 결과가 어디까지 왜곡되고 있었는지는 정밀하게 검증하지 못했다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>페이지 스캐폴딩 도구</h4><time>2026.03 ~</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>AI한테 새 페이지를 맡기면 폴더와 파일은 만들지만 라우터·메뉴 등록까지는 놓칠 때가 있었다. 코드 구조를 정비하는 방법은 확신이 없었고 리소스 대비 효과가 불확실했다.</p>
+            <span class="proj-label">Result</span>
+            <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 스캐폴딩 도구를 만들어 해결했다. PMF를 못 찾은 상황에서 빠른 기능 테스트 환경이 필요했다.</p>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-title"><h4>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h4><time>2025.03 ~</time></div>
+          <div class="proj-body">
+            <span class="proj-label">Why</span>
+            <p>소싱 유저 유입 채널을 찾던 중 경쟁사들이 익스텐션으로 홍보하는 것을 보고, 브라우저 안에서 즉시 마진을 계산해주는 경험이 유입 실험에 적합하다고 판단했다.</p>
+            <span class="proj-label">Result</span>
+            <p>1,000+ 다운로드를 기록했지만 결제 전환율은 현저히 낮았고, 타겟 고객층이 아니었다는 결론이 나왔다.</p>
+          </div>
+        </article>
+
+      </section>
+
+      <section class="skills"><h2>Skills</h2>
+        <dl>
+          <dt>Frontend</dt><dd>React · TypeScript · Next.js · Vue 3</dd>
+          <dt>State / Data</dt><dd>React Query · Zustand</dd>
+          <dt>Styling</dt><dd>Tailwind CSS · MUI</dd>
+        </dl>
+        <div class="skill-approach">
+          <article>
+            <h3>React / State</h3>
+            <p>상태를 먼저 성격별로 나눠 설계합니다. 파생 값은 가능하면 계산으로 처리하고, 서버 상태는 React Query, 국소 UI 상태는 로컬 state나 작은 store로 분리하며, 전역 상태는 필요한 경우에만 신중히 사용합니다.</p>
+          </article>
+          <article>
+            <h3>TypeScript</h3>
+            <p>TypeScript를 제약을 코드로 옮기는 도구로 사용합니다. 정책과 도메인 규칙은 타입, 유니온, 타입 가드, config 객체로 모델링하고, strict는 기존 코드베이스 상황에 맞춰 점진적으로 강화합니다.</p>
+          </article>
+          <article>
+            <h3>Styling</h3>
+            <p>신규 코드와 정리하는 영역에서는 Tailwind와 디자인 토큰을 우선합니다. 반복되는 패턴은 공통 컴포넌트로 올리고, 스타일 책임이 여러 레이어에 흩어지지 않도록 관리합니다.</p>
+          </article>
+          <article>
+            <h3>AI Workflow</h3>
+            <p>AI는 구조가 명확할수록 잘 작동한다고 생각합니다. 상태 경계와 규칙을 먼저 정리한 뒤, AI를 구현, 리팩터링, 테스트 보조, 디자인-코드 전환에 활용합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section><h2>Education</h2><p class="edu"><strong>한국폴리텍대학 인천캠퍼스</strong> · 컴퓨터정보과(2년제) · <time datetime="2017">2017</time> ~ <time datetime="2021">2021</time></p></section>
+      <section><h2>ETC</h2><p class="edu">육군 만기전역 · <time datetime="2018-04">2018.04</time> ~ <time datetime="2019-12">2019.12</time></p></section>
+    </div>
+  </main>
+</body>
+</html>
