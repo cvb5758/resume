@@ -107,7 +107,7 @@
     }
 
     .proj {
-      padding: 20px 0;
+      padding: 32px 0;
       border-bottom: 1px solid var(--border-light);
     }
     .proj:last-child { border-bottom: none; }
@@ -130,11 +130,11 @@
       flex-shrink: 0;
     }
     .proj-body p {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: var(--text-sub);
       margin-bottom: 8px;
       word-break: keep-all;
-      line-height: 1.7;
+      line-height: 1.75;
     }
     .proj-label {
       display: inline-block;
@@ -143,8 +143,8 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: var(--text-muted);
-      margin-bottom: 4px;
-      margin-top: 8px;
+      margin-bottom: 6px;
+      margin-top: 20px;
     }
     .proj-label:first-child { margin-top: 0; }
 
@@ -287,10 +287,14 @@
 
 <body>
   <div class="builder-toolbar">
+    <select id="company-select" onchange="selectCompany(this.value)" style="padding:6px 12px;font-size:0.8rem;font-family:inherit;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text-sub);min-width:180px;">
+      <option value="">회사 선택 (지원 동기 없음)</option>
+    </select>
     <button onclick="setAllLevels('brief')">전체 간략</button>
     <button onclick="setAllLevels('medium')">전체 중간</button>
     <button onclick="setAllLevels('detailed')">전체 상세</button>
     <button class="primary" onclick="window.print()">PDF 저장</button>
+    <button onclick="window.open('portfolio.html','_blank')">포트폴리오</button>
   </div>
 
   <main style="margin-top: 48px;">
@@ -303,12 +307,16 @@
     </header>
 
     <div class="resume-content">
+      <section id="motivation-section" class="about" style="display:none;"><h2>지원 동기</h2>
+        <p id="motivation-text"></p>
+      </section>
+
       <section class="about"><h2>About</h2>
         <p>AI를 적극적으로 활용하는 1인 프론트엔드 개발자입니다. 다만 AI를 잘 쓰는 일은 프롬프트보다 코드 환경을 정돈하는 일에 가깝다고 생각합니다. 로직이 흩어져 있으면 구조를 먼저 정리하고, 스타일 기준이 없으면 토큰 체계부터 잡습니다. 중요한 건 정리 자체가 아니라 이후 기능 개발, 검증, 실험 속도가 실제로 올라가느냐이며, 항상 실제 레버리지가 생기는 방향인지 고민합니다.</p>
       </section>
 
       <section><h2>Experience</h2>
-        <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ 현재</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
+        <div class="company-head"><h3>(주)뭉클랩</h3><p class="role">Frontend Developer · <time datetime="2024-06">2024.06</time> ~ <time datetime="2026-03">2026.03</time> (1년 10개월)</p><p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p></div>
         <h4 class="sub-title">역할 요약</h4>
         <ul class="bullets">
           <li>1인 프론트엔드로서 결제·광고·상품·주문·연동·온보딩 등 제품 전 영역의 개발과 운영을 맡고 있습니다.</li>
@@ -336,19 +344,19 @@
               <span class="proj-label">Why</span>
               <p>요금제 체크 로직이 13개 페이지에 분산되어 AI 컨텍스트가 오염됐고, 신규 요금제 추가 시 더 악화될 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
               <span class="proj-label">Result</span>
-              <p>FeatureMatrix config로 일원화한 뒤 AI 원샷 작업이 가능해졌고, 결제 PG 전환은 환경변수로 시스템을 분리해 신기능 릴리즈를 막지 않았다.</p>
+              <p>기능별 접근 설정로 일원화한 뒤 AI 원샷 작업이 가능해졌고, 결제 PG 전환은 환경변수로 시스템을 분리해 신기능 릴리즈를 막지 않았다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
               <p>요금제 체크 로직이 13개 페이지에 분산되어 있었다. 코드량은 크지 않았지만 관리 포인트가 흩어져 있어서, AI로 작업할 때 관련 없는 코드까지 컨텍스트에 들어와 원하는 퀄리티가 나오지 않았다. 이 상태에서 신규 요금제까지 추가되면 AI 활용 효율이 더 떨어지고 이후 개편도 어려워질 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
               <span class="proj-label">Result</span>
-              <p>기능별 접근 정책을 FeatureMatrix config 한 곳에 선언하고 라우트 레벨에서 자동 차단하는 구조로 바꾼 뒤 AI 원샷 작업이 가능해졌다. 결제 PG 전환은 환경변수로 시스템을 분리해 전환 기간 동안 신기능 릴리즈에 문제가 없었다.</p>
+              <p>기능별 접근 정책을 기능별 접근 설정 한 곳에 선언하고 라우트 레벨에서 자동 차단하는 구조로 바꾼 뒤 AI 원샷 작업이 가능해졌다. 결제 PG 전환은 환경변수로 시스템을 분리해 전환 기간 동안 신기능 릴리즈에 문제가 없었다.</p>
             </div>
             <div class="proj-body v v-detailed">
               <span class="proj-label">Why</span>
               <p>요금제 체크 로직이 13개 페이지에 분산되어 있었다. 코드량은 크지 않았지만 관리 포인트가 흩어져 있어서, AI로 작업할 때 관련 없는 코드까지 컨텍스트에 들어와 원하는 퀄리티가 나오지 않았다. 신규 요금제가 추가되면 레거시와 함께 관리해야 하는데, 이 상태로 가면 AI 활용 효율이 더 떨어지고 이후 개편도 어려워질 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
               <span class="proj-label">How</span>
-              <p>기능별 접근 정책을 FeatureMatrix config 한 곳에 선언하고, 라우트 레벨에서 자동 차단하는 구조로 바꿨다. 페이지에서 요금제를 직접 판단하던 코드가 없어졌고, 새 요금제 추가 시 매핑 하나만 수정하면 됐다. 정리 후에는 원하는 동작을 프롬프트에 적으면 원샷으로 작업이 됐다.</p>
+              <p>기능별 접근 정책을 기능별 접근 설정 한 곳에 선언하고, 라우트 레벨에서 자동 차단하는 구조로 바꿨다. 페이지에서 요금제를 직접 판단하던 코드가 없어졌고, 새 요금제 추가 시 매핑 하나만 수정하면 됐다. 정리 후에는 원하는 동작을 프롬프트에 적으면 원샷으로 작업이 됐다.</p>
               <p>결제 PG 전환에서 가장 중요했던 건 이관 작업 중에도 다른 기능 릴리즈가 막히지 않는 것이었다. 당장 가장 빠르게 할 수 있는 방법이 환경변수로 결제 시스템을 분리하는 거였고, 최선인지는 모르겠지만 실제로 전환 기간 동안 신기능 릴리즈에 문제가 없었다. 달리는 차에서 바퀴를 갈아끼운 게 아니라, 차를 두 대 굴린 것에 가깝다.</p>
             </div>
           </article>
@@ -367,13 +375,13 @@
             <div class="proj-title"><h4>복잡한 분기 검증용 결제 · 연동 데이터셋 구축</h4><time>2026.03</time></div>
             <div class="proj-body v v-brief">
               <span class="proj-label">Why</span>
-              <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 함께 얽히며, 같은 티어처럼 보여도 실제 노출 화면이 달라져 분기가 복잡해졌다. 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용도 컸다.</p>
+              <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 얽히며 분기가 복잡해졌고, 테스트 비용도 컸다. 관련 작업이 계속 이어지는 상황에서 이 병목을 방치할 수 없다고 판단했다.</p>
               <span class="proj-label">Result</span>
               <p>결제/요금제 dataset과 연동 preset을 만들어 로컬에서 분기 조합을 바로 재현할 수 있게 했고, 외부 상태 변경 없이 퍼블리싱·QA·회귀 검증을 빠르게 반복할 수 있게 됐다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
-              <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 함께 얽히며, 같은 티어처럼 보여도 실제 노출 화면이 달라져 분기가 복잡해졌다. 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용이 컸다.</p>
+              <p>신규·레거시 요금제와 쇼핑몰·광고 연동 상태가 함께 얽히며, 같은 티어처럼 보여도 실제 노출 화면이 달라져 분기가 복잡해졌다. 기존에는 어드민에서 결제 상태를 바꾸거나 실제 쇼핑몰을 직접 연동해야 해서 테스트 비용이 컸는데, 요금제 변경과 연동 관련 작업이 계속 이어지는 상황에서 이 병목을 그대로 두면 작업 속도가 계속 떨어질 거라고 판단했다.</p>
               <span class="proj-label">Result</span>
               <p>결제/요금제 상태는 dataset으로, 연동 상태는 preset으로 모델링해 로컬에서 분기 조합을 바로 재현할 수 있게 했고, 외부 상태 변경 없이 퍼블리싱·QA·회귀 검증을 빠르게 반복할 수 있게 됐다.</p>
             </div>
@@ -436,15 +444,15 @@
             <div class="proj-title"><h4>GTM 트래킹 체계 분리</h4><time>2025.01</time></div>
             <div class="proj-body v v-brief">
               <span class="proj-label">Why</span>
-              <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어, AI 작업 시 관심사가 섞인 파일이 오히려 방해가 됐다.</p>
+              <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어 AI 작업 시 방해가 됐고, 트래킹이 더 붙을 예정이어서 지금 분리하지 않으면 이후 더 어려워질 거라고 판단했다.</p>
               <span class="proj-label">Result</span>
-              <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 틀릴 수 없는 구조가 됐다.</p>
+              <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 거의 틀리지 않는 구조가 됐다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
-              <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어 있었다. 당장 작업이 안 되는 건 아니었지만, 광고 분석 쪽 트래킹이 본격적으로 붙을 예정이었고 이 파일이 끝없이 커지는 방향이 맞는지 의문이 들었다. 특히 AI한테는 관심사가 섞인 파일이 오히려 방해가 됐다.</p>
+              <p>600줄짜리 trackingHelper.ts에 Mixpanel·Hotjar·GTM이 혼재되어 있었다. 당장 작업이 안 되는 건 아니었지만, 새로운 트래킹이 계속 붙을 예정이었다. 이 파일에 계속 쌓아가면 관심사가 다른 코드끼리 서로 영향을 줄 수밖에 없고, 특히 AI로 트래킹 코드를 작업할 때 관련 없는 맥락이 섞여 들어와 정확도가 떨어졌다. 지금 구조를 분리하지 않으면 이후 트래킹이 붙을수록 더 손대기 어려워질 거라고 판단했다.</p>
               <span class="proj-label">Result</span>
-              <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 틀릴 수 없는 구조가 됐다. 기존 코드는 한꺼번에 옮기지 않고, 새로 추가하는 트래킹만 이 구조로 작성하는 전략을 택했다.</p>
+              <p>도메인별 커스텀 훅으로 분리하고 이벤트 파라미터에 타입을 걸어둔 결과, GA4 이벤트 15개 추가 시 AI가 거의 틀리지 않는 구조가 됐다. 기존 코드는 한꺼번에 옮기지 않고, 새로 추가하는 트래킹만 이 구조로 작성하는 전략을 택했다.</p>
             </div>
             <div class="proj-body v v-detailed">
               <span class="proj-label">Why</span>
@@ -452,7 +460,7 @@
               <span class="proj-label">How</span>
               <p>GTM 도입 초기에 shared/tracking/ 구조를 따로 설계했다. GTM 통신은 하나의 클라이언트로 격리하고, 도메인별로 커스텀 훅을 분리해서 이벤트 파라미터에 타입을 걸어두는 방식이었다. 기존 코드를 한꺼번에 옮기는 대신, 새로 추가하는 트래킹만 이 구조로 작성하고 기존 코드는 여유가 될 때 이관하는 전략을 택했다.</p>
               <span class="proj-label">Result</span>
-              <p>실제로 효과를 체감한 건 광고 분석 GA4 이벤트 15개를 추가할 때였다. 분리된 훅 파일에는 동일한 형태의 함수만 있으니까, AI한테 "새 이벤트 하나 추가해"라고 했을 때 틀릴 수가 거의 없는 구조가 됐다.</p>
+              <p>실제로 효과를 체감한 건 GA4 이벤트 15개를 추가할 때였다. 분리된 훅 파일에는 동일한 형태의 함수만 있으니까, AI한테 "새 이벤트 하나 추가해"라고 했을 때 틀릴 수가 거의 없는 구조가 됐다.</p>
             </div>
           </article>
 
@@ -470,19 +478,19 @@
             <div class="proj-title"><h4>초기 로딩 성능 개선</h4><time>2024.11</time></div>
             <div class="proj-body v v-brief">
               <span class="proj-label">Why</span>
-              <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. lazy loading이 전혀 없어 메인 번들이 10MB를 넘었다.</p>
+              <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. 서비스 진입 자체를 막는 문제라 우선 해결해야 한다고 판단했다.</p>
               <span class="proj-label">Result</span>
               <p>전체 라우트에 코드 스플리팅을 적용해 메인 번들을 2MB로 줄이고 fallback UI를 추가했다. 이후 흰 화면 버그 리포트가 사라졌다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
-              <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. lazy loading이 전혀 없어 메인 번들이 10MB를 넘었고, fallback UI도 없어서 다운로드가 끝날 때까지 흰 화면이 그대로 노출되고 있었다.</p>
+              <p>평소 초기 로딩이 느리다고 느끼던 중, Hotjar 녹화에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면을 확인했다. 단순히 느린 정도가 아니라 서비스 진입 자체를 막고 있는 문제여서, 다른 기능보다 먼저 해결해야 한다고 판단했다. 확인해보니 lazy loading이 전혀 없어 메인 번들이 10MB를 넘었고, fallback UI도 없어서 다운로드가 끝날 때까지 흰 화면이 그대로 노출되고 있었다.</p>
               <span class="proj-label">Result</span>
               <p>React.lazy와 Suspense 기반 코드 스플리팅을 전체 라우트에 적용해 메인 번들을 2MB로 줄이고 fallback UI를 추가했다. 이후 흰 화면 버그 리포트가 사라졌다.</p>
             </div>
             <div class="proj-body v v-detailed">
               <span class="proj-label">Why</span>
-              <p>평소 서비스에 진입하거나 테스트할 때 초기 로딩이 느리다고 느끼고 있었는데, Hotjar 녹화 영상에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면까지 확인됐다. 확인해보니 서비스에 lazy loading이 하나도 적용되어 있지 않아 메인 번들이 10MB를 넘었고, fallback UI도 없어서 다운로드가 끝날 때까지 흰 화면이 그대로 노출되고 있었다.</p>
+              <p>평소 서비스에 진입하거나 테스트할 때 초기 로딩이 느리다고 느끼고 있었는데, Hotjar 녹화 영상에서 사용자가 흰 화면을 버그로 인식하고 새로고침을 반복하는 장면까지 확인됐다. 단순히 느린 정도가 아니라 서비스 진입 자체를 막고 있는 문제라서, 다른 기능보다 먼저 해결해야 한다고 판단했다. 확인해보니 서비스에 lazy loading이 하나도 적용되어 있지 않아 메인 번들이 10MB를 넘었고, fallback UI도 없어서 다운로드가 끝날 때까지 흰 화면이 그대로 노출되고 있었다.</p>
               <span class="proj-label">Result</span>
               <p>React.lazy와 Suspense 기반 코드 스플리팅을 전체 라우트에 적용해 메인 번들을 10MB에서 2MB로 줄였고, 로딩 중에도 fallback UI로 로딩 상태를 표시하도록 변경했다. 이후 간간이 들어오던 흰 화면 버그 리포트가 사라졌다.</p>
             </div>
@@ -502,19 +510,21 @@
             <div class="proj-title"><h4>DataGrid 전체화면 · 컬럼 접기</h4><time>2025.01 ~ 02</time></div>
             <div class="proj-body v v-brief">
               <span class="proj-label">Why</span>
-              <p>데이터가 많아 한눈에 보기 어려워 전체화면 기능이 필요했다. MUI Dialog(Portal)로 구현했더니 그리드가 2개가 되어 상태가 단절되는 문제가 생겼다.</p>
+              <p>데이터가 많아 한눈에 파악하기 어려웠고, 평소에도 사용성을 떨어뜨린다고 느끼고 있어 전체화면·컬럼 접기로 보완할 수 있겠다고 판단했다.</p>
               <span class="proj-label">Result</span>
               <p>Dialog를 걷어내고 기존 컨테이너에 position: fixed를 적용해, 인스턴스 하나로 스크롤·정렬·필터 상태를 유지하는 방식으로 해결했다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
-              <p>데이터가 많아 한눈에 보기 어려웠고, 저해상도 환경에서는 특히 불편해 전체화면 기능이 필요했다. MUI Dialog(Portal)로 구현했더니 그리드가 DOM 트리 밖에 새로 마운트되면서 인스턴스가 2개가 됐고, 전체화면에서 조작한 스크롤·필터·정렬이 축소 시 날아가는 UX 단절이 생겼다.</p>
+              <p>서비스 특성상 DataGrid에 표시되는 데이터가 많아 한눈에 파악하기 어려웠고, 저해상도 환경에서는 특히 불편했다. 평소에도 이 부분이 사용성을 떨어뜨린다고 느끼고 있었고, 전체화면과 컬럼 접기로 보완할 수 있겠다고 판단해 구현을 시작했다.</p>
+              <span class="proj-label">Problem</span>
+              <p>MUI Dialog(Portal)로 전체화면을 구현했더니 그리드가 DOM 트리 밖에 새로 마운트되면서 인스턴스가 2개가 됐고, 전체화면에서 조작한 스크롤·필터·정렬이 축소 시 날아가는 UX 단절이 생겼다.</p>
               <span class="proj-label">Result</span>
               <p>Dialog를 걷어내고 기존 컨테이너에 position: fixed를 적용해, 인스턴스 하나로 상태를 유지하는 방식으로 해결했다.</p>
             </div>
             <div class="proj-body v v-detailed">
               <span class="proj-label">Why</span>
-              <p>서비스 특성상 DataGrid에 데이터가 많아서 한눈에 보기 어려웠고, 사용자 해상도가 낮으면 더 불편했다. 대표님이 다른 서비스에서 그리드 전체보기와 컬럼 접기 기능을 보고 괜찮겠다고 하셔서, 바로 AG Grid에서 제공하는 기능을 확인하고 구현을 시작했다.</p>
+              <p>서비스 특성상 DataGrid에 표시되는 데이터가 많아서 한눈에 파악하기 어려웠고, 사용자 해상도가 낮으면 더 불편했다. 평소에도 이 부분이 사용성을 떨어뜨린다고 느끼고 있었는데, 다른 서비스의 그리드 전체보기와 컬럼 접기 사례를 확인했을 때 이걸로 보완할 수 있겠다고 판단해 바로 구현을 시작했다.</p>
               <span class="proj-label">Problem</span>
               <p>컬럼 접기는 AG Grid 네이티브 기능에 커스텀 아이콘을 적용하는 방식으로 진행했다. 전체화면은 처음에 MUI Dialog의 fullScreen 옵션을 사용했다. prop 하나로 바로 전체화면이 되니까 가장 빠르게 구현할 수 있는 방법이었다.</p>
               <p>근데 막상 붙여보니 Dialog가 Portal 기반이라 기존 DOM 트리 밖에 별도로 렌더링되는 구조였고, 그 안에 AG Grid를 새로 마운트할 수밖에 없었다. 같은 데이터를 보여주는 그리드가 2개가 되어버렸고, 전체화면에서 스크롤하고 필터 걸고 정렬한 게 축소하면 다 날아가는 UX 단절이 생겼다.</p>
@@ -571,15 +581,15 @@
             <div class="proj-title"><h4>페이지 스캐폴딩 도구</h4><time>2026.03 ~</time></div>
             <div class="proj-body v v-brief">
               <span class="proj-label">Why</span>
-              <p>AI한테 새 페이지를 맡기면 폴더와 파일은 만들지만 라우터·메뉴 등록까지는 놓칠 때가 있었다. 코드 구조를 정비하는 방법은 확신이 없었고 리소스 대비 효과가 불확실했다.</p>
+              <p>AI한테 새 페이지를 맡기면 라우터·메뉴 등록까지 놓칠 때가 있었고, 구조를 고치는 대신 반복 작업 자체를 자동화하는 게 더 확실하다고 판단했다.</p>
               <span class="proj-label">Result</span>
-              <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 스캐폴딩 도구를 만들어 해결했다. PMF를 못 찾은 상황에서 빠른 기능 테스트 환경이 필요했다.</p>
+              <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 스캐폴딩 도구를 만들어 해결했다. 신규 기능을 빠르게 만들어 시장 반응을 확인해야 하는 상황이었다.</p>
             </div>
             <div class="proj-body v v-medium">
               <span class="proj-label">Why</span>
-              <p>AI한테 새 페이지를 맡기면 다른 페이지를 참조해서 폴더와 파일은 만들지만, 라우터에 등록하거나 메뉴에 추가해야 한다는 것까지는 생각하지 못할 때가 종종 있었다. 직접 하기엔 어렵지 않지만 번거로웠다. 코드 구조를 정비하는 방법도 있었지만, 그 방향에 확신이 들지 않았고 얻는 것에 비해 리소스가 크다고 판단했다.</p>
+              <p>AI한테 새 페이지를 맡기면 다른 페이지를 참조해서 폴더와 파일은 만들지만, 라우터에 등록하거나 메뉴에 추가해야 한다는 것까지는 놓칠 때가 종종 있었다. 코드 구조를 정비해서 AI가 패턴을 자연스럽게 파악하게 하는 방법도 있었지만, 확신이 없었고 리소스 대비 효과가 불확실했다. 구조를 고치는 대신 반복 작업 자체를 자동화하는 게 더 확실하다고 판단해 스캐폴딩 방식을 택했다.</p>
               <span class="proj-label">Result</span>
-              <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 스캐폴딩 도구를 만들어 해결했다. 1초면 기초 작업이 끝나고, AI가 놓치던 부분이 구조적으로 사라졌다.</p>
+              <p>명령어 하나로 컨벤션에 맞는 구조 생성 + 라우터·메뉴 자동 등록까지 되는 도구를 만들어, AI가 놓치던 부분이 구조적으로 사라졌다.</p>
             </div>
             <div class="proj-body v v-detailed">
               <span class="proj-label">Why</span>
@@ -587,7 +597,7 @@
               <span class="proj-label">How</span>
               <p>AI와 해결 방법을 의논하다 스캐폴딩이라는 방식을 확인하고 적용했다. 명령어 하나로 컨벤션에 맞는 폴더 구조(components, hooks, types, utils)가 생성되고, 옵션에 따라 API 레이어나 검색·목록 영역도 추가되며, 라우터 등록과 사이드바 메뉴 배치까지 자동으로 완료된다. 1초면 기초 작업이 끝나고, AI가 놓치던 부분이 구조적으로 사라졌다.</p>
               <span class="proj-label">Context</span>
-              <p>서비스가 PMF를 찾지 못한 상황이어서 신규 기능을 빠르게 테스트할 수 있는 환경이 필요했다. 이 도구를 만들면서 다른 단순 반복 작업들도 충분히 스캐폴딩으로 자동화할 수 있다고 생각했다. 현재 온보딩 페이지 스캐폴딩을 추가 작업 중이고, 마무리되면 비개발자나 다른 개발자도 간편하게 사용할 수 있도록 Claude·Codex skills로 구축할 예정이다.</p>
+              <p>신규 기능을 빠르게 만들어 시장 반응을 확인해야 하는 상황이어서 빠른 테스트 환경이 필요했다. 이후 온보딩 페이지 스캐폴딩까지 확장했고, Claude skills로 구축해 비개발자 직원에게 인수인계했다.</p>
             </div>
           </article>
 
@@ -661,7 +671,86 @@
     </div>
   </main>
 
+  <script src="companies.js"></script>
   <script>
+    // ── 회사 선택 ──
+    function selectCompany(key) {
+      const section = document.getElementById('motivation-section');
+      const text = document.getElementById('motivation-text');
+
+      if (!key || !companies[key]) {
+        section.style.display = 'none';
+        text.textContent = '';
+        reorderProjects(null);
+        // URL 파라미터 제거
+        history.replaceState(null, '', location.pathname);
+        return;
+      }
+
+      const company = companies[key];
+      text.textContent = company.motivation;
+      section.style.display = '';
+
+      // 프로젝트별 상세 레벨 적용
+      applyProjectLevels(company.projectLevels || null);
+
+      // 프로젝트 순서 재배치
+      reorderProjects(company.projectOrder || null);
+
+      // URL 파라미터 반영
+      const url = new URL(location);
+      url.searchParams.set('company', key);
+      history.replaceState(null, '', url);
+    }
+
+    function applyProjectLevels(levels) {
+      const projects = document.querySelectorAll('.proj');
+      if (!levels) {
+        // 레벨 미지정 시 기본 상세
+        projects.forEach(proj => {
+          proj.dataset.level = 'detailed';
+          const select = proj.querySelector('select');
+          if (select) select.value = 'detailed';
+        });
+        return;
+      }
+      projects.forEach((proj, idx) => {
+        const level = levels[idx] || 'detailed';
+        proj.dataset.level = level;
+        const select = proj.querySelector('select');
+        if (select) select.value = level;
+      });
+    }
+
+    function reorderProjects(order) {
+      if (!order) return;
+      const list = document.getElementById('project-list');
+      const projects = [...list.querySelectorAll('.proj')];
+      order.forEach(idx => {
+        if (projects[idx]) list.appendChild(projects[idx]);
+      });
+    }
+
+    // 초기화: 드롭다운 채우기 + URL 파라미터 처리
+    (function init() {
+      const select = document.getElementById('company-select');
+      Object.entries(companies).forEach(([key, val]) => {
+        const opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = val.name;
+        select.appendChild(opt);
+      });
+
+      // URL 파라미터로 자동 선택
+      const params = new URLSearchParams(location.search);
+      const companyKey = params.get('company');
+      if (companyKey && companies[companyKey]) {
+        select.value = companyKey;
+        selectCompany(companyKey);
+      }
+    })();
+
+    // ── 기존 빌더 기능 ──
     function setLevel(select) {
       const proj = select.closest('.proj');
       proj.dataset.level = select.value;
@@ -674,6 +763,9 @@
         if (select) select.value = level;
       });
     }
+
+    // 기본 상세 레벨로 초기화
+    setAllLevels('detailed');
 
     function moveProj(btn, dir) {
       const proj = btn.closest('.proj');
