@@ -112,20 +112,6 @@
     .company .role { font-size: 0.85rem; color: #666; margin-top: 2px; }
     .company .desc { font-size: 0.82rem; color: #999; margin-top: 1px; }
 
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 16px;
-      margin: 16px 0 8px;
-      padding: 12px 16px;
-      background: #f8f8f8;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      color: #666;
-    }
-    .stats span { white-space: nowrap; }
-    .stats strong { color: #222; font-weight: 600; }
-
     /* Project cards */
     .proj {
       padding: 24px 0;
@@ -168,6 +154,19 @@
       word-break: keep-all;
       line-height: 1.75;
     }
+    .proj ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+    .proj li {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.72;
+      word-break: keep-all;
+      margin-bottom: 6px;
+    }
+    .proj li:last-child { margin-bottom: 0; }
 
     /* GitHub repos section */
     .repo-grid {
@@ -234,12 +233,12 @@
       .divider { margin: 24px 0; }
       .introduce .lead { font-size: 0.95rem; }
       .introduce p { font-size: 0.88rem; line-height: 1.75; }
-      .stats { margin: 12px 0 6px; padding: 10px 12px; gap: 4px 10px; font-size: 0.8rem; }
       .proj-title { margin-bottom: 8px; }
       .proj-title h4 { font-size: 0.96rem; }
       .proj-title time { font-size: 0.74rem; }
       .proj-label { margin-top: 12px; margin-bottom: 2px; font-size: 0.64rem; }
       .proj p { font-size: 0.84rem; line-height: 1.62; }
+      .proj li { font-size: 0.82rem; line-height: 1.6; }
       .repo-grid { gap: 8px; }
       .repo-item { padding: 10px 12px; font-size: 0.8rem; }
       .timeline { font-size: 0.8rem; }
@@ -263,127 +262,159 @@
 
     <hr class="divider">
 
-    <section class="introduce">
-      <h2>Introduce<span class="dot">.</span></h2>
-      <p class="lead">이커머스 SaaS에서 <strong class="hl">1인 프론트엔드</strong>로 일하며, 기획부터 개발, 출시, 운영까지 제품이 만들어지는 전 과정을 직접 책임져왔습니다. 없던 기능을 빠르게 제품으로 만들고, 실제 사용자 흐름 안에서 개선해 출시하는 일을 반복해왔습니다. 저는 <strong class="hl">Zero to One</strong>이 낯선 개발자보다, 여러 번 반복해본 개발자에 가깝습니다.</p>
-      <p>처음에는 구현 속도를 높이는 것이 가장 중요한 역량이라고 생각했습니다. 하지만 AI를 깊게 활용할수록 구현 자체는 점점 덜 어려워졌고, 더 큰 문제는 <strong class="hl">반복적인 FE 작업 볼륨</strong>과 가설 검증 속도를 늦추는 구조라는 걸 분명히 보게 됐습니다. 실제로 AI를 활용한 큰 작업에서, 제가 모르는 것을 모른 채 잘못된 방향으로 밀어붙인 시행착오도 겪었습니다. 그 경험 이후로는 기능을 만드는 데서 그치지 않고, AI가 잘 작동하는 코드 구조와 작업 방식, 개발 환경을 정비하며 <strong class="hl">FE가 병목이 되지 않는 방향</strong>으로 일해왔습니다. 동시에 속도보다 <strong class="hl">이해와 판단 기준</strong>을 먼저 세우는 것이 더 중요하다는 점도 분명히 배웠습니다.</p>
-      <p>FE 병목을 줄이려다 보니 자연스럽게 <strong class="hl">백엔드 데이터 구조</strong>까지 다루게 됐습니다. 화면만 만들어서는 제품 개발 속도를 바꿀 수 없다고 생각했기 때문입니다. API 응답, 데이터 구조, 기능이 만들어지는 흐름 전체를 함께 보며 FE를 넘어 제품 개발 전반의 병목을 줄이는 방향으로 일해왔습니다. 저는 주어진 화면을 구현하는 프론트엔드 개발자가 아니라, 제품이 더 빠르게 만들어지고 더 자주 검증될 수 있도록 구조를 바꾸는 개발자입니다.</p>
-    </section>
-
-    <hr class="divider">
-
     <section><h2>Experience Overview<span class="dot">.</span></h2>
       <div class="company">
         <h3>(주)뭉클랩</h3>
         <p class="role">Frontend Developer · 2024.06 ~ 2026.03 (1년 10개월)</p>
         <p class="desc">이커머스 정산/순이익 분석 SaaS 「장사왕」 · 1인 프론트엔드</p>
       </div>
-      <div class="stats">
-        <span><strong>총 커밋 1,173+</strong> (cvb5758: 710 + suminlee-moonklabs: 463)</span>
-        <span><strong>기여 레포 8개</strong></span>
-        <span><strong>릴리즈 40+</strong></span>
-      </div>
     </section>
 
     <hr class="divider">
 
-    <section><h2>Project Detail<span class="dot">.</span></h2>
+    <section><h2>주요 기여<span class="dot">.</span></h2>
 
-      <!-- ① 현금 흐름 캘린더 — 첫 0→1 -->
       <article class="proj">
-        <div class="proj-title"><h4>현금 흐름 캘린더 개발</h4><time>2024.08 ~ 09</time></div>
-        <span class="proj-label">Why</span>
-        <p>이커머스 셀러들이 정산 일정을 엑셀로 직접 관리하고 있었다. 플랫폼별로 정산 주기가 다르고, 공휴일에 따라 입금일이 밀리면서 실제 현금 흐름을 파악하기 어려운 상태였다. 서비스 안에서 정산 일정을 자동으로 보여주면 이 문제를 해결할 수 있겠다고 판단했다.</p>
-        <span class="proj-label">How</span>
-        <p>캘린더 UI 위에 정산 데이터를 연동하고, 공휴일 API를 붙여서 실제 입금 예정일을 자동으로 계산하도록 만들었다. 반복 항목 등록, 엔트리 상세보기·수정, 월별 잔액 계산 등 셀러가 엑셀에서 하던 작업을 서비스 안에서 처리할 수 있게 했다. 이후 비회원도 사용할 수 있는 현금 흐름 계산기를 별도 앱으로 분리해 배포했다.</p>
-        <span class="proj-label">Context</span>
-        <p>입사 2개월차에 진행한 첫 신규 기능이었다. 기획부터 개발, 출시까지 혼자 담당했고, 약 한 달 동안 75건 이상의 커밋으로 완성했다.</p>
+        <div class="proj-title">
+          <h4>FE 병목을 줄이기 위해 구조를 바꾼 작업</h4>
+        </div>
+        <p>기능을 빠르게 만드는 것만으로는 제품 개발 속도를 바꾸기 어렵다고 생각했습니다. 실제로 병목은 화면 구현 자체보다 페이지마다 흩어진 조건 분기, 반복되는 스타일링, 복잡한 상태 검증처럼 개발과 QA 속도를 늦추는 구조에 더 많이 있었습니다. 그래서 기능 개발과 병행해 FE 구조를 공통화하고, 이후 변경과 검증이 쉬운 방향으로 정리해왔습니다.</p>
+
+        <span class="proj-label">대표 사례 — 요금제 구조 개편 / Feature Gating</span>
+        <p>플랜과 트랙에 따른 접근 조건이 여러 페이지에 흩어져 있어 신규 요금제 도입이나 정책 변경 때마다 여러 화면을 함께 수정해야 했습니다. 이를 줄이기 위해 <strong>Feature Gating 아키텍처</strong>를 설계하고, <strong>FeatureMatrix / evaluateFeatureAccess / PlanGuardRoute</strong>를 통해 페이지 인라인 분기를 라우트와 정책 중심 구조로 옮겼습니다. 이후에는 기능별 접근 정책을 한 곳에서 관리할 수 있게 되어 변경 비용이 낮아졌습니다.</p>
+
+        <span class="proj-label">대표 사례 — 스타일링 체계 정리</span>
+        <p>스타일 토큰과 공통 UI가 충분히 정리되지 않은 상태에서는 화면을 만들 때마다 비슷한 스타일링 판단을 반복해야 했고, <strong>styled / sx 중심 패턴</strong>도 계속 누적되고 있었습니다. 신규 코드와 정리하는 영역에서는 Tailwind와 디자인 토큰을 우선 적용하고, <strong>PageWrapper, Container, Loading, NoData</strong> 같은 반복 UI를 공통 컴포넌트로 재구성했습니다. 그 결과 화면별 중복 구현과 스타일링 비용을 줄일 수 있었습니다.</p>
+
+        <span class="proj-label">대표 사례 — mock data center / 분기 상태 재현</span>
+        <p><strong>mock data center와 분기 상태 재현 도구</strong>를 정비해, 복잡한 결제/연동 상태를 로컬에서 빠르게 재현할 수 있게 했습니다. AdsDiagnosis 영역도 API / component / hook / modal 구조로 분리하고 테스트 타입 설정까지 정리해, 이후 기능 확장과 회귀 검증이 쉬운 형태로 바꿨습니다.</p>
       </article>
 
-      <!-- ② 크롬 익스텐션 -->
       <article class="proj">
-        <div class="proj-title"><h4>크롬 익스텐션 — 소싱 유저 유입 채널 검증</h4><time>2025.03 ~</time></div>
-        <span class="proj-label">Why</span>
-        <p>소싱하는 사용자들을 서비스에 끌어들일 방법을 고민하고 있었다. 직접 소싱을 해보면서 불편한 점을 찾았고, 경쟁사들이 익스텐션으로 사용자를 확보하는 사례를 확인하면서 채널로 적합하다고 판단했다.</p>
-        <span class="proj-label">How</span>
-        <p>쿠팡·네이버에서 상품을 클릭하면 익스텐션 마진 계산기에 바로 주입되어 각 플랫폼 수수료가 적용된 예상 마진을 즉시 확인할 수 있게 만들었다. 발굴한 아이템을 서비스에서 저장·관리할 수 있게 연결하면 소싱 유저를 유입시킬 수 있다고 판단해 기획부터 개발까지 독립적으로 진행했다.</p>
-        <span class="proj-label">Result</span>
-        <p>최신 기준 1,000+ 다운로드를 기록했지만, 실제로 서비스에 유입되어 결제까지 이어지는 비율은 현저히 낮았다. 우리가 타겟하는 고객층이 아니었다는 결론이 나왔다.</p>
+        <div class="proj-title">
+          <h4>AI가 잘 작동하는 환경을 만든 작업</h4>
+        </div>
+        <p>AI를 단순히 코드 생성 도구로만 쓰기보다, 반복적인 FE 작업 볼륨을 줄이는 방향으로 활용해왔습니다. 다만 실제로는 코드베이스 구조와 규칙이 정리되어 있지 않으면 결과 품질이 쉽게 흔들렸습니다. 그래서 AI를 더 안정적으로 활용할 수 있도록 생성 규칙, 폴더 구조, 공통 패턴, 검증 장치를 함께 정비했습니다.</p>
+
+        <span class="proj-label">대표 사례 — Claude page scaffold command</span>
+        <p>새 페이지를 만들 때마다 폴더 생성, 라우터 등록, 메뉴 연결, 기본 구조 세팅을 반복하고 있었고, 이런 기초 작업은 번거롭지만 빠뜨리기 쉬운 영역이었습니다. 이를 줄이기 위해 <strong>Claude page scaffold command</strong>를 직접 구성해, 프로젝트 컨벤션에 맞는 페이지/컴포넌트/훅/API 구조를 명령으로 생성할 수 있게 했습니다. 반복적인 초기 작업을 구조로 고정해 새 기능을 더 빠르게 시작할 수 있는 환경을 만들었습니다.</p>
+
+        <span class="proj-label">대표 사례 — 스타일 경계 / 토큰 drift 점검</span>
+        <p>AI가 작업할 때 스타일 경계가 흐려지거나 토큰 사용 규칙이 깨지면 결과물이 쉽게 일관성을 잃었습니다. 이를 방지하기 위해 토큰 drift와 스타일 경계 위반을 확인하는 스크립트를 추가하고, mock data center도 dev/stg 환경에서 사용할 수 있게 정리했습니다. 생성 속도만 높이는 것이 아니라, 코드베이스가 쉽게 무너지지 않도록 관리하는 쪽에 더 집중했습니다.</p>
+
+        <span class="proj-label">대표 사례 — GTM / 트래킹 구조 분리</span>
+        <p>트래킹 관련 코드가 한 파일에 섞여 있던 시기에는 관심사가 뒤섞여 있어 수정과 확장이 모두 불편했습니다. 새로 추가하는 GTM 이벤트부터는 shared/tracking 구조와 도메인별 훅으로 분리하고, 이벤트 파라미터에도 타입을 걸어 관리했습니다. 이후에는 같은 형태의 패턴 안에서 작업할 수 있게 되어 반복적인 트래킹 추가와 수정이 훨씬 단순해졌습니다.</p>
       </article>
 
-      <!-- ③ GTM 트래킹 체계 분리 -->
       <article class="proj">
-        <div class="proj-title"><h4>GTM 트래킹 체계 분리</h4><time>2025.01</time></div>
-        <span class="proj-label">Why</span>
-        <p>GTM 트래킹을 도입할 때 기존 trackingHelper.ts에 코드를 추가했다. 이미 600줄이 넘는 파일이었는데, Mixpanel 초기화, Hotjar 설정, 해싱 함수 등이 한 파일에 섞여 있는 상태에서 회원가입·결제·쇼핑몰 연동 같은 GTM 이벤트까지 들어가면서 성격이 다른 도메인 로직이 계속 누적되는 구조가 됐다. 특히 AI로 트래킹 코드를 작업할 때가 걸렸다. 인간 입장에서는 파일 하나에 다 모여있는 게 스크롤만 하면 되니까 오히려 편할 수도 있는데, AI한테는 관심사가 섞여 있는 파일이 오히려 방해가 됐다.</p>
-        <span class="proj-label">How</span>
-        <p>GTM 도입 초기에 shared/tracking/ 구조를 따로 설계했다. GTM 통신은 하나의 클라이언트로 격리하고, 도메인별로 커스텀 훅을 분리해서 이벤트 파라미터에 타입을 걸어두는 방식이었다. 기존 코드를 한꺼번에 옮기는 대신, 새로 추가하는 트래킹만 이 구조로 작성하고 기존 코드는 여유가 될 때 이관하는 전략을 택했다.</p>
-        <span class="proj-label">Result</span>
-        <p>실제로 효과를 체감한 건 GA4 이벤트 15개를 추가할 때였다. 분리된 훅 파일에는 동일한 형태의 함수만 있으니까, AI한테 "새 이벤트 하나 추가해"라고 했을 때 틀릴 수가 거의 없는 구조가 됐다. 이 경험이 이후 스타일링 환경이나 요금제 구조를 정비할 때도 같은 기준으로 판단하게 된 출발점이었다.</p>
+        <div class="proj-title">
+          <h4>Zero to One을 반복해온 작업</h4>
+        </div>
+        <p>이커머스 SaaS에서 1인 프론트엔드로 일하며, 기획부터 개발, 출시, 운영까지 신규 기능이 실제 서비스 안에서 동작하도록 만드는 일을 반복해왔습니다. 단순히 화면을 추가하는 데서 그치지 않고, 사용자가 데이터를 보고 다음 행동까지 이어갈 수 있는 흐름으로 기능을 설계하는 데 집중했습니다.</p>
+
+        <span class="proj-label">대표 사례 — 광고 기능 확장</span>
+        <p>광고 영역을 분석 / 캠페인 / 진단 흐름으로 확장하고, AI 채팅과 코칭노트 기능까지 연결했습니다. 단일 대시보드를 추가한 것이 아니라 광고 성과를 확인하고, 문제를 해석하고, 다음 액션으로 이어질 수 있는 흐름을 제품 안에서 구성한 작업이었습니다.</p>
+
+        <span class="proj-label">대표 사례 — 수익성 분석 기능</span>
+        <p>상품별 순이익, 로켓그로스 순이익 계산기, 데이터 조회 기능 등 수익성 분석 기능을 개발했습니다. DataGrid 기반 그룹 분석, 전체화면, 컬럼 접기 등 복잡한 데이터 조회 경험도 함께 개선해, 데이터를 보는 데 그치지 않고 실제로 해석 가능한 형태로 바꾸려 했습니다.</p>
+
+        <span class="proj-label">대표 사례 — 크롬 익스텐션</span>
+        <p>소싱 사용자 유입 채널을 검증하기 위해 크롬 익스텐션을 기획·개발했습니다. 실제 사용 흐름 안에서 문제를 확인하고, 서비스 외부 접점에서 유저를 데려오는 실험을 직접 해본 작업이었습니다. 결과적으로 다운로드는 확보했지만 결제 전환은 낮았고, 이를 통해 우리가 타겟하는 고객층과의 간극도 확인할 수 있었습니다.</p>
+
+        <span class="proj-label">대표 사례 — 현금 흐름 캘린더</span>
+        <p>입사 초기에는 플랫폼별 정산 일정과 공휴일에 따라 달라지는 입금일을 계산해 보여주는 현금 흐름 캘린더도 직접 기획하고 개발했습니다. 반복 항목 관리와 월별 잔액 확인까지 서비스 안에서 처리할 수 있게 했고, 입사 초반부터 기획-개발-출시 전 과정을 독립적으로 맡았던 경험이 이후 작업 방식의 기반이 됐습니다.</p>
       </article>
 
-      <!-- ④ 쿠팡 광고 분석 대시보드 — 후기 0→1 -->
       <article class="proj">
-        <div class="proj-title"><h4>쿠팡 광고 분석 대시보드 (분석 · 캠페인 · 진단)</h4><time>2025.12 ~ 2026.02</time></div>
-        <span class="proj-label">Why</span>
-        <p>셀러들이 쿠팡 광고를 운영하면서 광고비 대비 수익성을 별도 엑셀로 추적하고 있었다. 캠페인별 성과를 한눈에 보기 어려웠고, 어떤 캠페인이 적자인지 판단하려면 수동 계산이 필요했다. 서비스 안에서 광고 수익성을 바로 확인할 수 있으면 셀러의 의사결정 속도가 빨라질 거라고 판단했다.</p>
-        <span class="proj-label">How</span>
-        <p>분석(캠페인 목록 + 핵심 지표), 캠페인(키워드 분석 + 검색/비검색 통계), 진단(수익성 상태 분류 + 개선 가이드) 3개 페이지로 구성했다. AG-Grid 기반 키워드 데이터 테이블, 검색 대 비검색 비교 차트, RED/YELLOW/GREEN/GRAY 상태 지표로 캠페인 수익성을 시각화했다.</p>
-        <span class="proj-label">Context</span>
-        <p>이 작업은 스타일링 환경 재구축(Tailwind 전환), 요금제 구조 개편과 같은 시기에 병행했다. 환경이 정리되면서 신규 페이지를 만드는 속도가 이전과 체감될 만큼 달랐고, 96건의 커밋으로 3개 페이지를 완성했다.</p>
+        <div class="proj-title">
+          <h4>FE 밖으로 확장해 데이터 구조까지 다룬 작업</h4>
+        </div>
+        <p>FE 병목을 줄이려다 보니 자연스럽게 API 응답과 데이터 구조까지 함께 보게 됐습니다. 화면 구현 속도와 정확도를 높이려면, 프론트에서 실제로 필요한 기준에 맞게 응답 구조와 도메인 모델도 함께 정리되어야 한다고 생각했기 때문입니다.</p>
+
+        <span class="proj-label">대표 사례 — vendorId / DTO / 도메인 모델 정리</span>
+        <p>광고 캠페인 목록과 진단 목록에서 실제로 필요한 데이터를 기준으로 <strong>vendorId</strong>를 API 응답에 추가하고, 관련 DTO와 도메인 모델도 함께 수정했습니다. 단순히 화면에서 우회 처리하는 대신, 프론트와 백엔드가 같은 기준으로 데이터를 다룰 수 있게 맞춘 작업이었습니다.</p>
+
+        <span class="proj-label">대표 사례 — SubAccountRequest CRUD</span>
+        <p>광고 계정 연동 기능 개발 과정에서 <strong>SubAccountRequest</strong> 테이블과 CRUD를 직접 추가했습니다. 동시에 <strong>originVendorId</strong> 중복이나 활성 상태 레코드 조회 문제도 수정해, 기능이 동작하는 수준을 넘어서 데이터 정합성까지 맞추려 했습니다.</p>
+
+        <span class="proj-label">대표 사례 — 관리자 API 문서화</span>
+        <p>관리자용 부계정 신청 관리 API 문서와 DTO도 함께 정리했습니다. 기능 구현에 필요한 구조를 맞추는 것뿐 아니라, 이후 다른 사람이 같은 맥락으로 이어서 작업할 수 있는 기준도 남기려 했습니다.</p>
       </article>
 
-      <!-- ⑤ 스타일링 환경 재구축 -->
       <article class="proj">
-        <div class="proj-title"><h4>스타일링 환경 재구축 — MUI/Emotion에서 Tailwind 전환</h4><time>2025.12 ~ 2026.03</time></div>
-        <span class="proj-label">Why</span>
-        <p>AI로 UI 작업을 했을 때 히트율이 높지 않았다. 스타일 토큰화가 전혀 되어 있지 않았고 공통 컴포넌트도 정리되지 않은 것이 많았다. 이 상태에서 AI가 작업을 진행하면, 일관성 없는 스타일링 구조를 참조하면서 컨텍스트가 오염됐고 결과물 퀄리티가 계속 떨어졌다. AI가 완성도 높은 결과를 내놓으려면 코드 환경 자체가 정돈되어 있어야 한다고 판단했고, 스타일링 체계를 먼저 고치기로 했다.</p>
-        <span class="proj-label">Decision</span>
-        <p>기반을 MUI/Emotion에서 Tailwind로 전환한 이유는 몇 가지 있었다. MUI/Emotion 위에 스타일링 환경을 구축하면 나중에 되돌리기 어려운 기술부채가 된다고 봤다. MUI 자체도 AI와 궁합이 좋지 않다고 생각했다. Tailwind 기반으로 전환하기로 결정했다.</p>
-        <span class="proj-label">Result</span>
-        <p>스타일 토큰화와 공통 컴포넌트 정리를 진행하면서 점진적으로 적용해나갔다. 어느 정도 마무리된 시점에서 피그마 MCP를 사용했을 때 히트율이 체감될 만큼 올라갔다.</p>
-        <p>다만 MUI/Emotion을 전부 걷어내지는 못했다. 최대한 작업한 결과가 MUI + Tailwind 혼용 수준이었지만, 골자는 Tailwind로 옮겼고 AI 레버리지도 크게 올라 만족스러운 결과를 얻었다. 최종적으로는 토큰과 공통 컴포넌트를 Pencil이나 Stitch에 넣어 디자이너 공수까지 줄이고 싶었지만, 거기까지는 도달하지 못했다.</p>
-      </article>
-
-      <!-- ⑥ 요금제 구조 개편 -->
-      <article class="proj">
-        <div class="proj-title"><h4>요금제 구조 개편 · 결제 시스템 전환</h4><time>2026.01 ~ 03</time></div>
-        <span class="proj-label">Why</span>
-        <p>요금제 체크 로직이 13개 페이지에 분산되어 있었다. 코드량은 크지 않았지만 관리 포인트가 흩어져 있어서, AI로 작업할 때 관련 없는 코드까지 컨텍스트에 들어와 원하는 퀄리티가 나오지 않았다. 신규 요금제가 추가되면 레거시와 함께 관리해야 하는데, 이 상태로 가면 AI 활용 효율이 더 떨어지고 이후 개편도 어려워질 거라고 판단해 결제 전환 전에 먼저 구조를 정리했다.</p>
-        <span class="proj-label">How</span>
-        <p>기능별 접근 정책을 기능별 접근 설정 한 곳에 선언하고, 라우트 레벨에서 자동 차단하는 구조로 바꿨다. 페이지에서 요금제를 직접 판단하던 코드가 없어졌고, 새 요금제 추가 시 매핑 하나만 수정하면 됐다. 정리 후에는 원하는 동작을 프롬프트에 적으면 원샷으로 작업이 됐다.</p>
-        <p>결제 PG 전환에서 가장 중요했던 건 이관 작업 중에도 다른 기능 릴리즈가 막히지 않는 것이었다. 당장 가장 빠르게 할 수 있는 방법이 환경변수로 결제 시스템을 분리하는 거였고, 최선인지는 모르겠지만 실제로 전환 기간 동안 신기능 릴리즈에 문제가 없었다. 달리는 차에서 바퀴를 갈아끼운 게 아니라, 차를 두 대 굴린 것에 가깝다.</p>
-      </article>
-
-      <!-- ⑦ 페이지 스캐폴딩 도구 -->
-      <article class="proj">
-        <div class="proj-title"><h4>페이지 스캐폴딩 도구</h4><time>2026.03 ~</time></div>
-        <span class="proj-label">Why</span>
-        <p>새 페이지를 만들 때 폴더 생성, 기초 컴포넌트 구축, 라우터 등록, 사이드바 메뉴 적용까지 해야 하는데, AI한테 "새 페이지 만들어줘"라고 하면 다른 페이지를 참조해서 폴더와 파일은 만들지만, 라우터에 등록하거나 메뉴에 추가해야 한다는 것까지는 생각하지 못할 때가 종종 있었다. 직접 하기엔 어렵지 않지만 번거로웠다. AI가 기존 코드만 보고 라우터·메뉴 등록 패턴까지 자연스럽게 파악할 수 있도록 코드 구조를 정비하는 방법도 있었지만, 그 방향에 확신이 들지 않았고 얻는 것에 비해 리소스가 크다고 판단했다.</p>
-        <span class="proj-label">How</span>
-        <p>AI와 해결 방법을 의논하다 스캐폴딩이라는 방식을 확인하고 적용했다. 명령어 하나로 컨벤션에 맞는 폴더 구조(components, hooks, types, utils)가 생성되고, 옵션에 따라 API 레이어나 검색·목록 영역도 추가되며, 라우터 등록과 사이드바 메뉴 배치까지 자동으로 완료된다. 1초면 기초 작업이 끝나고, AI가 놓치던 부분이 구조적으로 사라졌다.</p>
-        <span class="proj-label">Context</span>
-        <p>신규 기능을 빠르게 만들어 시장 반응을 확인해야 하는 상황이어서 빠른 테스트 환경이 필요했다. 이후 온보딩 페이지 스캐폴딩까지 확장했고, Claude skills로 구축해 비개발자 직원에게 인수인계했다.</p>
+        <div class="proj-title">
+          <h4>QA, 문서화, 핸드오프</h4>
+        </div>
+        <p>기능을 빠르게 만드는 것만큼, 운영 가능한 형태로 남기고 팀이 같은 기준으로 검증할 수 있게 하는 일도 함께 맡았습니다.</p>
+        <ul>
+          <li>Promise Chain 기반 API 호출 패턴을 <code>async/await</code>와 로딩 UI 중심으로 정리했습니다.</li>
+          <li>AG-Grid, 페이지네이션, height, strict mode, lint-staged 등 운영성 이슈를 지속적으로 정리했습니다.</li>
+          <li>QA 테스트 케이스, 핸드오프 문서, 리팩토링 결과 문서, API 매핑 문서를 작성했습니다.</li>
+          <li>디자인 시스템 문서, Token Catalog, Usage Guidelines, Component Spacing Spec을 정리했습니다.</li>
+        </ul>
       </article>
 
     </section>
 
     <hr class="divider">
 
-    <!-- Additional Contributions -->
     <section><h2>Additional Contributions<span class="dot">.</span></h2>
-      <table class="timeline">
-        <tr><th>시기</th><th>작업</th><th>배경</th></tr>
-        <tr><td>2024.11</td><td>초기 로딩 성능 개선</td><td>메인 번들 10MB → 2MB, React.lazy 기반 코드 스플리팅</td></tr>
-        <tr><td>2024.12~2025.01</td><td>DataGrid 그룹화/프리셋/컬럼 모듈화</td><td>엑셀 다운로드 없이 그리드에서 직접 그룹 분석</td></tr>
-        <tr><td>2025.01~02</td><td>DataGrid 전체화면 · 컬럼 접기</td><td>position: fixed 방식으로 그리드 상태 유지하며 전체화면 전환</td></tr>
-        <tr><td>2025.02~03</td><td>상품별 순이익 페이지 신규 개발</td><td>Master-Detail 그리드, 마진 상태 시각화</td></tr>
-        <tr><td>2025.03~04</td><td>로켓그로스 순이익 계산기</td><td>그로스 셀러 전용 수수료 구조 반영한 마진 계산</td></tr>
-        <tr><td>2025.04~11</td><td>매입원가 페이지 간 컨텍스트 연결</td><td>5개 페이지에서 "발견 즉시 입력" 동선</td></tr>
-        <tr><td>2025.07</td><td>숫자 0과 미입력 구분 문제 추적 · 수정</td><td>공통 유틸 falsy 판정 오류, 전체 숫자 필드 정비</td></tr>
-        <tr><td>2026.01</td><td>로딩 경험 체계 정비</td><td>NProgress + 스켈레톤 + 콘텐츠 영역 로딩 통일</td></tr>
-        <tr><td>2026.03</td><td>분기 검증용 결제 · 연동 데이터셋 구축</td><td>요금제/연동 상태 조합을 로컬에서 즉시 재현</td></tr>
-      </table>
+      <div class="cap-group">
+        <h4>프로덕트 작업<span class="dot">.</span></h4>
+        <ul>
+          <li>현금 흐름 캘린더를 기획·개발해 플랫폼별 정산 일정과 입금일을 서비스 안에서 확인할 수 있게 했습니다.</li>
+          <li>광고 기능을 분석 / 캠페인 / 진단 흐름으로 확장하고, AI 채팅과 코칭노트 기능까지 연결했습니다.</li>
+          <li>결제 도메인을 작업했고, 추천인·쿠폰·혜택관리까지 포함해 결제 이후 사용자 흐름으로 확장했습니다.</li>
+          <li>상품별 순이익, 로켓그로스 순이익 계산기, 데이터 조회 기능 등 수익성 분석 기능을 개발했습니다.</li>
+          <li>DataGrid 기반 그룹 분석, 전체화면, 컬럼 접기 등 복잡한 데이터 조회 경험을 개선했습니다.</li>
+          <li>크롬 익스텐션을 기획·개발해 소싱 유입 채널을 검증했습니다.</li>
+        </ul>
+      </div>
+
+      <div class="cap-group">
+        <h4>구조 개선 작업<span class="dot">.</span></h4>
+        <ul>
+          <li>플랜/트랙별 접근 정책을 중앙화한 Feature Gating 아키텍처를 설계하고, 페이지별 인라인 접근 조건을 구조로 치환했습니다.</li>
+          <li>디자인 토큰, 공통 UI primitives, Tailwind 기반 스타일 체계를 도입해 반복적인 스타일링 비용을 낮췄습니다.</li>
+          <li><code>PageWrapper</code>, <code>Container</code>, <code>Loading</code>, <code>NoData</code> 등 반복 UI를 공통 컴포넌트로 재구성했습니다.</li>
+          <li>AdsDiagnosis 영역의 API / component / hook / modal 구조를 분리하고 테스트 타입 설정을 정리했습니다.</li>
+          <li>GTM/트래킹 구조를 분리하고, mock data center와 분기 검증용 데이터셋을 정비했습니다.</li>
+        </ul>
+      </div>
+
+      <div class="cap-group">
+        <h4>AI 활용 / 개발환경 작업<span class="dot">.</span></h4>
+        <ul>
+          <li>프로젝트 컨벤션에 맞는 새 페이지/컴포넌트/훅/API를 생성할 수 있는 Claude page scaffold command를 직접 구성했습니다.</li>
+          <li>토큰 drift, 스타일 경계 위반 등을 확인하는 스크립트를 추가하고, mock data center를 dev/stg 환경에서 사용할 수 있게 정리했습니다.</li>
+          <li>AI가 더 안정적으로 작업할 수 있도록 폴더 구조, 테스트 타입, 공통 패턴을 지속적으로 정비했습니다.</li>
+          <li>리팩토링 결과, QA 기준, 핸드오프 문서를 정리해 같은 기준으로 작업할 수 있는 환경을 만들었습니다.</li>
+        </ul>
+      </div>
+
+      <div class="cap-group">
+        <h4>데이터 / 백엔드 연계 작업<span class="dot">.</span></h4>
+        <ul>
+          <li>광고 계정 연동 구조와 <code>SubAccountRequest</code> CRUD를 구현했습니다.</li>
+          <li>캠페인/진단 API 응답에 <code>vendorId</code>를 추가하고 DTO와 도메인 모델을 수정했습니다.</li>
+          <li><code>originVendorId</code> 중복, 활성 상태 레코드 조회 등 데이터 정합성 문제를 수정했습니다.</li>
+          <li>관리자용 부계정 신청 관리 API 문서와 DTO를 정리해 이후 운영 기준도 함께 맞췄습니다.</li>
+          <li>로켓그로스/광고 스크래핑 및 엑셀 업로드 자동화 기능을 구현하고, ExcelJobChecker와 DB 적재 구조를 구성했습니다.</li>
+          <li>광고 정산 스크래퍼와 ETL 흐름에서 <code>originVendorId</code> 추출, 필드 정리, 업로드 구조 변경을 반영했습니다.</li>
+          <li>retry / backoff / timeout 로직과 테스트 스크립트를 추가해 데이터 수집 흐름의 안정성을 높였습니다.</li>
+          <li>세션 복구, 인증, 선택자 변경, serverless 배포 이슈 등을 정리해 실제 운영 중 발생하던 수집 문제를 줄였습니다.</li>
+        </ul>
+      </div>
+
+      <div class="cap-group">
+        <h4>운영성 / QA / 문서화 작업<span class="dot">.</span></h4>
+        <ul>
+          <li>Promise Chain 기반 API 호출 패턴을 <code>async/await</code>와 로딩 UI 중심으로 정리했습니다.</li>
+          <li>AG-Grid, 페이지네이션, height, strict mode, lint-staged 등 운영성 이슈를 지속적으로 정리했습니다.</li>
+          <li>QA 테스트 케이스, 핸드오프 문서, 리팩토링 결과 문서, API 매핑 문서를 작성했습니다.</li>
+          <li>디자인 시스템 문서, Token Catalog, Usage Guidelines, Component Spacing Spec을 정리했습니다.</li>
+        </ul>
+      </div>
     </section>
 
 
