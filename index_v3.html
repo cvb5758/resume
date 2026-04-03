@@ -68,45 +68,23 @@
 
     .dot { color: #2563eb; }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 132px 1fr;
-      gap: 0 28px;
-      align-items: center;
-    }
-    .hero-photo {
-      width: 132px;
-      height: 170px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      background: #f8fafc;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-    }
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .hero-copy h1 {
+    .hero h1 {
       font-size: 2.3rem;
       font-weight: 800;
       line-height: 1.28;
       letter-spacing: -0.04em;
       word-break: keep-all;
     }
-    .hero-copy .contact {
+    .hero .contact {
       margin-top: 16px;
       font-size: 0.88rem;
       color: #888;
     }
-    .hero-copy .contact a {
+    .hero .contact a {
       color: #888;
       text-decoration: none;
     }
-    .hero-copy .contact a:hover {
+    .hero .contact a:hover {
       color: #2563eb;
     }
 
@@ -211,15 +189,7 @@
     }
 
     @media (max-width: 640px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-      .hero-photo {
-        width: 120px;
-        height: 154px;
-      }
-      .hero-copy h1 {
+      .hero h1 {
         font-size: 2rem;
       }
     }
@@ -341,35 +311,12 @@
     </div>
 
     <div class="hero">
-      <div class="hero-photo">
-        <img src="profile.jpeg" alt="이수민 프로필 사진">
-      </div>
-      <div class="hero-copy">
-        <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FE<br>이수민입니다<span class="dot">.</span></h1>
-        <p class="contact">
-          <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
-          <a href="https://github.com/cvb5758">github.com/cvb5758</a>
-        </p>
-      </div>
+      <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FE<br>이수민입니다<span class="dot">.</span></h1>
+      <p class="contact">
+        <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
+        <a href="https://github.com/cvb5758">github.com/cvb5758</a>
+      </p>
     </div>
-
-    <hr class="divider">
-
-    <section class="introduce">
-      <h2>지원 동기<span class="dot">.</span></h2>
-      <p>
-        PMF를 탐색하는 단계에서 1인 프론트엔드로 기획 참여부터 출시·운영까지 반복하며, 가설을 빠르게 화면으로 옮기고 검증하는 과정을 계속해왔습니다. 백엔드 전체를 깊이 다룬 경험은 아직 부족하지만, 화면에 필요한 API와 데이터 구조를 직접 맞춰온 경험이 있고, 프로덕트 엔지니어로 범위를 넓혀가고 싶습니다. 널스빌리지를 운영하면서 B2B SaaS MVP에 착수하는 구조가, 제가 해온 '만들고 검증하고 다시 만드는' 방식과 맞닿아 있다고 느껴 지원합니다.
-      </p>
-    </section>
-
-    <hr class="divider">
-
-    <section class="introduce">
-      <h2>AI 활용 경험<span class="dot">.</span></h2>
-      <p>
-        AI는 코드 생성보다 구조와 규칙을 먼저 정리한 뒤 활용하는 편입니다. 페이지 초기 구조 자동 생성 도구와 스타일 규칙 검증 장치를 만들어, AI로 작업해도 결과가 흔들리지 않는 환경을 만들었습니다. Claude Code, Codex, OpenCode를 병행하며 구현·리팩터링·문서화에 사용하고 있고, 이력서와 경력기술서 역시 Claude와 함께 작성·검토했습니다.
-      </p>
-    </section>
 
     <hr class="divider">
 
