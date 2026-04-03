@@ -68,45 +68,23 @@
 
     .dot { color: #2563eb; }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 132px 1fr;
-      gap: 0 28px;
-      align-items: center;
-    }
-    .hero-photo {
-      width: 132px;
-      height: 170px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      background: #f8fafc;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-    }
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .hero-copy h1 {
+    .hero h1 {
       font-size: 2.3rem;
       font-weight: 800;
       line-height: 1.28;
       letter-spacing: -0.04em;
       word-break: keep-all;
     }
-    .hero-copy .contact {
+    .hero .contact {
       margin-top: 16px;
       font-size: 0.88rem;
       color: #888;
     }
-    .hero-copy .contact a {
+    .hero .contact a {
       color: #888;
       text-decoration: none;
     }
-    .hero-copy .contact a:hover {
+    .hero .contact a:hover {
       color: #2563eb;
     }
 
@@ -211,15 +189,7 @@
     }
 
     @media (max-width: 640px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-      .hero-photo {
-        width: 120px;
-        height: 154px;
-      }
-      .hero-copy h1 {
+      .hero h1 {
         font-size: 2rem;
       }
     }
@@ -336,21 +306,17 @@
 <body>
   <main>
     <div class="actions" style="gap:8px;">
+      <a class="nav-btn" href="index.html">대표 버전 보기</a>
       <a class="nav-btn" href="career_detail_ai_native.html">경력기술서 보기</a>
       <button class="print-btn" onclick="window.print()">PDF로 저장</button>
     </div>
 
     <div class="hero">
-      <div class="hero-photo">
-        <img src="profile.jpeg" alt="이수민 프로필 사진">
-      </div>
-      <div class="hero-copy">
-        <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FE<br>이수민입니다<span class="dot">.</span></h1>
-        <p class="contact">
-          <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
-          <a href="https://github.com/cvb5758">github.com/cvb5758</a>
-        </p>
-      </div>
+      <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FE<br>이수민입니다<span class="dot">.</span></h1>
+      <p class="contact">
+        <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
+        <a href="https://github.com/cvb5758">github.com/cvb5758</a>
+      </p>
     </div>
 
     <hr class="divider">
@@ -389,6 +355,7 @@
             <li>FeatureMatrix / evaluateFeatureAccess / PlanGuardRoute 기반의 Feature Gating 아키텍처를 설계해 페이지 인라인 분기를 라우트·정책 중심 구조로 옮기고, 검색/목록 페이지 템플릿과 공통 컴포넌트(PageWrapper, Loading, NoData)를 정리해 신규 페이지 build 비용을 줄였습니다.</li>
             <li>Claude Code 기반 page scaffold command로 폴더 생성·라우터 등록·메뉴 연결·기본 구조 세팅을 자동화하고, 스타일 토큰 drift 점검 스크립트와 mock data center를 정비해 AI 작업의 일관성을 확보했습니다.</li>
             <li>광고 캠페인 API에 프론트에서 필요한 식별자를 추가하고 관련 DTO·도메인 모델을 수정했고, 부계정 연동 기능에서는 테이블 설계와 CRUD를 직접 구현해 프론트와 백엔드가 같은 기준으로 데이터를 다룰 수 있게 맞췄습니다.</li>
+            <li>이 외에도 PMF를 탐색하고 유지보수하는 과정 전반의 기획 논의에 참여하며, 프론트엔드 개발을 주도했습니다.</li>
           </ul>
           <div class="skill-tags">
             <span>React</span><span>TypeScript</span><span>Next.js</span><span>React Query</span><span>Tailwind CSS</span><span>Claude Code</span><span>Codex</span><span>OpenCode</span>
