@@ -68,23 +68,45 @@
 
     .dot { color: #2563eb; }
 
-    .hero h1 {
+    .hero {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 0 28px;
+      align-items: center;
+    }
+    .hero-photo {
+      width: 132px;
+      height: 170px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-copy h1 {
       font-size: 2.3rem;
       font-weight: 800;
       line-height: 1.28;
       letter-spacing: -0.04em;
       word-break: keep-all;
     }
-    .hero .contact {
+    .hero-copy .contact {
       margin-top: 16px;
       font-size: 0.88rem;
       color: #888;
     }
-    .hero .contact a {
+    .hero-copy .contact a {
       color: #888;
       text-decoration: none;
     }
-    .hero .contact a:hover {
+    .hero-copy .contact a:hover {
       color: #2563eb;
     }
 
@@ -189,7 +211,15 @@
     }
 
     @media (max-width: 640px) {
-      .hero h1 {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .hero-photo {
+        width: 120px;
+        height: 154px;
+      }
+      .hero-copy h1 {
         font-size: 2rem;
       }
     }
@@ -311,11 +341,16 @@
     </div>
 
     <div class="hero">
-      <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FrontEnd<br>이수민입니다<span class="dot">.</span></h1>
-      <p class="contact">
-        <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
-        <a href="https://github.com/cvb5758">github.com/cvb5758</a>
-      </p>
+      <div class="hero-photo">
+        <img src="profile.jpeg" alt="이수민 프로필 사진">
+      </div>
+      <div class="hero-copy">
+        <h1>가설검증 속도를 최대 10배 끌어올린<br>AI Native FrontEnd<br>이수민입니다<span class="dot">.</span></h1>
+        <p class="contact">
+          <a href="mailto:cvb575859@gmail.com">cvb575859@gmail.com</a> · 010-6515-8230 ·
+          <a href="https://github.com/cvb5758">github.com/cvb5758</a>
+        </p>
+      </div>
     </div>
 
     <hr class="divider">
