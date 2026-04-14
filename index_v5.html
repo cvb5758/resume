@@ -175,6 +175,16 @@
       word-break: keep-all;
       line-height: 1.75;
     }
+    .exp-right .competency-label {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: #333;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      padding-left: 10px;
+      border-left: 3px solid #9ca3af;
+      line-height: 1.25;
+    }
     .exp-right .role-list {
       list-style: disc;
       padding-left: 18px;
@@ -186,6 +196,10 @@
       margin-bottom: 10px;
       word-break: keep-all;
       line-height: 1.75;
+    }
+    .exp-right .role-list .flow-step {
+      display: block;
+      margin-top: 4px;
     }
     .exp-right .stats {
       display: flex;
@@ -319,17 +333,19 @@
       .hero-copy .contact { margin-top: 8px; font-size: 0.72rem; }
       section > h2 { margin-bottom: 12px; }
       .divider { margin: 17px 0; }
-      .introduce .lead { font-size: 0.86rem; line-height: 1.54; letter-spacing: 0.006em; }
-      .introduce p { font-size: 0.79rem; line-height: 1.52; margin-bottom: 9px; letter-spacing: 0.008em; }
-      .exp-block { grid-template-columns: 164px 1fr; gap: 0 24px; margin-bottom: 18px; }
+      .introduce .lead { font-size: 0.86rem; line-height: 1.58; letter-spacing: 0.006em; }
+      .introduce p { font-size: 0.79rem; line-height: 1.58; margin-bottom: 10px; letter-spacing: 0.008em; }
+      .exp-block { grid-template-columns: 164px 1fr; gap: 0 24px; margin-bottom: 20px; }
       .exp-left h3 { font-size: 1.03rem; }
       .exp-left .role { font-size: 0.79rem; }
       .exp-left .period { font-size: 0.75rem; }
-      .exp-right .product { font-size: 0.78rem; margin-bottom: 11px; line-height: 1.56; }
-      .exp-right .role-list { margin-bottom: 11px; }
-      .exp-right .role-list li { font-size: 0.72rem; margin-bottom: 8px; line-height: 1.5; letter-spacing: 0.012em; }
+      .exp-right .product { font-size: 0.78rem; margin-bottom: 10px; line-height: 1.58; }
+      .exp-right .competency-label { font-size: 0.82rem; margin: 0 0 9px; padding-left: 8px; border-left-width: 2px; letter-spacing: -0.02em; }
+      .exp-right .role-list { margin-bottom: 12px; }
+      .exp-right .role-list li { font-size: 0.72rem; margin-bottom: 10px; line-height: 1.58; letter-spacing: 0.012em; }
+      .exp-right .role-list .flow-step { margin-top: 2px; }
       .exp-right .stats { gap: 3px 10px; margin-bottom: 8px; font-size: 0.75rem; }
-      .skill-tags { gap: 3px; }
+      .skill-tags { gap: 4px; margin-top: 6px; }
       .skill-tags span { font-size: 0.68rem; padding: 1px 7px; }
       .cap-group { margin-bottom: 18px; }
       .cap-group h4 { font-size: 0.9rem; margin-bottom: 6px; }
@@ -369,16 +385,16 @@
     <section class="introduce">
       <h2>Introduce<span class="dot">.</span></h2>
       <p class="lead">
-        저는 PMF를 찾는 이커머스 SaaS에서 1인 프론트엔드로 일하며, <strong class="hl">기획 논의부터 개발, 출시, 운영까지 제품이 만들어지는 전 과정을 반복</strong>해왔습니다. 제가 일해온 방식은 단순히 화면을 빨리 만드는 것이 아니라, 다음 가설을 더 빠르고 안정적으로 검증할 수 있도록 구조와 기준을 함께 남기는 것에 가깝습니다.
+        저는 PMF를 찾는 이커머스 SaaS에서 1인 프론트엔드로 일하며, <strong class="hl">정제되지 않은 요구사항을 실제 서비스 기능으로 만들고 검증 가능한 화면으로 바꾸는 일</strong>을 반복해왔습니다. 기획 논의부터 개발, 출시, 운영까지 제품이 만들어지는 전 과정을 보며, 단순히 화면을 구현하는 것보다 다음 가설을 더 빠르게 확인할 수 있는 상태를 만드는 데 집중해왔습니다.
       </p>
       <p>
-        처음에는 요금제·권한 조건이 페이지마다 흩어져 있었고, 새 화면을 만들 때마다 기본 구조와 반복 UI, 스타일 판단, 복잡한 상태 검증을 다시 맞춰야 했습니다. 기능이 늘어날수록 작은 변경도 여러 화면에 영향을 주고, 검증해야 할 케이스도 함께 늘어나는 문제가 있었습니다. 그래서 <strong class="hl">요금제·권한 규칙, 페이지 기본 구조, 반복 UI, 스타일 시스템, 검증용 테스트 데이터 환경</strong>을 정리해 새 요구사항이 들어와도 같은 기준 안에서 시작하고 변경하고 검증할 수 있는 상태로 바꿔왔습니다.
+        요구사항이 늘어날수록 FE 안의 반복 비용도 함께 커졌습니다. 그래서 요금제·권한 규칙, 페이지 기본 구조, 반복 UI, 스타일 시스템, 검증용 테스트 데이터 환경처럼 <strong class="hl">다음 작업의 시작 비용과 검증 비용을 줄이는 구조</strong>를 함께 정리해왔습니다.
       </p>
       <p>
-        그 과정에서 광고 분석·캠페인·진단, 결제·쿠폰·혜택, 수익성 분석, 복잡한 데이터 조회, 크롬 익스텐션, 엑셀 기반 가설을 GraphQL 대시보드 화면으로 옮긴 비즈니스 마스터처럼 서로 다른 형태의 요구사항을 계속 받았습니다. <strong class="hl">요구사항은 매번 달랐지만 기능 구현과 UI 완성도를 끝까지 맞춰 실제 서비스 안에서 동작하는 기능으로 완성</strong>했고, 이를 통해 여러 제품 가설을 검증 가능한 화면으로 바꿔왔습니다.
+        광고, 결제, 수익성 분석, 복잡한 데이터 조회, 크롬 익스텐션, 비즈니스 마스터처럼 요구사항의 형태는 매번 달랐지만, <strong class="hl">기능 구현과 UI 완성도를 끝까지 맞춰 실제 서비스 안에서 동작하는 기능</strong>으로 완성해왔습니다.
       </p>
       <p>
-        <strong class="hl">저는 어떤 요구사항이 와도 디자인 의도와 기능 요구사항을 함께 이해하고, AI Native한 방식으로 구조화·구현·검증까지 밀고 가는 프론트엔드입니다.</strong> 빠르게 만들되 결과물이 흔들리지 않도록 기준을 세우고, 디자인과 기능을 완성도 높게 구현해 팀이 바로 검증할 수 있는 제품 상태로 만드는 것이 제가 제공할 수 있는 가장 큰 강점입니다.
+        <strong class="hl">저는 어떤 요구사항이 와도 디자인 의도와 기능 요구사항을 함께 이해하고, AI Native한 방식으로 구조화·구현·검증까지 밀고 가는 프론트엔드입니다.</strong> 빠르게 만들되 결과물이 흔들리지 않도록 기준을 세우고, 팀이 바로 검증할 수 있는 제품 상태로 만드는 것을 중요하게 생각합니다.
       </p>
     </section>
 
@@ -394,12 +410,16 @@
           <p class="period">2024. 06 ~ 2026. 03</p>
         </div>
         <div class="exp-right">
-          <p class="product">이커머스 정산/순이익 분석 SaaS 「장사왕」 · PMF를 탐색하는 단계에서 신입으로 합류, 1인 프론트엔드</p>
+          <p class="competency-label">핵심 역량</p>
           <ul class="role-list">
-            <li><strong>PMF 탐색의 실행 루프:</strong> 소싱 사용자 유입 채널을 검증하기 위해 크롬 익스텐션 기획 논의에 참여하고 개발 담당. 출시 이후 다운로드는 확보했지만 결제 전환이 낮다는 결과까지 확인하며, 유입 채널과 타겟 고객층 사이의 간극을 다음 제품 판단 근거로 남김.</li>
-            <li><strong>AI 레버리지 기반 구축:</strong> 새 화면마다 반복되던 라우터·메뉴·컴포넌트·훅·API 기본 구조와 페이지 래퍼·로딩·빈 상태 처리 정리. 플랜/트랙 접근 조건, 스타일 시스템, 검증용 테스트 데이터 환경, 스타일 규칙 점검 스크립트까지 묶어 AI가 만든 결과도 같은 기준에서 수정·검증되게 함.</li>
-            <li><strong>검증 가능한 화면과 UI 완성도:</strong> 대표님이 엑셀로 정리한 매출·광고·비용·상품 리포트 가설을 GraphQL 기반 비즈니스 마스터 대시보드로 전환. 상품별 순이익, 로켓그로스 순이익 계산기, DataGrid 기반 그룹 분석·전체화면·컬럼 접기 등 사용자가 데이터를 읽고 판단하는 화면 경험도 함께 다듬음.</li>
-            <li><strong>검증·운영 기준까지 마무리:</strong> 기능 구현 이후 QA 테스트 케이스, 핸드오프 문서, 리팩토링 결과 문서, API 매핑 문서를 남겨 같은 기준으로 확인하고 이어서 작업할 수 있게 함. Promise Chain 기반 API 호출 패턴을 async/await와 로딩 UI 중심으로 정리하고, AG-Grid·페이지네이션·height·strict mode·lint-staged 같은 운영성 이슈도 함께 정리함.</li>
+            <li><strong>Zero to One 실행:</strong> PMF 탐색 단계에서 현금 흐름, 광고 분석·캠페인·진단, 결제·쿠폰·혜택, 수익성 분석, 크롬 익스텐션 등 정제되지 않은 요구사항을 실제 서비스 기능으로 구현. <strong>출시 이후 운영 흐름까지 보며 다음 제품 판단에 필요한 화면 상태로 만듦.</strong></li>
+            <li><strong>가설 검증 UI 전환:</strong> 엑셀 기반 매출·광고·비용·상품 리포트는 반복 검토와 사용 흐름 확인이 어려웠음. 빠르게 화면으로 옮겨보는 편이 낫다고 판단해 Apollo / GraphQL 기반 비즈니스 마스터 대시보드로 구현했고, <strong>엑셀 기반 가설을 서비스 안에서 확인 가능한 UI와 데이터 흐름으로 전환함.</strong></li>
+            <li><strong>FE 병목 해결:</strong>
+              <span class="flow-step"><strong>1)</strong> 요금제·권한 조건이 여러 페이지에 흩어져 정책 변경 때마다 수정 범위를 다시 찾아야 했음. 접근 규칙을 라우트와 정책 중심으로 정리해 <strong>권한 수정 컨텍스트를 한 번에 전달할 수 있게 함.</strong></span>
+              <span class="flow-step"><strong>2)</strong> 결제·연동·요금제 상태가 복잡해 특정 화면 상태를 확인하려면 실제 데이터나 어드민 상태를 매번 맞춰야 했음. QA 상태 재현용 mock 데이터 환경을 만들어 <strong>복잡한 상태 재현 시간을 최대 99% 줄임.</strong></span>
+              <span class="flow-step"><strong>3)</strong> 스타일 기준이 흩어져 있으면 AI가 만든 UI의 간격·토큰·패턴이 쉽게 흔들렸음. Tailwind 기반 스타일 체계와 반복 UI 기준을 정리해 <strong>Figma MCP 기반 UI 초안 생성이 가능한 흐름을 만듦.</strong></span>
+            </li>
+            <li><strong>성능 병목 개선:</strong> 초기 메인 번들이 10MB 이상으로 커져 로딩 속도가 느렸고, 번들 다운로드 중 보여줄 화면이 없어 사용자가 빈 화면을 앱 오류처럼 인식하는 문제가 있었음. 라우트 단위 lazy loading과 Vite manualChunks로 <strong>초기 번들을 600KB대까지 줄이고, Suspense fallback으로 로딩 화면을 제공함.</strong></li>
           </ul>
           <div class="skill-tags">
             <span>React</span><span>TypeScript</span><span>Next.js</span><span>React Query</span><span>Tailwind CSS</span><span>Claude Code</span><span>Codex</span><span>OpenCode</span>
@@ -427,14 +447,6 @@
         <h3>Performance / Loading UX<span class="dot">.</span></h3>
         <ul>
           <li>초기 로딩에서 <strong>10MB 이상이던 메인 번들</strong> 때문에 화면이 비어 보이고 사용자가 앱이 멈췄다고 느껴 새로고침을 반복하는 문제가 있었습니다. 이를 줄이기 위해 <strong>라우트 단위 lazy loading, Suspense fallback, Vite manualChunks</strong>로 페이지·벤더 청크를 분리했습니다.</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <h3>TypeScript<span class="dot">.</span></h3>
-        <ul>
-          <li>TypeScript는 <strong>제약을 코드로 옮기는 도구</strong>로 사용합니다. 정책과 도메인 규칙은 타입, 유니온, 타입 가드, config 객체로 모델링합니다.</li>
-          <li><strong>strict는 기존 코드베이스 상황에 맞춰 점진적으로 강화</strong>합니다.</li>
         </ul>
       </div>
 
