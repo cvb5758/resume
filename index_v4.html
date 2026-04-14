@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이력서 - 이수민</title>
   <style>
-    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: "Apple SD Gothic Neo", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #222;
       background: #fff;
       line-height: 1.8;
@@ -271,12 +269,14 @@
     }
 
     @media print {
+      @page { size: A4; margin: 11mm 10mm; }
       body { font-size: 11.8px; }
-      main { padding: 14px 0 18px; max-width: 100%; }
+      main { padding: 10px 14px 16px; max-width: 100%; }
       section { margin-top: 20px; }
       .cap-group, .skill-group { break-inside: avoid; }
       .exp-block { break-inside: auto; page-break-inside: auto; }
-      .print-page-break {
+      .print-page-break,
+      .skills-section {
         break-before: page;
         page-break-before: always;
       }
@@ -286,8 +286,8 @@
       .hero .contact { margin-top: 10px; font-size: 0.75rem; }
       section > h2 { margin-bottom: 12px; }
       .divider { margin: 17px 0; }
-      .introduce .lead { font-size: 0.86rem; line-height: 1.52; }
-      .introduce p { font-size: 0.79rem; line-height: 1.5; margin-bottom: 9px; }
+      .introduce .lead { font-size: 0.86rem; line-height: 1.54; letter-spacing: 0.006em; }
+      .introduce p { font-size: 0.79rem; line-height: 1.52; margin-bottom: 9px; letter-spacing: 0.008em; }
       .exp-block { grid-template-columns: 164px 1fr; gap: 0 24px; margin-bottom: 18px; }
       .exp-left h3 { font-size: 1.03rem; }
       .exp-left .role { font-size: 0.79rem; }
@@ -372,7 +372,7 @@
 
     <hr class="divider">
 
-    <section>
+    <section class="skills-section">
       <h2>Skills<span class="dot">.</span></h2>
 
       <div class="skill-group">
